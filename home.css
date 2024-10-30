@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar-sections{
+    color: black;
+    font-size: 17px;
+}
+
+.navbar-nav .nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.navbarSection {
+    gap: 0.7rem;
+}
+
+.navbar-div{
+    height: 8rem;
+    width: 100%;
+}
+
