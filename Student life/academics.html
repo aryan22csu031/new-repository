@@ -4,11 +4,225 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academics</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
     <style>
+        body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar-sections{
+    color: black;
+    font-size: 17px;
+}
+
+.navbar-nav .nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.navbarSection {
+    gap: 0.7rem;
+}
+
+.navbar-div{
+    height: 8rem;
+    width: 100%;
+}
+
+.academics-header{
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: black;
+  color: white;
+  background-image: url("https://cdn.pixabay.com/photo/2015/07/19/10/00/school-work-851328_1280.jpg");
+  background-size: cover;
+}
+
+
+.academics-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+}
+
+.academics-list ul {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.academics-list ul .active-head {
+  font-weight: 100;
+}
+
+.academics-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem;
+  background-color: blue;
+  height: 20rem;
+  width: 100%;
+}
 
     </style>
 </head>
 <body>
+    <div>
+        <div>
+            <marquee behavior="" direction="" class="bg-danger text-white "><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee>
+          
+          <nav class="navbar navbar-expand-lg navbar-light navbar-div">
+            <!-- here keep the logo -->
+             <a class="navbar-brand" href="./images/logo.webp"><div class="container text-center my-5">
+              <img src="../images/logo.webp" alt="Logo" class="rounded-circle img-fluid" style="width: 100px; height: 100px;">
+            </div>
+            </a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ml-auto navbarSection">
+                 <!-- About Us Dropdown -->
+                 <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" id="aboutUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">About Us</h5>
+                   </a>
+                   <div class="dropdown-menu" aria-labelledby="aboutUsDropdown">
+                     <a class="dropdown-item" href="#">Founder's Desk</a>
+                     <a class="dropdown-item" href="#">Principal Desk</a>
+                     <a class="dropdown-item" href="#">School Management</a>
+                     <a class="dropdown-item" href="#">Managing Committee</a>
+                     <a class="dropdown-item" href="#">Princples & Policies</a>
+                     <a class="dropdown-item" href="#">Infrastructure</a>
+                   </div>
+                 </li>
+                 <!-- Add additional nav items here if needed -->
+          
+                  <!-- Admissions Dropdown -->
+                  <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" id="admissionsUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Admissions</h5>
+                   </a>
+                   <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
+                     <a class="dropdown-item" href="#">Admissions HelpDesk/school</a>
+                     <a class="dropdown-item" href="#">Admissions Procedure</a>
+                     <a class="dropdown-item" href="#">Registration</a>
+                     <a class="dropdown-item" href="#">Free Structure</a>
+                     <a class="dropdown-item" href="#">School Timings</a>
+                     <a class="dropdown-item" href="#">FAQ's</a>
+                   </div>
+                 </li>
+                 <!-- Add additional nav items here if needed -->
+                   <!-- Student Life Dropdown -->
+                 <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" id="StudentLifeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Student Life</h5>
+                   </a>
+                   <div class="dropdown-menu" aria-labelledby="StudentLifeDropdown">
+                     <a class="dropdown-item" href="./Student life/academics.html">Academics</a>
+                     <a class="dropdown-item" href="#">Sports</a>
+                     <a class="dropdown-item" href="#">Co-curriculum</a>
+                     <a class="dropdown-item" href="#">Social-Cultural Development</a>
+                     <a class="dropdown-item" href="#">Counselling</a>
+                     <a class="dropdown-item" href="#">Achievements</a>
+                     <a class="dropdown-item" href="#">Event Calender</a>
+                     <a class="dropdown-item" href="#">Toppers</a>
+                     <a class="dropdown-item" href="#">Cabinet</a>
+                     <a class="dropdown-item" href="#">Transfer Cerificate</a>
+                   </div>
+                 </li>
+                 <!-- Add additional nav items here if needed -->
+                      <!-- News $ Calender Dropdown -->
+                 <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" id="news&CalenderDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">News & Calender</h5>
+                   </a>
+                   <div class="dropdown-menu" aria-labelledby="news&CalenderDropdown">
+                     <a class="dropdown-item" href="#">Studet Hand Book</a>
+                     <a class="dropdown-item" href="#">NewsLetter/Scholars Times</a>
+                   </div>
+                   
+                 </li>
+                 <!-- Add additional nav items here if needed -->
+                         <!-- Mandatory Disclosures -->
+                 <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" id="mandatoryDisclosureDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Mandatory Disclosures</h5>
+                   </a>
+                   <div class="dropdown-menu" aria-labelledby="mandatoryDisclosureDropdown">
+                     <a class="dropdown-item" href="#">Booklist</a>
+                     <a class="dropdown-item" href="#">Safety Certificates & Affiliations</a>
+                     <a class="dropdown-item" href="#">CBSE-OASIS</a>
+                     <a class="dropdown-item" href="#">Mandatory Public Disclosures</a>
+                   </div>
+                   
+                 </li>
+                 <!-- Add additional nav items here if needed -->
+                          <!-- Contact Us  -->
+                 <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" id="contactUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Contact Us</h5>
+                   </a>
+                  
+                 </li>
+                 <!-- Add additional nav items here if needed -->
+          
+                 <!-- Notice -->
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="noticeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Notice</h5>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="noticeDropdown">
+                              <a class="dropdown-item" href="#">Notice 1</a>
+                              <a class="dropdown-item" href="#">Notice 2</a>
+                              <a class="dropdown-item" href="#">Notice 3</a>
+                             
+                            </div>
+                            
+                          </li>
+               </ul>
+             </div>
+           </nav>
+    </div>
+    <div class="academics-header">
+      <div>
+        <h1>Academics</h1>
+        </div>
+        <div class="academics-list">
+          <ul>
+            <li>Home ></li>
+            <li>Student Life ></li>
+            <li class="active-head">Academics</li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="academics-info">
+      <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+          The current button
+        </button>
+        <button type="button" class="list-group-item list-group-item-action">A second button item</button>
+        <button type="button" class="list-group-item list-group-item-action">A third button item</button>
+        <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+        <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
+      </div>
+    </div>
     
 
     <script>
