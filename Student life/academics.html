@@ -38,7 +38,6 @@
 
 .academics-header{
   display: flex;
-  width: 100vw;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -71,13 +70,74 @@
 
 .academics-info {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5rem;
-  background-color: blue;
-  height: 20rem;
+  position: relative;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 4rem;
+  align-items: start;
   width: 100%;
 }
+
+.academics-brief {
+  width: 70%;
+  font-family:sans-serif;
+}
+
+hr{
+  background-color: black;
+}
+
+.res-container {
+      display: flex;
+      margin-top: 3rem;
+    }
+    .res-sidebar {
+      width: 250px;
+      color: black;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .res-sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .res-nav-item {
+      padding: 15px;
+      margin: 10px 0;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+
+    .active {
+      color: #007bff;
+    }
+
+    /* PDF Viewer Styling */
+    .viewer {
+      flex: 1;
+      background-color: #ffffff;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    iframe {
+      width: 90%;
+      height: 90%;
+      border: none;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .dep-container {
+      display: flex;
+      gap: 2px;
+    }
 
     </style>
 </head>
@@ -214,19 +274,71 @@
 
     <div class="academics-info">
       <div class="list-group">
-        <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
-          The current button
+        <button type="button" class="list-group-item list-group-item-action" aria-current="true">
+          Academics
         </button>
-        <button type="button" class="list-group-item list-group-item-action">A second button item</button>
-        <button type="button" class="list-group-item list-group-item-action">A third button item</button>
-        <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
-        <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
+        <button type="button" class="list-group-item list-group-item-action">Results and Achievements</button>
+        <button type="button" class="list-group-item list-group-item-action">Department</button>
+      </div>
+      <div class="academics-brief">
+        <h1>Academics</h1>
+        <hr>
+        <p>The school provides a caring, friendly and well-structured Hybrid system of learning. We value students who are intellectually curious and creative and mentor them towards attaining academic excellence. <br> <br>
+  
+          The emphasis is on the holistic development of the child. Co-curricular activities and responsibility towards the environment are integrated into the learning process. The efforts are to remain abreast with the latest in the field of education, so that the academic programme remains contemporary and rigorous at all times. <br> <br>
+          
+          The school is affiliated to the Central Board of Secondary Education (CBSE). English is the medium of instruction. The school has a dedicated faculty of highly qualified and efficient teachers, who use modern techniques of teaching. Interdisciplinary and experiential learning is encouraged to strengthen conceptual knowledge. <br> <br>
+          
+          The school provides best-in-class infrastructure facilities to the students. The learning needs of each student are met in an environment that is supportive and affirming. Peer tutoring, remedial and enrichment classes are regularly conducted to optimize learning outcomes. The students of Little Scholars School have excelled in all fields and have proceeded to study in the top colleges.</p>
+          
+    <div class="results-info">
+      <h1 style="margin-top: 4rem;">Results and Achivements</h1>
+        <hr>
+      <div class="res-container">
+        <div class="res-sidebar">
+          <div class="res-nav-item active" data-pdf="pdf1.pdf">CBSE Class 10th 2024</div>
+          <div class="res-nav-item active">CBSE Class 12th 2024</div>
+          <div class="res-nav-item active">CBSE Class 10th 2023</div>
+          <div class="res-nav-item active">CBSE Class 12th 2023</div>
+          <div class="res-nav-item active">CBSE Class 10th 2022</div>
+          <div class="res-nav-item active">CBSE Class 12th 2022</div>
+          <div class="res-nav-item active">CBSE Class 10th 2021</div>
+          <div class="res-nav-item active">CBSE Class 12th 2021</div>
+        </div>
+    
+        <div class="viewer">
+          <iframe id="pdf-viewer" src="./assets/CBSE Class 10th 2024.pdf"></iframe>
+        </div>
+      </div>
+      <div class="dep-container">
+        <div class="res-nav-item active">Arts</div>
+        <div class="res-nav-item">Commerce</div>
+        <div class="res-nav-item">English</div>
+        <div class="res-nav-item">Hind</div>
+        <div class="res-nav-item">Humanities</div>
+        <div class="res-nav-item">IT</div>
+        <div class="res-nav-item">Mathematics</div>
+        <div class="res-nav-item">Physical Education</div>
+        <div class="res-nav-item">Science</div>
+      </div>
+    </div>
       </div>
     </div>
     
 
     <script>
+        const navItems = document.querySelectorAll('.res-nav-item');
+    const pdfViewer = document.getElementById('pdf-viewer');
+
+    navItems.forEach(item => {
+      item.addEventListener('click', function () {
+        navItems.forEach(nav => nav.classList.remove('active'));
+        this.classList.add('active');
+        const pdfSrc = "./assets/"+item.innerHTML.toString() + ".pdf";
         
+        pdfViewer.src = pdfSrc;
+      });
+    });
     </script>
 </body>
 </html>
