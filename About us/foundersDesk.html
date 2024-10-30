@@ -1,17 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Founder's desk</title>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Founder's desk</title>
+        <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    </style>
-</head>
-<body>
-    
-    <script>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .breadcrumb {
+            background-color: #000;
+            color: white;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            padding: 40px 0;
+        }
+
+        .breadcrumb-content {
+            width: 95%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .breadcrumb-content {
+                width: 80%;
+                gap: 1.5rem;
+            }
+        }
+
+        .title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.05em;
+        }
+
+        @media (min-width: 640px) {
+            .title {
+                font-size: 2.5rem;
+            }
+        }
+
+        .breadcrumb-links {
+            display: flex;
+            gap: 0.25rem;
+            font-size: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .breadcrumb-links {
+                font-size: 1.125rem;
+            }
+        }
+
+        .breadcrumb-item {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            text-decoration: none;
+            color: white;
+        }
+
+        .current {
+            font-weight: 300;
+        }
+
+        .icon {
+            display: inline-block;
+            font-size: 1em;
+        }
+
+        .container {
+            position: relative;
+            background-image: url('/images/background-img-aboutus.png');
+            display: flex;
+            flex-direction: column-reverse;
+            padding: 160px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                gap: 1.5rem;
+                padding-top: 3.5rem;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .heading1 {
+            color: #666;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .heading2 {
+            color: #e53e3e;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .description {
+            color: #000;
+            font-weight: 600;
+            line-height: 1.75;
+            font-size: 0.875rem;
+            text-align: justify;
+            margin-bottom: 2rem;
+        }
+
+        .additional-text {
+            color: #000;
+            font-weight: 300;
+            line-height: 1.75;
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .image-container {
+                justify-content: flex-end;
+                width: 40%;
+            }
+        }
+
+        .image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border: 4px solid #333;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div class="breadcrumb">
+            <div class="breadcrumb-content">
+                <h1 class="title">Founder Desk</h1>
+                <div class="breadcrumb-links">
+                    <a href="/" class="breadcrumb-item">
+                        Home
+                        <span class="icon">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
+                            </svg>
+                        </span>
+                    </a>
+                    <p class="breadcrumb-item">
+                        About us
+                        <span class="icon">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
+                            </svg>
+                        </span>
+                    </p>
+                    <span class="breadcrumb-item current">Founder Desk</span>
+                </div>
+            </div>
+        </div>
+       
+        <div class="container">
+                <div class="content">
+                    <h3 class="heading1">Welcome To</h3>
+                    <h2 class="heading2">Little Scholars</h2>
+                    <p class="description">
+                        Little Scholars is a journey of self-discovery for a child as they grow to become young adults.
+                        The school will equip him to excel in academics, and to be savvy in through a Hybrid learning platform.
+                    </p>
+                    <p class="additional-text">
+                        The student will be encouraged to discover their interests, talents and aptitudes, and learn to form their opinions and role in society.
+                        This is achieved in a nurturing environment, where the Mentor enacts the role of a Second Parent. An important feature of this process is the school’s provision of rich choices, be they in courses of academics, co-curricular activities in artistic, creative and intellectual activities, and in sports and adventure.
+                        Engagements with ecology and heritage allow engagements with the community, within the school, in rural areas, or through NGOs, nurturing the ideologies of the school motto ‘Service before self’.
+                        Leadership abilities to take decisions and to find solutions are imbibed on the sports field, through social interactions, and through positions of responsibility provided in school, aiming not just to nurture the students through their formative years, but also to place them on a continuous curiosity to learn, while carrying the responsibilities of leader with understanding, intelligence, sensitivity and an inclusive attitude.
+                    </p>
+                </div>
+                <div class="image-container">
+                    <img src="/images/Founder_img.jpeg" alt="desk" class="image">
+                </div>
+        </div>
         
-    </script>
-</body>
+        <script>
+            
+        </script>
+    </body>
 </html>
