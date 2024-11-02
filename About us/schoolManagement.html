@@ -15,22 +15,37 @@
             font-family: Arial, sans-serif;
         }
 
-        .breadcrumb {
-            background-color: #000;
+        .breadcrumb { 
+            background-image: url('images/Header-bg.jpg');
+            background-position: center;
+            background-size: cover;
+            height: 200px;
             color: white;
-            display: flex;
-            justify-content: center;
             position: relative;
-            z-index: 2;
-            padding: 40px 0;
+            display: flex;
+            align-items: center; /* Centers the breadcrumb content vertically */
+            justify-content: center; /* Centers the breadcrumb content horizontally */
+        }
+
+        .breadcrumb::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent black overlay */
+            z-index: 1; /* Places overlay behind content */
         }
 
         .breadcrumb-content {
-            width: 95%;
+            position: relative;
+            z-index: 2; /* Ensures content is above the overlay */
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
+            padding: 50px;
         }
 
         @media (min-width: 640px) {
@@ -82,54 +97,16 @@
             display: inline-block;
             font-size: 1em;
         }
-        .header {
-            position: relative;
-            height: 190px;
-            background: url('header-bg.jpg') no-repeat center center;
-            background-size: cover;
-            color: white;
-            display: grid;
-            place-items: center;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.85);
-        }
-
-        .content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-
-        .content h1 {
-            font-size: 28px;
-            font-weight: 600;
-        }
-
-        .nav {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            font-size: 16px;
-        }
-
-        .nav a, .nav p {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav .arrow {
-            margin-left: 5px;
-        }
 
         .team-section {
-            padding: 70px 0;
+            padding-top: 7rem;
+            padding-bottom: 8rem;
+        }
+
+        .team-content {
+            display: flex;
+            flex-direction: column;
+            row-gap: 3rem;
         }
 
         .team-header {
@@ -190,7 +167,7 @@
 <body>
     <div class="breadcrumb">
         <div class="breadcrumb-content">
-            <h1 class="title">Principal Desk</h1>
+            <h1 class="title">School Management</h1>
             <div class="breadcrumb-links">
                 <a href="/" class="breadcrumb-item">
                     Home
@@ -208,63 +185,71 @@
                         </svg>
                     </span>
                 </p>
-                <span class="breadcrumb-item current">Principal Desk</span>
+                <span class="breadcrumb-item current">School Management</span>
             </div>
         </div>
     </div>
 
     <div>
-        <section class="header">
-            <div class="overlay"></div>
-            <div class="content">
-                <h1>School Management</h1>
-                <div class="nav">
-                    <a href="/">Home <span class="arrow">→</span></a>
-                    <p>About us <span class="arrow">→</span></p>
-                    <span class="subtitle">School Management</span>
-                </div>
-            </div>
-        </section>
-        
         <section class="team-section">
-            <div class="team-header">
-                <h1>Principal and Vice Principal</h1>
-                <div class="divider"></div>
-            </div>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="/images/principal.webp" alt="Principal">
-                    <p class="name">Ms. Shikha Gautam</p>
-                    <p class="role">Principal</p>
-                    <div class="about-link">About</div>
+            <div class="team-content">
+                <div class="team-header">
+                    <h1>Principal and Vice Principal</h1>
+                    <div class="divider"></div>
                 </div>
-                <div class="team-member">
-                    <img src="/static/media/vice-prinicipal.f60470c7bb3cc1358615.webp" alt="Vice Principal">
-                    <p class="name">Ms. Ruma Agarwal</p>
-                    <p class="role">Vice Principal</p>
-                    <div class="about-link">About</div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="/images/principal.webp" alt="Principal">
+                        <p class="name">Ms. Shikha Gautam</p>
+                        <p class="role">Principal</p>
+                        <div class="about-link">About</div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/static/media/vice-prinicipal.f60470c7bb3cc1358615.webp" alt="Vice Principal">
+                        <p class="name">Ms. Ruma Agarwal</p>
+                        <p class="role">Vice Principal</p>
+                        <div class="about-link">About</div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="team-header">
-                <h1>Heads</h1>
-                <div class="divider"></div>
-            </div>
-            <div class="team-grid">
-                <!-- Repeat team member structure for other heads -->
-                <div class="team-member">
-                    <img src="/static/media/academic-head.6efbca68e71171fa5022.webp" alt="Academic Head">
-                    <p class="name">Mr. Subhash Sharma</p>
-                    <p class="role">Academic Head</p>
-                    <div class="about-link">About</div>
+    
+                <div class="team-header">
+                    <h1>Heads</h1>
+                    <div class="divider"></div>
                 </div>
-                <div class="team-member">
-                    <img src="/static/media/curricular-head.9ca56fd42a48e80ec7d8.webp" alt="Co-curricular Head">
-                    <p class="name">Ms. Kamna Chhabra</p>
-                    <p class="role">Co-curricular Head</p>
-                    <div class="about-link">About</div>
+                <div class="team-grid">
+                    <!-- Repeat team member structure for other heads -->
+                    <div class="team-member">
+                        <img src="/static/media/academic-head.6efbca68e71171fa5022.webp" alt="Academic Head">
+                        <p class="name">Mr. Subhash Sharma</p>
+                        <p class="role">Academic Head</p>
+                        <div class="about-link">About</div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/static/media/curricular-head.9ca56fd42a48e80ec7d8.webp" alt="Co-curricular Head">
+                        <p class="name">Ms. Kamna Chhabra</p>
+                        <p class="role">Co-curricular Head</p>
+                        <div class="about-link">About</div>
+                    </div>
+                    <!-- Add more team members as needed -->
+                    <div class="team-member">
+                        <img src="/static/media/curricular-head.9ca56fd42a48e80ec7d8.webp" alt="Co-curricular Head">
+                        <p class="name">Ms. MANISH CHANDRA SHARAMA </p>
+                        <p class="role">ICT Head</p>
+                        <div class="about-link">About</div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/static/media/curricular-head.9ca56fd42a48e80ec7d8.webp" alt="Co-curricular Head">
+                        <p class="name">Ms. KAPIL KUMAR VISHNOI</p>
+                        <p class="role">HR Head</p>
+                        <div class="about-link">About</div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/static/media/curricular-head.9ca56fd42a48e80ec7d8.webp" alt="Co-curricular Head">
+                        <p class="name">Ms. GOPAL SINGH BISHT</p>
+                        <p class="role">SPORT HEAD</p>
+                        <div class="about-link">About</div>
+                    </div>
                 </div>
-                <!-- Add more team members as needed -->
             </div>
         </section>
     </div>
