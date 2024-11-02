@@ -15,22 +15,37 @@
             font-family: Arial, sans-serif;
         }
 
-        .breadcrumb {
-            background-color: #000;
+        .breadcrumb { 
+            background-image: url('images/Header-bg.jpg');
+            background-position: center;
+            background-size: cover;
+            height: 200px;
             color: white;
-            display: flex;
-            justify-content: center;
             position: relative;
-            z-index: 2;
-            padding: 40px 0;
+            display: flex;
+            align-items: center; /* Centers the breadcrumb content vertically */
+            justify-content: center; /* Centers the breadcrumb content horizontally */
+        }
+
+        .breadcrumb::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent black overlay */
+            z-index: 1; /* Places overlay behind content */
         }
 
         .breadcrumb-content {
-            width: 95%;
+            position: relative;
+            z-index: 2; /* Ensures content is above the overlay */
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
+            padding: 50px;
         }
 
         @media (min-width: 640px) {
@@ -128,6 +143,7 @@
             font-size: 0.875rem;
             text-align: justify;
             margin-bottom: 2rem;
+            word-spacing: 3px;
         }
 
         .additional-text {
@@ -154,7 +170,7 @@
         }
 
         .image {
-            width: 100%;
+            max-width: 100%;
             height: auto;
             object-fit: cover;
             border: 4px solid #333;
@@ -206,7 +222,7 @@
                 <div class="image-container">
                     <picture>
                         <source srcset="../images/principal.webp" type="image/webp">
-                        <img src="../images/principal.webp" alt="..">
+                        <img src="../images/principal.webp" alt="Principal" class="image">
                     </picture>
                 </div>
         </div>
