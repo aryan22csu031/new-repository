@@ -5,11 +5,269 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Management</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .breadcrumb {
+            background-color: #000;
+            color: white;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            padding: 40px 0;
+        }
+
+        .breadcrumb-content {
+            width: 95%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .breadcrumb-content {
+                width: 80%;
+                gap: 1.5rem;
+            }
+        }
+
+        .title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.05em;
+        }
+
+        @media (min-width: 640px) {
+            .title {
+                font-size: 2.5rem;
+            }
+        }
+
+        .breadcrumb-links {
+            display: flex;
+            gap: 0.25rem;
+            font-size: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .breadcrumb-links {
+                font-size: 1.125rem;
+            }
+        }
+
+        .breadcrumb-item {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            text-decoration: none;
+            color: white;
+        }
+
+        .current {
+            font-weight: 300;
+        }
+
+        .icon {
+            display: inline-block;
+            font-size: 1em;
+        }
+        .header {
+            position: relative;
+            height: 190px;
+            background: url('header-bg.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            display: grid;
+            place-items: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            font-size: 16px;
+        }
+
+        .nav a, .nav p {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav .arrow {
+            margin-left: 5px;
+        }
+
+        .team-section {
+            padding: 70px 0;
+        }
+
+        .team-header {
+            text-align: center;
+        }
+
+        .divider {
+            width: 70px;
+            height: 1px;
+            background: black;
+            margin: 10px auto;
+        }
+
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            padding: 20px;
+        }
+
+        .team-member {
+            width: 180px;
+            text-align: center;
+            transition: transform 0.4s;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 320px;
+            border-radius: 8px;
+            border: 4px solid black;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+
+        .name {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .role {
+            color: red;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .about-link {
+            color: red;
+            cursor: pointer;
+            font-weight: bold;
+        }
 
     </style>
 </head>
 <body>
-    
+    <div class="breadcrumb">
+        <div class="breadcrumb-content">
+            <h1 class="title">Principal Desk</h1>
+            <div class="breadcrumb-links">
+                <a href="/" class="breadcrumb-item">
+                    Home
+                    <span class="icon">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
+                        </svg>
+                    </span>
+                </a>
+                <p class="breadcrumb-item">
+                    About us
+                    <span class="icon">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
+                        </svg>
+                    </span>
+                </p>
+                <span class="breadcrumb-item current">Principal Desk</span>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <section class="header">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>School Management</h1>
+                <div class="nav">
+                    <a href="/">Home <span class="arrow">→</span></a>
+                    <p>About us <span class="arrow">→</span></p>
+                    <span class="subtitle">School Management</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="team-section">
+            <div class="team-header">
+                <h1>Principal and Vice Principal</h1>
+                <div class="divider"></div>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="/images/principal.webp" alt="Principal">
+                    <p class="name">Ms. Shikha Gautam</p>
+                    <p class="role">Principal</p>
+                    <div class="about-link">About</div>
+                </div>
+                <div class="team-member">
+                    <img src="/static/media/vice-prinicipal.f60470c7bb3cc1358615.webp" alt="Vice Principal">
+                    <p class="name">Ms. Ruma Agarwal</p>
+                    <p class="role">Vice Principal</p>
+                    <div class="about-link">About</div>
+                </div>
+            </div>
+
+            <div class="team-header">
+                <h1>Heads</h1>
+                <div class="divider"></div>
+            </div>
+            <div class="team-grid">
+                <!-- Repeat team member structure for other heads -->
+                <div class="team-member">
+                    <img src="/static/media/academic-head.6efbca68e71171fa5022.webp" alt="Academic Head">
+                    <p class="name">Mr. Subhash Sharma</p>
+                    <p class="role">Academic Head</p>
+                    <div class="about-link">About</div>
+                </div>
+                <div class="team-member">
+                    <img src="/static/media/curricular-head.9ca56fd42a48e80ec7d8.webp" alt="Co-curricular Head">
+                    <p class="name">Ms. Kamna Chhabra</p>
+                    <p class="role">Co-curricular Head</p>
+                    <div class="about-link">About</div>
+                </div>
+                <!-- Add more team members as needed -->
+            </div>
+        </section>
+    </div>
 
     <script>
         

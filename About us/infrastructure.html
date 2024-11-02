@@ -5,11 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infrastructure</title>
     <style>
-        
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .container {
+            width: 83.33%;
+            margin: 0 auto;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .divider {
+            width: 70px;
+            height: 4px;
+            background-color: black;
+            margin: auto;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .bg-dark-blue {
+            background-color: #003366; /* Example color */
+        }
+
+        .hoverable {
+            background-color: #f5f5f5; /* Example color */
+            color: black;
+        }
+
+        .hoverable:hover {
+            color: red;
+        }
+
+        .swiper-container {
+            border: 2px solid #e0e0e0;
+            padding: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            position: absolute;
+            top: 50%;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transform: translateY(-50%);
+        }
+
+        .swiper-button-next {
+            right: 10px;
+        }
+
+        .swiper-button-prev {
+            left: 10px;
+        }
+
     </style>
 </head>
 <body>
-    
+    <section class="relative w-full py-24 bg-off-white-bg">
+        <div class="container">
+            <div class="content flex-col">
+                <div class="header">
+                    <h1 class="uppercase">INFRASTRUCTURE</h1>
+                    <div class="divider"></div>
+                </div>
+                <div class="buttons flex-wrap">
+                    <button class="btn bg-dark-blue text-white">School Building</button>
+                    <button class="btn hoverable">Sports Ground</button>
+                    <button class="btn hoverable">Auditorium</button>
+                    <button class="btn hoverable">Biological Lab</button>
+                    <button class="btn hoverable">Chemistry Lab</button>
+                    <button class="btn hoverable">Computer Lab</button>
+                    <button class="btn hoverable">Library</button>
+                    <button class="btn hoverable">Physics Lab</button>
+                </div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="/static/media/in1.webp" alt="Slide 1"></div>
+                        <div class="swiper-slide"><img src="/static/media/in2.webp" alt="Slide 2"></div>
+                        <div class="swiper-slide"><img src="/static/media/in3.webp" alt="Slide 3"></div>
+                        <div class="swiper-slide"><img src="/static/media/in4.webp" alt="Slide 4"></div>
+                        <div class="swiper-slide"><img src="/static/media/in5.webp" alt="Slide 5"></div>
+                        <div class="swiper-slide"><img src="/static/media/in6.webp" alt="Slide 6"></div>
+                    </div>
+                    <button class="swiper-button-next" aria-label="Next Slide">→</button>
+                    <button class="swiper-button-prev" aria-label="Previous Slide">←</button>
+                </div>
+            </div>
+        </div>
+    </section>
     <script>
 
     </script>
