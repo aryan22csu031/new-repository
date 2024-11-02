@@ -98,69 +98,108 @@
             font-size: 1em;
         }
 
-        .team-section {
+        .management-section {
             padding-top: 7rem;
             padding-bottom: 8rem;
+
         }
 
-        .team-content {
+        .management-container {
+            width: 83.333333%;
+            margin-left: auto;
+            margin-right: auto;
             display: flex;
             flex-direction: column;
             row-gap: 3rem;
         }
 
-        .team-header {
-            text-align: center;
-        }
 
-        .divider {
-            width: 70px;
-            height: 1px;
-            background: black;
-            margin: 10px auto;
-        }
+.gap-y-4 {
+  row-gap: 1rem;
+}
 
-        .team-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
-            padding: 20px;
-        }
+.title {
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 600;
+  color: #222;
+}
 
-        .team-member {
-            width: 180px;
-            text-align: center;
-            transition: transform 0.4s;
-        }
+.divider {
+  width: 70px;
+  height: 4px;
+  background-color: black;
+}
 
-        .team-member img {
-            width: 100%;
-            height: 320px;
-            border-radius: 8px;
-            border: 4px solid black;
-        }
+.staff-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0 1rem;
+}
 
-        .team-member:hover {
-            transform: scale(1.05);
-        }
+.staff-member {
+  width: 260px;
+  transition: transform 0.4s;
+}
 
-        .name {
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+.staff-member:hover {
+  transform: scale(1.05);
+}
 
-        .role {
-            color: red;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+.image-wrapper {
+  width: 100%;
+  height: 320px;
+  cursor: pointer;
+}
 
-        .about-link {
-            color: red;
-            cursor: pointer;
-            font-weight: bold;
-        }
+.staff-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.375rem;
+  border: 4px solid black;
+}
+
+.staff-info {
+  text-align: center;
+}
+
+.staff-name {
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.staff-role {
+  color: #e74c3c;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.about-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.arrow-icon {
+  color: #e74c3c;
+}
+
+.about-text {
+  font-weight: 600;
+  color: #222;
+  transition: color 0.3s;
+}
+
+.about-text:hover {
+  color: #e74c3c;
+}
 
     </style>
 </head>
@@ -191,88 +230,83 @@
     </div>
 
     <div>
-        <section class="team-section">
-            <div class="team-content">
-                <div class="team-header">
-                    <h1>Principal and Vice Principal</h1>
+        <section class="management-section">
+            <div class="management-container">
+                <div class="flex flex-col gap-y-12">
+                    <div class="flex flex-col gap-y-4">
+                    <h1 class="title">Principal and Vice Principal</h1>
                     <div class="divider"></div>
-                </div>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <picture>
-                            <source srcset="../images/principal.webp" type="image/webp">
-                            <img src="/images/principal.webp" alt="Principal" class="image">
-                        </picture>
-                        <p class="name">Ms. Shikha Gautam</p>
-                        <p class="role">Principal</p>
-                        <div class="about-link">About</div>
                     </div>
-                    <div class="team-member">
-                        <picture>
-                            <source srcset="../images/vice-prinicipal.webp" type="image/webp">
-                            <img src="../images/vice-prinicipal.webp" alt="Vice Principal">
-                        </picture>
-                        <p class="name">Ms. Ruma Agarwal</p>
-                        <p class="role">Vice Principal</p>
-                        <div class="about-link">About</div>
+                    <div class="staff-container">
+                    <!-- Principal -->
+                    <div class="staff-member">
+                        <div class="image-wrapper">
+                        <img src="/static/media/principal.a305c8beaf9e5382376e.webp" alt="Principal" class="staff-image">
+                        </div>
+                        <div class="staff-info">
+                        <p class="staff-name">Ms. Shikha Gautam</p>
+                        <p class="staff-role">Principal</p>
+                        <div class="about-button">
+                            <span class="arrow-icon">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                            </svg>
+                            </span>
+                            <span class="about-text">About</span>
+                        </div>
+                        </div>
                     </div>
-                </div>
-    
-                <div class="team-header">
-                    <h1>Heads</h1>
-                    <div class="divider"></div>
-                </div>
-                <div class="team-grid">
-                    <!-- Repeat team member structure for other heads -->
-                    <div class="team-member">
-                        <picture>
-                            <source srcset="../images/academic-head.webp" type="image/webp">
-                            <img src="../images/academic-head.webp" alt="Academic Head">
-                        </picture>
-                        <p class="name">Mr. Subhash Sharma</p>
-                        <p class="role">Academic Head</p>
-                        <div class="about-link">About</div>
+                    <!-- Vice Principal -->
+                    <div class="staff-member">
+                        <div class="image-wrapper">
+                        <img src="/static/media/vice-prinicipal.f60470c7bb3cc1358615.webp" alt="Vice Principal" class="staff-image">
+                        </div>
+                        <div class="staff-info">
+                        <p class="staff-name">Ms. Ruma Agarwal</p>
+                        <p class="staff-role">Vice Principal</p>
+                        <div class="about-button">
+                            <span class="arrow-icon">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                            </svg>
+                            </span>
+                            <span class="about-text">About</span>
+                        </div>
+                        </div>
                     </div>
-                    <div class="team-member">
-                        <picture>
-                            <source srcset="../images/curricular-head.webp" type="image/webp">
-                            <img src="../images/curricular-head.webp" alt="Co-curricular Head">
-                        </picture>
-                        <p class="name">Ms. Kamna Chhabra</p>
-                        <p class="role">Co-curricular Head</p>
-                        <div class="about-link">About</div>
-                    </div>
-                    <!-- Add more team members as needed -->
-                    <div class="team-member">
-                        <picture>
-                            <source srcset="../images/ict-head.webp" type="image/webp">
-                            <img src="../images/ict-head.webp" alt="Co-curricular Head">
-                        </picture>
-                        <p class="name">Ms. MANISH CHANDRA SHARAMA </p>
-                        <p class="role">ICT Head</p>
-                        <div class="about-link">About</div>
-                    </div>
-                    <div class="team-member">
-                        <picture>
-                            <source srcset="../images/hr-head.webp" type="image/webp">
-                            <img src="../images/hr-head.webp" alt="Co-curricular Head">
-                        </picture>
-                        <p class="name">Ms. KAPIL KUMAR VISHNOI</p>
-                        <p class="role">HR Head</p>
-                        <div class="about-link">About</div>
-                    </div>
-                    <div class="team-member">
-                        <picture>
-                            <source srcset="../images/sport-head.webp" type="image/sport-head">
-                            <img src="../images/sport-head.webp" alt="Co-curricular Head">
-                        </picture>
-                        <p class="name">Ms. GOPAL SINGH BISHT</p>
-                        <p class="role">SPORT HEAD</p>
-                        <div class="about-link">About</div>
                     </div>
                 </div>
+          
+              <!-- Heads Section -->
+              <div class="flex flex-col gap-y-12">
+                <div class="flex flex-col gap-y-4">
+                  <h1 class="title">Heads</h1>
+                  <div class="divider"></div>
+                </div>
+                <div class="heads-container">
+                  <!-- Head Entries (Repeat structure below for each head) -->
+                  <div class="staff-member">
+                    <div class="image-wrapper">
+                      <img src="/static/media/academic-head.6efbca68e71171fa5022.webp" alt="Academic Head" class="staff-image">
+                    </div>
+                    <div class="staff-info">
+                      <p class="staff-name">Mr. Subhash Sharma</p>
+                      <p class="staff-role">Academic Head</p>
+                      <div class="about-button">
+                        <span class="arrow-icon">
+                          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                          </svg>
+                        </span>
+                        <span class="about-text">About</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Add other heads here -->
+                </div>
+              </div>
             </div>
-        </section>
+          </section>
     </div>
 
     <script>
