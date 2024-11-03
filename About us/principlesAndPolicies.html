@@ -3,27 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Principles and Policies</title>
     <style>
       .navbar-sections {
@@ -233,6 +214,63 @@
         font-family: "Open Sans", sans-serif;
       }
 
+      .school-uniform {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .school-uniform h2 {
+    text-align: center;
+    font-size: 1.5em;
+  }
+  
+  /* Tabs styling */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+  }
+
+  .tab.active {
+    background-color: #fff;
+    border-bottom: none;
+    font-weight: bold;
+  }
+
+  .content-schooluniform {
+    border: 1px solid #ddd;
+    border-top: none;
+    padding: 15px;
+    background-color: #fff;
+  }
+
+  /* List and text styling */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li {
+    padding: 5px 0;
+  }
+
+  p {
+    font-size: 0.9em;
+    color: #555;
+  }
+
       /* Modal Styling  */
 
 .modal-header {
@@ -362,434 +400,535 @@
     </style>
   </head>
   <body>
-    <marquee behavior="" direction="" class="bg-danger text-white "><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee>
-    <div>
-      <nav class="navbar navbar-expand-lg navbar-light navbar-div">
-        <!-- here keep the logo -->
-        <a class="navbar-brand" href="./homepage.html"
-          ><div class="container text-center my-5">
-            <img
-              src="./images/logo.webp"
-              alt="Logo"
-              class="rounded-circle img-fluid"
-              style="width: 100px; height: 100px"
-            />
-          </div>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto navbarSection">
-            <!-- About Us Dropdown -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="aboutUsDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i class="fas fa-info-circle"></i>
-                <h5 class="navbar-sections">About Us</h5>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="aboutUsDropdown">
-                <a class="dropdown-item" href="/About us/foundersDesk.html"
-                  >Founder's Desk</a
-                >
-                <a class="dropdown-item" href="#">Principal Desk</a>
-                <a class="dropdown-item" href="#">School Management</a>
-                <a class="dropdown-item" href="#">Managing Committee</a>
-                <a class="dropdown-item" href="#">Princples & Policies</a>
-                <a class="dropdown-item" href="#">Infrastructure</a>
+        <marquee behavior="" direction="" class="bg-danger text-white "><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee>
+        <div>
+          <nav class="navbar navbar-expand-lg navbar-light navbar-div">
+            <!-- here keep the logo -->
+            <a class="navbar-brand" href="./homepage.html"
+              ><div class="container text-center my-5">
+                <img
+                  src="./images/logo.webp"
+                  alt="Logo"
+                  class="rounded-circle img-fluid"
+                  style="width: 100px; height: 100px"
+                />
               </div>
-            </li>
-            <!-- Add additional nav items here if needed -->
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto navbarSection">
+                <!-- About Us Dropdown -->
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="aboutUsDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="fas fa-info-circle"></i>
+                    <h5 class="navbar-sections">About Us</h5>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="aboutUsDropdown">
+                    <a class="dropdown-item" href="/About us/foundersDesk.html"
+                      >Founder's Desk</a
+                    >
+                    <a class="dropdown-item" href="#">Principal Desk</a>
+                    <a class="dropdown-item" href="#">School Management</a>
+                    <a class="dropdown-item" href="#">Managing Committee</a>
+                    <a class="dropdown-item" href="#">Princples & Policies</a>
+                    <a class="dropdown-item" href="#">Infrastructure</a>
+                  </div>
+                </li>
+                <!-- Add additional nav items here if needed -->
 
-            <!-- Admissions Dropdown -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="admissionsUsDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i class="fas fa-info-circle"></i>
-                <h5 class="navbar-sections">Admissions</h5>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
-                <a class="dropdown-item" href="#">Admissions HelpDesk/school</a>
-                <a class="dropdown-item" href="#">Admissions Procedure</a>
-                <a class="dropdown-item" href="#">Registration</a>
-                <a class="dropdown-item" href="#">Free Structure</a>
-                <a class="dropdown-item" href="#">School Timings</a>
-                <a class="dropdown-item" href="#">FAQ's</a>
-              </div>
-            </li>
-            <!-- Add additional nav items here if needed -->
-            <!-- Student Life Dropdown -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="StudentLifeDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i class="fas fa-info-circle"></i>
-                <h5 class="navbar-sections">Student Life</h5>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="StudentLifeDropdown">
-                <a class="dropdown-item" href="./Student life/academics.html"
-                  >Academics</a
-                >
-                <a class="dropdown-item" href="./Student life/sports.html"
-                  >Sports</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="./Student life/co-curricular.html"
-                  >Co-curriculum</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="./Student life/social-culturalDevelopment.html"
-                  >Social-Cultural Development</a
-                >
-                <a class="dropdown-item" href="./Student life/counselling.html"
-                  >Counselling</a
-                >
-                <a class="dropdown-item" href="./Student life/">Achievements</a>
-                <a
-                  class="dropdown-item"
-                  href="./Student life/eventsCalender.html"
-                  >Event Calender</a
-                >
-                <a class="dropdown-item" href="./Student life/toppers.html"
-                  >Toppers</a
-                >
-                <a class="dropdown-item" href="./Student life/cabinet.html"
-                  >Cabinet</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="./Student life/transferCertificate.html"
-                  >Transfer Cerificate</a
-                >
-              </div>
-            </li>
-            <!-- Add additional nav items here if needed -->
-            <!-- News $ Calender Dropdown -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="news&CalenderDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i class="fas fa-info-circle"></i>
-                <h5 class="navbar-sections">News & Calender</h5>
-              </a>
-              <div
-                class="dropdown-menu"
-                aria-labelledby="news&CalenderDropdown"
-              >
-                <a class="dropdown-item" href="#">Studet Hand Book</a>
-                <a class="dropdown-item" href="#">NewsLetter/Scholars Times</a>
-              </div>
-            </li>
-            <!-- Add additional nav items here if needed -->
-            <!-- Mandatory Disclosures -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="mandatoryDisclosureDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i class="fas fa-info-circle"></i>
-                <h5 class="navbar-sections">Mandatory Disclosures</h5>
-              </a>
-              <div
-                class="dropdown-menu"
-                aria-labelledby="mandatoryDisclosureDropdown"
-              >
-                <a class="dropdown-item" href="#">Booklist</a>
-                <a class="dropdown-item" href="#"
-                  >Safety Certificates & Affiliations</a
-                >
-                <a class="dropdown-item" href="#">CBSE-OASIS</a>
-                <a class="dropdown-item" href="#"
-                  >Mandatory Public Disclosures</a
-                >
-              </div>
-            </li>
-            <!-- Add additional nav items here if needed -->
-            <!-- Contact Us  -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="contactUsDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i class="fas fa-info-circle"></i>
-                <h5 class="navbar-sections">Contact Us</h5>
-              </a>
-            </li>
-            <!-- Add additional nav items here if needed -->
+                <!-- Admissions Dropdown -->
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="admissionsUsDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="fas fa-info-circle"></i>
+                    <h5 class="navbar-sections">Admissions</h5>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
+                    <a class="dropdown-item" href="#">Admissions HelpDesk/school</a>
+                    <a class="dropdown-item" href="#">Admissions Procedure</a>
+                    <a class="dropdown-item" href="#">Registration</a>
+                    <a class="dropdown-item" href="#">Free Structure</a>
+                    <a class="dropdown-item" href="#">School Timings</a>
+                    <a class="dropdown-item" href="#">FAQ's</a>
+                  </div>
+                </li>
+                <!-- Add additional nav items here if needed -->
+                <!-- Student Life Dropdown -->
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="StudentLifeDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="fas fa-info-circle"></i>
+                    <h5 class="navbar-sections">Student Life</h5>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="StudentLifeDropdown">
+                    <a class="dropdown-item" href="./Student life/academics.html"
+                      >Academics</a
+                    >
+                    <a class="dropdown-item" href="./Student life/sports.html"
+                      >Sports</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="./Student life/co-curricular.html"
+                      >Co-curriculum</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="./Student life/social-culturalDevelopment.html"
+                      >Social-Cultural Development</a
+                    >
+                    <a class="dropdown-item" href="./Student life/counselling.html"
+                      >Counselling</a
+                    >
+                    <a class="dropdown-item" href="./Student life/">Achievements</a>
+                    <a
+                      class="dropdown-item"
+                      href="./Student life/eventsCalender.html"
+                      >Event Calender</a
+                    >
+                    <a class="dropdown-item" href="./Student life/toppers.html"
+                      >Toppers</a
+                    >
+                    <a class="dropdown-item" href="./Student life/cabinet.html"
+                      >Cabinet</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="./Student life/transferCertificate.html"
+                      >Transfer Cerificate</a
+                    >
+                  </div>
+                </li>
+                <!-- Add additional nav items here if needed -->
+                <!-- News $ Calender Dropdown -->
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="news&CalenderDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="fas fa-info-circle"></i>
+                    <h5 class="navbar-sections">News & Calender</h5>
+                  </a>
+                  <div
+                    class="dropdown-menu"
+                    aria-labelledby="news&CalenderDropdown"
+                  >
+                    <a class="dropdown-item" href="#">Studet Hand Book</a>
+                    <a class="dropdown-item" href="#">NewsLetter/Scholars Times</a>
+                  </div>
+                </li>
+                <!-- Add additional nav items here if needed -->
+                <!-- Mandatory Disclosures -->
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="mandatoryDisclosureDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="fas fa-info-circle"></i>
+                    <h5 class="navbar-sections">Mandatory Disclosures</h5>
+                  </a>
+                  <div
+                    class="dropdown-menu"
+                    aria-labelledby="mandatoryDisclosureDropdown"
+                  >
+                    <a class="dropdown-item" href="#">Booklist</a>
+                    <a class="dropdown-item" href="#"
+                      >Safety Certificates & Affiliations</a
+                    >
+                    <a class="dropdown-item" href="#">CBSE-OASIS</a>
+                    <a class="dropdown-item" href="#"
+                      >Mandatory Public Disclosures</a
+                    >
+                  </div>
+                </li>
+                <!-- Add additional nav items here if needed -->
+                <!-- Contact Us  -->
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="contactUsDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="fas fa-info-circle"></i>
+                    <h5 class="navbar-sections">Contact Us</h5>
+                  </a>
+                </li>
+                <!-- Add additional nav items here if needed -->
 
-            <!-- Notice -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="noticeDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i class="fas fa-info-circle"></i>
-                <h5 class="navbar-sections">Notice</h5>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="noticeDropdown">
-                <a class="dropdown-item" href="#">Notice 1</a>
-                <a class="dropdown-item" href="#">Notice 2</a>
-                <a class="dropdown-item" href="#">Notice 3</a>
-              </div>
-            </li>
-            <!-- Add additional nav items here if needed -->
-          </ul>
+                <!-- Notice -->
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="noticeDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="fas fa-info-circle"></i>
+                    <h5 class="navbar-sections">Notice</h5>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="noticeDropdown">
+                    <a class="dropdown-item" href="#">Notice 1</a>
+                    <a class="dropdown-item" href="#">Notice 2</a>
+                    <a class="dropdown-item" href="#">Notice 3</a>
+                  </div>
+                </li>
+                <!-- Add additional nav items here if needed -->
+              </ul>
+            </div>
+          </nav>
         </div>
-      </nav>
-    </div>
-    <div class="breadcrumb">
-      <div class="breadcrumb-content">
-        <h1 class="title">Principles & Policies</h1>
-        <div class="breadcrumb-links">
-          <a href="/" class="breadcrumb-item">
-            Home
-            <span class="icon">
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 320 512"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
-                ></path>
-              </svg>
-            </span>
-          </a>
-          <p class="breadcrumb-item">
-            About us
-            <span class="icon">
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 320 512"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
-                ></path>
-              </svg>
-            </span>
-          </p>
-          <span class="breadcrumb-item current">Principles & Policies</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="container w-11/12 mx-auto bg-white App">
-      <div
-        class="content-container flex-wrap py-20 overflow-hidden text-left rounded-lg md:flex overscroll-y-contain 2xl:flex 2xl:flex-nowrap"
-      >
-        <div
-          class="sidebar mx-auto mt-5 overflow-y-auto text-center md:w-8/12 md:overflow-hidden scroll-mx-0 2xl:w-1/4 lg:text-left"
-        >
-          <ul class="menu list-none border-list">
-            <li class="menu-item">
-              <a href="#section-0" class="menu-link"
-                >Behaviour/Code of Conduct</a
-              >
-            </li>
-            <li class="menu-item">
-              <a href="#section-1" class="menu-link">Library</a>
-            </li>
-            <li class="menu-item">
-              <a href="#section-2" class="menu-link">Transport Rules</a>
-            </li>
-            <li class="menu-item">
-              <a href="#section-3" class="menu-link">School Uniform</a>
-            </li>
-            <li class="menu-item">
-              <a href="#section-4" class="menu-link">House System</a>
-            </li>
-            <li class="menu-item">
-              <a href="#section-5" class="menu-link">Withdrawal from School</a>
-            </li>
-            <li class="menu-item">
-              <a href="#section-6" class="menu-link">Faculty</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="content w-3/4 p-4 overflow-y-auto">
-          <div id="section-0" class="section">
-            <div class="section-content pb-10 rounded-lg">
-              <h2 class="section-title">Behaviour/Code of Conduct</h2>
-              <img
-                src="/static/media/Pic_of_students.ba65281cd9bf9609e6e9.webp"
-                alt="Behaviour/Code of Conduct"
-                class="section-image"
-              />
-              <p class="section-text">
-                Students are expected to adhere to the code of conduct at all
-                times.
+        <div class="breadcrumb">
+          <div class="breadcrumb-content">
+            <h1 class="title">Principles & Policies</h1>
+            <div class="breadcrumb-links">
+              <a href="/" class="breadcrumb-item">
+                Home
+                <span class="icon">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 320 512"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+              <p class="breadcrumb-item">
+                About us
+                <span class="icon">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 320 512"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+                    ></path>
+                  </svg>
+                </span>
               </p>
+              <span class="breadcrumb-item current">Principles & Policies</span>
             </div>
           </div>
-          <!-- Additional sections would follow similarly with unique content -->
         </div>
-      </div>
-    </div>
-    <section class="footer">
-      <div class="container">
-          <div class="row">
+
+        <div class="container w-11/12 mx-auto bg-white App">
+          <div class="content-container flex-wrap py-20 overflow-hidden text-left rounded-lg md:flex overscroll-y-contain 2xl:flex 2xl:flex-nowrap">
+            <div class="sidebar mx-auto mt-5 overflow-y-auto text-center md:w-8/12 md:overflow-hidden scroll-mx-0 2xl:w-1/4 lg:text-left">
+              <ul class="menu list-none border-list">
+                <li class="menu-item">
+                  <a href="#section-0" class="menu-link">Behaviour/Code of Conduct</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#section-1" class="menu-link">Library</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#section-2" class="menu-link">Transport Rules</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#section-3" class="menu-link">School Uniform</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#section-4" class="menu-link">House System</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#section-5" class="menu-link">Withdrawal from School</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#section-6" class="menu-link">Faculty</a>
+                </li>
+              </ul>
+            </div>
+            <div class="content w-3/4 p-4 overflow-y-auto">
+                  <div id="section-0" class="section">
+                    <div class="section-content pb-10 rounded-lg">
+                      <h2 class="section-title">Behaviour/Code of Conduct</h2>
+                      <img
+                        src="../images/Pic_of_students.webp"
+                        alt="Behaviour/Code of Conduct"
+                        class="section-image"
+                      />
+                      <p class="section-text">
+                        Students must be punctual and regular to school. Leave of absence must be applied for. No student shall leave the School premises during the School hours without prior permission of the Principal. Honesty, cleanliness of dress and loyalty to School are demanded and expected of each student.
+                      </p>
+                      <p>
+                        A student should be habitually clean and neatly dressed. The School uniform is to be worn on all days. Immorality, insubordination, ragging of any kind, contempt of authority or wilful damage to property will be a sufficient reason for immediate expulsion of the student and are responsible for all School property.
+                      </p>
+                      <p>
+                        Money should not be lent or borrowed by the student and articles should not be exchanged between the students. Students are not allowed to wear jewellery or bring valuables to school. Students are admitted in the School at their own risk. The School will not be responsible for any injury or loss of books, stationery or any other article. They are not allowed to bring mobile phone to school. No reading materials (other than prescribed text books) should be brought to School without permission.
+                      </p>
+                      <p>
+                        The School reserves the right to advise the parents to withdraw their child if his/her progress in studies is unsatisfactory or his/her attendance is irregular or his/her conduct is harmful to other students.
+                      </p>
+                    </div>
+                  </div>
+                  <div id="section-0" class="section">
+                    <div class="section-content pb-10 rounded-lg">
+                      <h2 class="section-title">Library</h2>
+                      <img
+                        src="../images/Pic_of_Library.webp"
+                        alt="Behaviour/Code of Conduct"
+                        class="section-image"
+                      />
+                      <p class="section-text">
+                        Students must maintain absolute silence in the library. Students are expected to handle the library books with care. Books marked, disfigured or damaged will have to be replaced or paid by the borrower. For the loss of a book, the market price will be charged. Text books, magazines and reference books will not be issued.
+                      </p>
+                    </div>
+                  </div>
+                  <div id="section-0" class="section">
+                    <div class="section-content pb-10 rounded-lg">
+                      <h2 class="section-title">Transport Rules</h2>
+                      <img
+                        src="../images/Pic_of_Bus_Area.webp"
+                        alt="Behaviour/Code of Conduct"
+                        class="section-image"
+                      />
+                      <p class="section-text">
+                        The school bus service is available for all students on specific routes. Bus drivers are authorized to stop the bus only at designated stops. Routes and stops are approved by the school and parents must survey the route prior to selecting a bus stop. The list of stops is made keeping in view the convenience and safety of all bus commuters and no diversion/extension will be entertained on existing routes.
+                      </p>
+                      <p>
+                        Bus fees will be paid by parents as per fee rules. At the end of the Academic Session, i.e. by 31st March, parents must apply in writing for withdraw from bus if required, failing which bus fee will be charged from April, as per approved rates.
+                      </p>
+                      <p>
+                        Students are expected to behave in a courteous manner in the bus and should not throw trash/food inside or outside the bus. In case of any emergency, parents must contact the School office, which will take the necessary action in contacting the person in charge of a particular bus.
+                      </p>
+                    </div>
+                  </div>
+                  <div id="section-0" class="section">
+                    <div class="section-content pb-10 rounded-lg">
+                      <h2 class="section-title">School Uniform</h2>
+                      <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Winter</button>
+                          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Summer</button>
+                        </div>
+                      </nav>
+                      <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                          <button type="button" onclick="..">Boys</button>
+                          <button type="button" onclick="..">Girls</button>
+                         <div>
+                          <img src=".." alt="..">
+                         </div>
+                         <div>
+                          <p><strong>For All Days Except Monday and Friday</strong></p>
+                          <ul>
+                            <li>House Shirt</li>
+                            <li>White Socks</li>
+                            <li>White Shoes</li>
+                          </ul>
+                          <p>A child coming to school out of uniform without a valid reason will be charged a fine of Rs.20/- & subsequently this fine will be doubled.</p>
+                          <p>All blazers and pullovers must have the child’s name and class clearly visible on the inner pockets of the blazers and below the back of the pullover.</p>
+                         </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                          <button type="button" onclick="..">Boys</button>
+                          <button type="button" onclick="..">Girls</button>
+                          <div>
+                            <img src=".." alt="..">
+                           </div>
+                           <div>
+                            <p><strong>For All Days Except Monday and Friday</strong></p>
+                            <ul>
+                              <li>House Shirt</li>
+                              <li>White Socks</li>
+                              <li>White Shoes</li>
+                            </ul>
+                            <p>A child coming to school out of uniform without a valid reason will be charged a fine of Rs.20/- & subsequently this fine will be doubled.</p>
+                            <p>All blazers and pullovers must have the child’s name and class clearly visible on the inner pockets of the blazers and below the back of the pullover.</p>
+                           </div>
+                        </div>
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="footer">
+          <div class="container">
+              <div class="row">
+                  
+                  <div class="col-md-3 footer-col text-center">
+                      <img src="./images/logo.webp" alt="School Logo" class="img-fluid footer-logo mb-3">
+                      <p>Bhalla Farm Pratappur, Ramnagar Road,<br> Kashipur-244713, Distt. U.S.Nagar</p>
+                      <div class="social-icons">
+                          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                          <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                      </div>
+                  </div>
+        
+                  <div class="col-md-3 footer-col">
+                      <h5>Birthdays</h5>
+                      <ul class="birthdays">
+                          <li>
+                              <img src="./images/p1.webp" alt="Person Image">
+                              <strong> Daksh Gehlot</strong><br><span>August 2nd, 2024</span>
+                          </li>
+                          <li>
+                              <img src="./images/p2.webp" alt="Person Image">
+                              <strong> Karan Kumar</strong><br><span>July 26th, 2024</span>
+                          </li>
+                          <li>
+                              <img src="./images/p4.webp" alt="Person Image">
+                              <strong> Tazeem Khan</strong><br><span>July 18th, 2024</span>
+                          </li>
+                        
+                          <li>
+                              <img src="./images/p3.webp" alt="Person Image">
+                              <strong> Ramesh Singh</strong><br><span>June 5th, 2024</span>
+                          </li>
+                      </ul>
+                  </div>
+        
               
-              <div class="col-md-3 footer-col text-center">
-                  <img src="./images/logo.webp" alt="School Logo" class="img-fluid footer-logo mb-3">
-                  <p>Bhalla Farm Pratappur, Ramnagar Road,<br> Kashipur-244713, Distt. U.S.Nagar</p>
-                  <div class="social-icons">
-                      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                  <div class="col-md-3 footer-col useful-links">
+                      <h5>Useful Links</h5>
+                      <a href="#" onclick="displayContent('privacyPolicy')"><i class="fas fa-angle-right"></i> Privacy Policy</a>
+                      <a href="#" onclick="displayContent('terms')"><i class="fas fa-angle-right"></i> Terms & Conditions</a>
+                      <a href="#" onclick="displayContent('contact')"><i class="fas fa-angle-right"></i> Contact</a>
+                      <a href="#" onclick="displayContent('sitemap')"><i class="fas fa-angle-right"></i> Sitemap</a>
+                      
+                      <div id="contentDisplay" class="content-display"></div>
+                  </div>
+        
+                  <div class="col-md-3 footer-col">
+                      <h5>School Timings</h5>
+                      <p>Summers: 07:20 am - 1:30 pm</p>
+                      <p>Winters: 07:50 am - 2:00 pm</p>
+                      <p>Total Visits: 8723</p>
                   </div>
               </div>
-    
-              <div class="col-md-3 footer-col">
-                  <h5>Birthdays</h5>
-                  <ul class="birthdays">
-                      <li>
-                          <img src="./images/p1.webp" alt="Person Image">
-                          <strong> Daksh Gehlot</strong><br><span>August 2nd, 2024</span>
-                      </li>
-                      <li>
-                          <img src="./images/p2.webp" alt="Person Image">
-                          <strong> Karan Kumar</strong><br><span>July 26th, 2024</span>
-                      </li>
-                      <li>
-                          <img src="./images/p4.webp" alt="Person Image">
-                          <strong> Tazeem Khan</strong><br><span>July 18th, 2024</span>
-                      </li>
-                     
-                      <li>
-                          <img src="./images/p3.webp" alt="Person Image">
-                          <strong> Ramesh Singh</strong><br><span>June 5th, 2024</span>
-                      </li>
-                  </ul>
-              </div>
-    
-           
-              <div class="col-md-3 footer-col useful-links">
-                  <h5>Useful Links</h5>
-                  <a href="#" onclick="displayContent('privacyPolicy')"><i class="fas fa-angle-right"></i> Privacy Policy</a>
-                  <a href="#" onclick="displayContent('terms')"><i class="fas fa-angle-right"></i> Terms & Conditions</a>
-                  <a href="#" onclick="displayContent('contact')"><i class="fas fa-angle-right"></i> Contact</a>
-                  <a href="#" onclick="displayContent('sitemap')"><i class="fas fa-angle-right"></i> Sitemap</a>
-                  
-                  <div id="contentDisplay" class="content-display"></div>
-              </div>
-    
-              <div class="col-md-3 footer-col">
-                  <h5>School Timings</h5>
-                  <p>Summers: 07:20 am - 1:30 pm</p>
-                  <p>Winters: 07:50 am - 2:00 pm</p>
-                  <p>Total Visits: 8723</p>
-              </div>
           </div>
-      </div>
-      <div class="footer-bottom">
-          <p>© 2024 Little Scholars. All Rights Reserved.</p>
-          <p>Made with <i class="fas fa-heart text-danger"></i> by <a href="https://puminatidigital.com" target="_blank">Puminati Digital</a></p>
-      </div>
-    </section>
-    
-    
-    <div class="back-to-top" onclick="scrollToTop()">
-      <i class="fas fa-chevron-up"></i>
-    </div>
+          <div class="footer-bottom">
+              <p>© 2024 Little Scholars. All Rights Reserved.</p>
+              <p>Made with <i class="fas fa-heart text-danger"></i> by <a href="https://puminatidigital.com" target="_blank">Puminati Digital</a></p>
+          </div>
+        </section>
+        <div class="back-to-top" onclick="scrollToTop()">
+          <i class="fas fa-chevron-up"></i>
+        </div>
 
-    <script>
-      // Modal Implementation
-function showNotice(title, content) {
-    document.getElementById('noticeModalLabel').textContent = title;
-    document.getElementById('noticeContent').textContent = content;
-    var noticeModal = new bootstrap.Modal(document.getElementById('noticeModal'));
-    noticeModal.show();
-}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script>
+                // Modal Implementation
+          function showNotice(title, content) {
+              document.getElementById('noticeModalLabel').textContent = title;
+              document.getElementById('noticeContent').textContent = content;
+              var noticeModal = new bootstrap.Modal(document.getElementById('noticeModal'));
+              noticeModal.show();
+          }
 
-//Scroll Up Button
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-
-// Useful Links Information
-function displayContent(section) {
-    const contentDisplay = document.getElementById('contentDisplay');
-    
-    let content = '';
-
-    if (section === 'privacyPolicy') {
-        content = "<strong>Privacy Policy:</strong> Here you'll find information on how we handle your data.";
-    } else if (section === 'terms') {
-        content = "<strong>Terms & Conditions:</strong> Please read the terms and conditions of our service.";
-    } else if (section === 'contact') {
-        content = "<strong>Contact:</strong> Feel free to reach out via our contact page for support.";
-    } else if (section === 'sitemap') {
-        content = "<strong>Sitemap:</strong> View the structure of our website for easy navigation.";
-    }
+            //Scroll Up Button
+            function scrollToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
 
 
-    contentDisplay.innerHTML = content;
-    contentDisplay.style.display = 'block';
+            // Useful Links Information
+            function displayContent(section) {
+                const contentDisplay = document.getElementById('contentDisplay');
+                
+                let content = '';
 
-}
+                if (section === 'privacyPolicy') {
+                    content = "<strong>Privacy Policy:</strong> Here you'll find information on how we handle your data.";
+                } else if (section === 'terms') {
+                    content = "<strong>Terms & Conditions:</strong> Please read the terms and conditions of our service.";
+                } else if (section === 'contact') {
+                    content = "<strong>Contact:</strong> Feel free to reach out via our contact page for support.";
+                } else if (section === 'sitemap') {
+                    content = "<strong>Sitemap:</strong> View the structure of our website for easy navigation.";
+                }
 
-    </script>
+
+                contentDisplay.innerHTML = content;
+                contentDisplay.style.display = 'block';
+
+            }
+
+            function showTab(tabName) {
+              const tabs = document.querySelectorAll('.tab');
+              const contents = document.querySelectorAll('.tab-content');
+                
+                // Hide all content
+              contents.forEach(content => {
+              content.style.display = 'none';
+              });
+                
+                // Remove active class from all tabs
+              tabs.forEach(tab => {
+              tab.classList.remove('active');
+              });
+                
+                // Show selected tab content and add active class
+              document.getElementById(tabName).style.display = 'block';
+              document.querySelector(`.tab[onclick="showTab('${tabName}')"]`).classList.add('active');
+            }
+        </script>
   </body>
 </html>
