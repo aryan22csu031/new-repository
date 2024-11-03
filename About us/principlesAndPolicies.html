@@ -5,12 +5,258 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principles and Policies</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .breadcrumb { 
+            background-image: url('images/Header-bg.jpg');
+            background-position: center;
+            background-size: cover;
+            height: 200px;
+            color: white;
+            position: relative;
+            display: flex;
+            align-items: center; /* Centers the breadcrumb content vertically */
+            justify-content: center; /* Centers the breadcrumb content horizontally */
+        }
+
+        .breadcrumb::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent black overlay */
+            z-index: 1; /* Places overlay behind content */
+        }
+
+        .breadcrumb-content {
+            position: relative;
+            z-index: 2; /* Ensures content is above the overlay */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 50px;
+        }
+
+
+        @media (min-width: 640px) {
+            .breadcrumb-content {
+                width: 80%;
+                gap: 1.5rem;
+            }
+        }
+
+        .title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.05em;
+        }
+
+        @media (min-width: 640px) {
+            .title {
+                font-size: 2.5rem;
+            }
+        }
+
+        .breadcrumb-links {
+            display: flex;
+            gap: 0.25rem;
+            font-size: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .breadcrumb-links {
+                font-size: 1.125rem;
+            }
+        }
+
+        .breadcrumb-item {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            text-decoration: none;
+            color: white;
+        }
+
+        .current {
+            font-weight: 300;
+        }
+
+        .icon {
+            display: inline-block;
+            font-size: 1em;
+        }
+        .container {
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5rem 0;
+    overflow: hidden;
+    text-align: left;
+    border-radius: 0.5rem;
+}
+
+.sidebar {
+    margin: 1.25rem auto;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    border: 0.2px solid rgb(211, 203, 203);
+    border-radius: 0.5rem;
+}
+
+.menu-item {
+    border-bottom: 0.2px solid rgb(211, 203, 203);
+    line-height: 1.8rem;
+}
+
+.menu-link {
+    display: block;
+    margin-left: 0.75rem;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    color: #000;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    word-break: break-word;
+    transition: background 0.3s;
+}
+
+.menu-link:hover {
+    background-color: rgb(244, 243, 243);
+}
+
+.content {
+    width: 75%;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.section {
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 0.2px solid rgb(173, 172, 172);
+}
+
+.section-content {
+    padding-bottom: 2.5rem;
+    border-radius: 0.5rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    padding: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    border-bottom: 0.2px solid rgb(173, 172, 172);
+}
+
+.section-image {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-text {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+}
 
     </style>
 </head>
 <body>
-    
+    <div class="breadcrumb">
+        <div class="breadcrumb-content">
+            <h1 class="title">Principles & Policies</h1>
+            <div class="breadcrumb-links">
+                <a href="/" class="breadcrumb-item">
+                    Home
+                    <span class="icon">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
+                        </svg>
+                    </span>
+                </a>
+                <p class="breadcrumb-item">
+                    About us
+                    <span class="icon">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
+                        </svg>
+                    </span>
+                </p>
+                <span class="breadcrumb-item current">Principles & Policies</span>
+            </div>
+        </div>
+    </div>
 
+
+    <div class="container w-11/12 mx-auto bg-white App">
+        <div class="content-container flex-wrap py-20 overflow-hidden text-left rounded-lg md:flex overscroll-y-contain 2xl:flex 2xl:flex-nowrap">
+            <div class="sidebar mx-auto mt-5 overflow-y-auto text-center md:w-8/12 md:overflow-hidden scroll-mx-0 2xl:w-1/4 lg:text-left">
+                <ul class="menu list-none border-list">
+                    <li class="menu-item">
+                        <a href="#section-0" class="menu-link">Behaviour/Code of Conduct</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#section-1" class="menu-link">Library</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#section-2" class="menu-link">Transport Rules</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#section-3" class="menu-link">School Uniform</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#section-4" class="menu-link">House System</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#section-5" class="menu-link">Withdrawal from School</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#section-6" class="menu-link">Faculty</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="content w-3/4 p-4 overflow-y-auto">
+                <div id="section-0" class="section">
+                    <div class="section-content pb-10 rounded-lg">
+                        <h2 class="section-title">Behaviour/Code of Conduct</h2>
+                        <img src="/static/media/Pic_of_students.ba65281cd9bf9609e6e9.webp" alt="Behaviour/Code of Conduct" class="section-image">
+                        <p class="section-text">Students are expected to adhere to the code of conduct at all times.</p>
+                    </div>
+                </div>
+                <!-- Additional sections would follow similarly with unique content -->
+            </div>
+        </div>
+    </div>
+    
     <script>
         
     </script>
