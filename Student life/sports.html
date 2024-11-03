@@ -112,23 +112,6 @@
         color: #007bff;
       }
 
-      /* PDF Viewer Styling */
-      .viewer {
-        flex: 1;
-        background-color: #ffffff;
-        padding: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      iframe {
-        width: 90%;
-        height: 90%;
-        border: none;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      }
-
       .dep-container {
         display: flex;
         margin-top: 3rem;
@@ -173,7 +156,7 @@
       >
       <nav class="navbar navbar-expand-lg navbar-light navbar-div">
         <!-- here keep the logo -->
-        <a class="navbar-brand" href="./homepage.html"
+        <a class="navbar-brand" href="../homepage.html" style="cursor: pointer;"
           ><div class="container text-center my-5">
             <img
               src="./images/logo.webp"
@@ -427,13 +410,11 @@
           experience for the students.
         </p>
         <div>
-          <a href=""><h1 style="margin-top: 3rem">Department</h1></a>
+          <a href=""><h1 style="margin-top: 3rem">Departments</h1></a>
           <hr />
           <div class="dep-container">
             <div class="dep-sidebar">
-              <div class="dep-nav-item active" data-pdf="pdf1.pdf">
-                Football
-              </div>
+              <div class="dep-nav-item active">Football</div>
               <div class="dep-nav-item">Cricket</div>
               <div class="dep-nav-item">Volleyball</div>
               <div class="dep-nav-item">Basketball</div>
@@ -450,6 +431,8 @@
                   font-weight: 100;
                   font-family: Cambria, Cochin, Georgia, Times,
                     'Times New Roman', serif;
+                  margin-bottom: 1rem;
+                  text-align: center;
                 "
               >
                 Football Department
@@ -475,9 +458,9 @@
                   <
                 </h1>
                 <img
-                  src="./images/football1.webp"
                   alt=""
                   class="football-img"
+                  style="max-width: 40rem; max-height: 40rem"
                 />
                 <h1
                   style="
@@ -491,7 +474,10 @@
                   >
                 </h1>
               </div>
-              <p class="viewer-content" style="margin-top: 1rem">
+              <p
+                class="viewer-content"
+                style="margin-top: 1rem; max-width: 100%"
+              >
                 WORLD'S MOST POPULAR GAME-- Football or Soccer Is A Way of Life
                 in Little Scholars Equipped with the best playing facilities,
                 our school boasts of a full dimension football field. Under the
@@ -529,44 +515,438 @@
     </div>
 
     <script>
-      const dep_navItems = document.querySelectorAll(".dep-nav-item");
-      const dep_pdfViewer = document.getElementById("dep-pdf-viewer");
-      const dep_content = document.querySelector(".viewer-content");
-      const football_corousal = document.querySelector(".football-img");
-      const football_plus = document.querySelector(".football-plus");
-      const football_minus = document.querySelector(".football-minus");
-      const football_imgs = [
-        "football1",
-        "football2",
-        "football3",
-        "football4",
+      const depname = document.querySelectorAll(".dep-nav-item");
+      const dephead = document.querySelector(".dep-name");
+      const corousal = document.querySelector(".football-img");
+      const plus = document.querySelector(".football-plus");
+      const minus = document.querySelector(".football-minus");
+      corousal.src = "./images/football1.webp";
+      const staff = document.querySelector(".staff");
+      const depcontent = document.querySelector(".viewer-content");
+      let i = 1;
+      var names = [
+        "Mr. Gopal Singh Bisht",
+        "Mr. Gaurav Sharma",
+        "Mr. Sanjay Bhardwaj",
       ];
-      let i = 1; 
+      staff.innerHTML = "";
+      var div = document.createElement("div");
+      div.style.display = "flex";
+      div.style.alignItems = "center";
+      div.style.flexWrap = "wrap";
+      div.style.gap = "10px";
+      for (let k = 1; k <= 3; k++) {
+        const imgdiv = document.createElement("div");
+        imgdiv.style.display = "flex";
+        imgdiv.style.flexDirection = "column";
+        imgdiv.style.gap = "5px";
+        const img = document.createElement("img");
+        img.src = `./images/football_t${k}.webp`;
+        img.style.height = "12rem";
+        img.style.borderRadius = "10px";
+        const name = document.createElement("p");
+        name.innerHTML = names[k - 1];
+        imgdiv.appendChild(img);
+        imgdiv.appendChild(name);
+        div.appendChild(imgdiv);
+      }
+      staff.appendChild(div);
+      depname.forEach((item) => {
+        item.addEventListener("click", () => {
+          // console.log(item.innerHTML);
+          depname.forEach((nav) => nav.classList.remove("active"));
+          switch (item.innerHTML) {
+            case "Football":
+              item.classList.add("active");
+              dephead.innerHTML = "Football Department";
+              depcontent.innerHTML =
+                "WORLD'S MOST POPULAR GAME-- Football or Soccer Is A Way of Life in Little Scholars Equipped with the best playing facilities, our school boasts of a full dimension football field. Under the able guidance of their coaches, our footballers have always been at the forefront in various tournaments. As a well spun and conditioned outfit, they have brought home many a laurels. In the post- pandemic phase, we are quite optimistic that our soccer team will be in the reckoning at various competitions.";
+              corousal.src = "./images/football1.webp";
+              plus.addEventListener("click", () => {
+                if (i >= 4) {
+                  i = 1;
+                } else {
+                  i++;
+                }
+                console.log(i);
+                let img_url = `./images/football${i}.webp`;
+                console.log(img_url);
+                corousal.src = img_url;
+              });
 
-football_plus.addEventListener("click", () => {
-    if (i >= 4) {
-        i = 1;
-    } else {
-        i++;
-    }
-    console.log(i);
-    let img_url = `./images/football${i}.webp`;
-    console.log(img_url);
-    football_corousal.src = img_url;
-});
+              // Event listener for decrementing the image
+              minus.addEventListener("click", () => {
+                if (i <= 1) {
+                  i = 4;
+                } else {
+                  i--;
+                }
+                console.log(i);
+                let img_url = `./images/football${i}.webp`;
+                console.log(img_url);
+                corousal.src = img_url;
+              });
+              var names = [
+                "Mr. Gopal Singh Bisht",
+                "Mr. Gaurav Sharma",
+                "Mr. Sanjay Bhardwaj",
+              ];
+              staff.innerHTML = "";
+              var div = document.createElement("div");
+              div.style.display = "flex";
+              div.style.alignItems = "center";
+              div.style.flexWrap = "wrap";
+              div.style.gap = "10px";
+              for (let k = 1; k <= 3; k++) {
+                const imgdiv = document.createElement("div");
+                imgdiv.style.display = "flex";
+                imgdiv.style.flexDirection = "column";
+                imgdiv.style.gap = "5px";
+                const img = document.createElement("img");
+                img.src = `./images/football_t${k}.webp`;
+                img.style.height = "12rem";
+                img.style.borderRadius = "10px";
+                const name = document.createElement("p");
+                name.innerHTML = names[k - 1];
+                imgdiv.appendChild(img);
+                imgdiv.appendChild(name);
+                div.appendChild(imgdiv);
+              }
+              staff.appendChild(div);
+              break;
+            case "Cricket":
+              item.classList.add("active");
+              dephead.innerHTML = "Cricket Department";
+              depcontent.innerHTML =
+                "Game of the Teeming Millions Cricket in India, enjoys the biggest fan following. Cricketers are virtually worshipped as demi Gods. <br><br>Keeping the spirit of cricket alive, Little Scholars boasts of great facilities. The school has its own world class cricket ground. The school team has won many a laurels at the interschool, interdistrict and interstate levels. <br><br>At the moment, cricket facilities are being upgraded as per the standards of BCCI.";
+              corousal.src = "./images/cricket1.webp";
+              plus.addEventListener("click", () => {
+                if (i >= 4) {
+                  i = 1;
+                } else {
+                  i++;
+                }
+                console.log(i);
+                let img_url = `./images/cricket${i}.webp`;
+                console.log(img_url);
+                corousal.src = img_url;
+              });
 
-// Event listener for decrementing the image
-football_minus.addEventListener("click", () => {
-    if (i <= 1) {
-        i = 4;
-    } else {
-        i--;
-    }
-    console.log(i);
-    let img_url = `./images/football${i}.webp`;
-    console.log(img_url);
-    football_corousal.src = img_url;
-});
+              // Event listener for decrementing the image
+              minus.addEventListener("click", () => {
+                if (i <= 1) {
+                  i = 4;
+                } else {
+                  i--;
+                }
+                console.log(i);
+                var img_url = `./images/cricket${i}.webp`;
+                console.log(img_url);
+                corousal.src = img_url;
+              });
+              var names = [
+                "Mr. Gopal Singh Bisht",
+                "Mr. Gaurav Sharma",
+                "Mr. Sanjay Bhardwaj",
+              ];
+              staff.innerHTML = "";
+              var div = document.createElement("div");
+              div.style.display = "flex";
+              div.style.alignItems = "center";
+              div.style.flexWrap = "wrap";
+              div.style.gap = "10px";
+              for (let k = 1; k <= 3; k++) {
+                const imgdiv = document.createElement("div");
+                imgdiv.style.display = "flex";
+                imgdiv.style.flexDirection = "column";
+                imgdiv.style.gap = "5px";
+                const img = document.createElement("img");
+                img.src = `./images/cricket_t${k}.webp`;
+                img.style.height = "12rem";
+                img.style.borderRadius = "10px";
+                const name = document.createElement("p");
+                name.innerHTML = names[k - 1];
+                imgdiv.appendChild(img);
+                imgdiv.appendChild(name);
+                div.appendChild(imgdiv);
+              }
+              staff.appendChild(div);
+              break;
+            case "Volleyball":
+              item.classList.add("active");
+              dephead.innerHTML = "Volleyball Department";
+              plus.innerHTML = "";
+              minus.innerHTML = "";
+              depcontent.innerHTML =
+                "Little scholars is equipped with two Volleyball courts separate for boys and girls. The school team has won many laurels at the interschool, interdistrict and interstate levels.";
+              corousal.src = `./images/volleyball1.webp`;
+              var names = [
+                "Mr. Gopal Singh Bisht",
+                "Mr. Gaurav Sharma",
+                "Mr. Sanjay Bhardwaj",
+              ];
+              staff.innerHTML = "";
+              var div = document.createElement("div");
+              div.style.display = "flex";
+              div.style.alignItems = "center";
+              div.style.flexWrap = "wrap";
+              div.style.gap = "10px";
+              for (let k = 1; k <= 3; k++) {
+                const imgdiv = document.createElement("div");
+                imgdiv.style.display = "flex";
+                imgdiv.style.flexDirection = "column";
+                imgdiv.style.gap = "5px";
+                const img = document.createElement("img");
+                img.src = `./images/volleyball_t${k}.webp`;
+                img.style.height = "12rem";
+                img.style.borderRadius = "10px";
+                const name = document.createElement("p");
+                name.innerHTML = names[k - 1];
+                imgdiv.appendChild(img);
+                imgdiv.appendChild(name);
+                div.appendChild(imgdiv);
+              }
+              staff.appendChild(div);
+              break;
+            case "Basketball":
+              item.classList.add("active");
+              dephead.innerHTML = "Basketball Department";
+              plus.innerHTML = "";
+              minus.innerHTML = "";
+              depcontent.innerHTML =
+                "OUR EXCEPTIONAL CAGERS CANNOT BE CAGED Basketball has always been our forte. Every year, in the month of October, we host Shakuntala Bhalla Memorial Inter School Basketball wherein, schools from Kashipur, Bazpur, Jaspur, Nainital and Rudrapur have been participating with zeal. The school has two basketball courts of international specifications and every effort is made to ensure that basketball continues in our routine. For this, we have coaches on campus. Indeed, we take pride in our accomplishments.";
+              corousal.src = `./images/basketball1.webp`;
+              var names = [
+                "Mr. Gopal Singh Bisht",
+                "Mr. Gaurav Sharma",
+                "Mr. Sanjay Bhardwaj",
+              ];
+              staff.innerHTML = "";
+              var div = document.createElement("div");
+              div.style.display = "flex";
+              div.style.alignItems = "center";
+              div.style.flexWrap = "wrap";
+              div.style.gap = "10px";
+              for (let k = 1; k <= 3; k++) {
+                const imgdiv = document.createElement("div");
+                imgdiv.style.display = "flex";
+                imgdiv.style.flexDirection = "column";
+                imgdiv.style.gap = "5px";
+                const img = document.createElement("img");
+                img.src = `./images/basketball_t${k}.webp`;
+                img.style.height = "12rem";
+                img.style.borderRadius = "10px";
+                const name = document.createElement("p");
+                name.innerHTML = names[k - 1];
+                imgdiv.appendChild(img);
+                imgdiv.appendChild(name);
+                div.appendChild(imgdiv);
+              }
+              staff.appendChild(div);
+              break;
+            case "Badminton":
+              item.classList.add("active");
+              dephead.innerHTML = "Badminton Department";
+              depcontent.innerHTML =
+                "Badminton is a great sport for fitness and is very excellent for individuals of all age groups. If you want to try out a new racket sport, it is a great choice. It is officially chosen as the fastest of all racket sports in the world. The speed at which a player can hit the shuttlecock is up to 288kph toward their opponent. <br><br>A player can also run around the court up to 6.4km or 4 miles during the match, so the players must have great agility to keep up with this game. Although agility and stamina are necessary for this game at a competitive level, anyone can play this game to achieve fitness and flexibility.";
+              corousal.src = "./images/badminton1.webp";
+              plus.addEventListener("click", () => {
+                if (i >= 4) {
+                  i = 1;
+                } else {
+                  i++;
+                }
+                console.log(i);
+                let img_url = `./images/badminton${i}.webp`;
+                corousal.src = img_url;
+              });
+
+              // Event listener for decrementing the image
+              minus.addEventListener("click", () => {
+                if (i <= 1) {
+                  i = 4;
+                } else {
+                  i--;
+                }
+                console.log(i);
+                let img_url = `./images/badminton${i}.webp`;
+                console.log(img_url);
+                corousal.src = img_url;
+              });
+              var names = [
+                "Mr. Gopal Singh Bisht",
+                "Mr. Gaurav Sharma",
+                "Mr. Sanjay Bhardwaj",
+              ];
+              staff.innerHTML = "";
+              var div = document.createElement("div");
+              div.style.display = "flex";
+              div.style.alignItems = "center";
+              div.style.flexWrap = "wrap";
+              div.style.gap = "10px";
+              for (let k = 1; k <= 3; k++) {
+                const imgdiv = document.createElement("div");
+                imgdiv.style.display = "flex";
+                imgdiv.style.flexDirection = "column";
+                imgdiv.style.gap = "5px";
+                const img = document.createElement("img");
+                img.src = `./images/badminton_t${k}.webp`;
+                img.style.height = "12rem";
+                img.style.borderRadius = "10px";
+                const name = document.createElement("p");
+                name.innerHTML = names[k - 1];
+                imgdiv.appendChild(img);
+                imgdiv.appendChild(name);
+                div.appendChild(imgdiv);
+              }
+              staff.appendChild(div);
+              break;
+            case "Kho-Kho":
+              item.classList.add("active");
+              dephead.innerHTML = "Kho-Kho Department";
+              plus.innerHTML = "";
+              minus.innerHTML = "";
+              depcontent.innerHTML =
+                "The Kho-Kho Department focuses on developing students' skills in this traditional Indian sport. Kho-Kho is known for enhancing agility, teamwork, and endurance. We offer specialized training and participate in various inter-school and district-level tournaments.";
+              corousal.src = `./images/khokho1.webp`;
+              var names = [
+                "Mr. Gopal Singh Bisht",
+                "Mr. Gaurav Sharma",
+                "Mr. Sanjay Bhardwaj",
+              ];
+              staff.innerHTML = "";
+              var div = document.createElement("div");
+              div.style.display = "flex";
+              div.style.alignItems = "center";
+              div.style.flexWrap = "wrap";
+              div.style.gap = "10px";
+              for (let k = 1; k <= 3; k++) {
+                const imgdiv = document.createElement("div");
+                imgdiv.style.display = "flex";
+                imgdiv.style.flexDirection = "column";
+                imgdiv.style.gap = "5px";
+                const img = document.createElement("img");
+                img.src = `./images/khokho_t${k}.webp`;
+                img.style.height = "12rem";
+                img.style.borderRadius = "10px";
+                const name = document.createElement("p");
+                name.innerHTML = names[k - 1];
+                imgdiv.appendChild(img);
+                imgdiv.appendChild(name);
+                div.appendChild(imgdiv);
+              }
+              staff.appendChild(div);
+              break;
+            case "Swimming":
+              item.classList.add("active");
+              dephead.innerHTML = "Swimming Department";
+              depcontent.innerHTML =
+                "LIKE A DUCK TAKES TO WATER.... <br><br>As rightly said, Practice makes a man perfect. This is evident as far as swimming is concerned at Little Scholars. There is an ultra-modern, all-weather half-Olympic size, indoor aquatic complex under a qualified and result-oriented swimming instructor. <br><br>Since its inception in 2014, this unique facility has produced champions at the school, city, district, state, and national levels, consistently. Our ace swimmers have brought home many accolades and are still rearing to brush aside their competitors. To attain such amazing feats, our swimming squad trains regularly. Moreover, the entire aquatic complex is monitored through CCTV cameras to ensure safety.";
+              corousal.src = "./images/swimming1.webp";
+              plus.addEventListener("click", () => {
+                if (i >= 8) {
+                  i = 1;
+                } else {
+                  i++;
+                }
+                console.log(i);
+                let img_url = `./images/swimming${i}.webp`;
+                console.log(img_url);
+                corousal.src = img_url;
+              });
+
+              // Event listener for decrementing the image
+              minus.addEventListener("click", () => {
+                if (i <= 1) {
+                  i = 4;
+                } else {
+                  i--;
+                }
+                let img_url = `./images/swimming${i}.webp`;
+                console.log(img_url);
+                corousal.src = img_url;
+              });
+              var names = ["Mr. Dayal Singh"];
+              staff.innerHTML = "";
+              var div = document.createElement("div");
+              div.style.display = "flex";
+              div.style.alignItems = "center";
+              div.style.flexWrap = "wrap";
+              div.style.gap = "10px";
+              for (let k = 1; k <= 1; k++) {
+                const imgdiv = document.createElement("div");
+                imgdiv.style.display = "flex";
+                imgdiv.style.flexDirection = "column";
+                imgdiv.style.gap = "5px";
+                const img = document.createElement("img");
+                img.src = `./images/swimming_t${k}.webp`;
+                img.style.height = "12rem";
+                img.style.borderRadius = "10px";
+                const name = document.createElement("p");
+                name.innerHTML = names[k - 1];
+                imgdiv.appendChild(img);
+                imgdiv.appendChild(name);
+                div.appendChild(imgdiv);
+              }
+              staff.appendChild(div);
+              break;
+            case "Chess":
+              item.classList.add("active");
+              dephead.innerHTML = "Chess Department";
+              depcontent.innerHTML =
+                "Little Scholars is one of the few schools having the facility of teaching Chess in school. The game of chess is considered as the best exercise for the brain. <br><br>The school has a great environment for the fastest-growing games in our country. <br><br>Our Student Ansh Agarwal, Dev Rastogi, and ex-student Krish Agarwal were rewarded in the chess competition held around Kashipur.";
+              corousal.src = "./images/chess1.webp";
+              plus.addEventListener("click", () => {
+                if (i >= 3) {
+                  i = 1;
+                } else {
+                  i++;
+                }
+                console.log(i);
+                let img_url = `./images/chess${i}.webp`;
+                console.log(img_url);
+                corousal.src = img_url;
+              });
+
+              // Event listener for decrementing the image
+              minus.addEventListener("click", () => {
+                if (i <= 1) {
+                  i = 4;
+                } else {
+                  i--;
+                }
+                console.log(i);
+                let img_url = `./images/chess${i}.webp`;
+                console.log(img_url);
+                corousal.src = img_url;
+              });
+              var names = ["Mr. Mohd Zubair"];
+              staff.innerHTML = "";
+              var div = document.createElement("div");
+              div.style.display = "flex";
+              div.style.alignItems = "center";
+              div.style.flexWrap = "wrap";
+              div.style.gap = "10px";
+              for (let k = 1; k <= 1; k++) {
+                const imgdiv = document.createElement("div");
+                imgdiv.style.display = "flex";
+                imgdiv.style.flexDirection = "column";
+                imgdiv.style.gap = "5px";
+                const img = document.createElement("img");
+                img.src = `./images/chess_t${k}.webp`;
+                img.style.height = "12rem";
+                img.style.borderRadius = "10px";
+                const name = document.createElement("p");
+                name.innerHTML = names[k - 1];
+                imgdiv.appendChild(img);
+                imgdiv.appendChild(name);
+                div.appendChild(imgdiv);
+              }
+              staff.appendChild(div);
+              break;
+          }
+        });
+      });
     </script>
   </body>
 </html>
