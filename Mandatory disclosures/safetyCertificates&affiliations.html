@@ -24,6 +24,7 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="./style.css" />
     <title>Safety certificates & Affiliations</title>
   </head>
   <style>
@@ -55,130 +56,129 @@
 
     /* Modal Styling  */
 
-.modal-header {
-    background-color: #333333;
-    color: #ffffff;
-}
+    .modal-header {
+      background-color: #333333;
+      color: #ffffff;
+    }
 
-/*Notice Modal Styling Ending*/
+    /*Notice Modal Styling Ending*/
 
+    /* Footer Styling */
+    .footer {
+      background-color: #333333;
+      color: #b0b0b0;
+      padding: 40px 0;
+    }
+    .footer .footer-col h5 {
+      color: #ffffff;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .footer .footer-col p,
+    .footer .footer-col li,
+    .footer .footer-col a {
+      color: #b0b0b0;
+      font-size: 14px;
+    }
+    .footer .footer-col li {
+      list-style-type: none;
+      margin-bottom: 8px;
+    }
+    .footer .footer-col li a {
+      display: flex;
+      align-items: center;
+      color: #b0b0b0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer .footer-col li a:hover {
+      color: #ffffff;
+    }
+    .footer .footer-col li a i {
+      margin-right: 8px;
+      color: #ffffff;
+    }
+    .footer .footer-col a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .footer .social-icons a {
+      color: #b0b0b0;
+      font-size: 18px;
+      margin-right: 10px;
+    }
+    .footer .social-icons a:hover {
+      color: #ffffff;
+    }
+    .footer .footer-col img {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
+    .footer-logo {
+      width: 180px;
+      height: auto;
+    }
 
+    .footer .birthdays {
+      max-height: 150px;
+      overflow-y: auto;
+      padding-right: 15px;
+    }
+    .footer .birthdays::-webkit-scrollbar {
+      width: 8px;
+    }
+    .footer .birthdays::-webkit-scrollbar-thumb {
+      background-color: #555555;
+      border-radius: 4px;
+    }
+    .footer .birthdays::-webkit-scrollbar-thumb:hover {
+      background-color: #777777;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 0.5px;
+      color: #b0b0b0;
+      font-size: 12px;
+      border-top: 1px solid #444;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333333;
+      color: #ffffff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+    }
+    .back-to-top:hover {
+      background-color: #555555;
+    }
+    .footer .useful-links a {
+      display: block;
+      padding: 8px 0;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .footer .useful-links a:hover {
+      color: #ffffff;
+      padding-left: 10px;
+    }
 
-/* Footer Styling */
-.footer {
-    background-color: #333333;
-    color: #b0b0b0;
-    padding: 40px 0;
-}
-.footer .footer-col h5 {
-    color: #ffffff;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-.footer .footer-col p, .footer .footer-col li, .footer .footer-col a {
-    color: #b0b0b0;
-    font-size: 14px;
-}
-.footer .footer-col li {
-    list-style-type: none;
-    margin-bottom: 8px;
-}
-.footer .footer-col li a {
-    display: flex;
-    align-items: center;
-    color: #b0b0b0;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-.footer .footer-col li a:hover {
-    color: #ffffff;
-}
-.footer .footer-col li a i {
-    margin-right: 8px; 
-    color: #ffffff;
-}
-.footer .footer-col a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-.footer .social-icons a {
-    color: #b0b0b0;
-    font-size: 18px;
-    margin-right: 10px;
-}
-.footer .social-icons a:hover {
-    color: #ffffff;
-}
-.footer .footer-col img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-}
-.footer-logo {
-    width: 180px; 
-    height: auto;
-}
-
-.footer .birthdays {
-    max-height: 150px;
-    overflow-y: auto;
-    padding-right: 15px;
-}
-.footer .birthdays::-webkit-scrollbar {
-    width: 8px;
-}
-.footer .birthdays::-webkit-scrollbar-thumb {
-    background-color: #555555;
-    border-radius: 4px;
-}
-.footer .birthdays::-webkit-scrollbar-thumb:hover {
-    background-color: #777777;
-}
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 0.5px;
-    color: #b0b0b0;
-    font-size: 12px;
-    border-top: 1px solid #444;
-}
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333333;
-    color: #ffffff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    cursor: pointer;
-}
-.back-to-top:hover {
-    background-color: #555555;
-}
-.footer .useful-links a {
-    display: block;
-    padding: 8px 0;
-    transition: all 0.3s ease;
-    text-decoration:none;
-}
-.footer .useful-links a:hover {
-    color: #ffffff;
-    padding-left: 10px;
-}
-
-.content-display {
-    display: none;
-    color: #ffffff;
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #444;
-    border-radius: 5px;
-}
-/* Footer Styling End*/
-
+    .content-display {
+      display: none;
+      color: #ffffff;
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #444;
+      border-radius: 5px;
+    }
+    /* Footer Styling End*/
   </style>
   <body>
     <marquee behavior="" direction="" class="bg-danger text-white"
@@ -413,9 +413,7 @@
     <div class="section-1">
       <div class="head">
         <h1>Safety-certificate & Affiliations</h1>
-        <p>
-          <b>Home > News & Calendar ></b> Safety-certificate & Affiliations
-        </p>
+        <p><b>Home > News & Calendar ></b> Safety-certificate & Affiliations</p>
       </div>
     </div>
 
@@ -440,9 +438,11 @@
                 viewBox="0 0 512 512"
                 height="1em"
                 width="1em"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
-                  d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                  d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"
+                ></path>
               </svg>
               <p><b>view</b></p>
             </div>
@@ -452,8 +452,7 @@
           <td>2.</td>
           <td>Building Safety</td>
           <td>
-            <div
-              onclick="window.open('./images/Building_Safety.pdf', '_self')">
+            <div onclick="window.open('./images/Building_Safety.pdf', '_self')">
               <svg
                 stroke="currentColor"
                 fill="currentColor"
@@ -461,9 +460,11 @@
                 viewBox="0 0 512 512"
                 height="1em"
                 width="1em"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
-                  d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                  d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"
+                ></path>
               </svg>
               <p><b>view</b></p>
             </div>
@@ -481,9 +482,11 @@
                 viewBox="0 0 512 512"
                 height="1em"
                 width="1em"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
-                  d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                  d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"
+                ></path>
               </svg>
               <p><b>view</b></p>
             </div>
@@ -501,9 +504,11 @@
                 viewBox="0 0 512 512"
                 height="1em"
                 width="1em"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
-                  d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                  d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"
+                ></path>
               </svg>
               <p><b>view</b></p>
             </div>
@@ -521,9 +526,11 @@
                 viewBox="0 0 512 512"
                 height="1em"
                 width="1em"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
-                  d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                  d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"
+                ></path>
               </svg>
               <p><b>view</b></p>
             </div>
@@ -533,8 +540,7 @@
           <td>6.</td>
           <td>Society Renewal</td>
           <td>
-            <div
-              onclick="window.open('./images/Society_Renewal.pdf', '_self')">
+            <div onclick="window.open('./images/Society_Renewal.pdf', '_self')">
               <svg
                 stroke="currentColor"
                 fill="currentColor"
@@ -542,9 +548,11 @@
                 viewBox="0 0 512 512"
                 height="1em"
                 width="1em"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
-                  d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                  d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"
+                ></path>
               </svg>
               <p><b>view</b></p>
             </div>
@@ -555,67 +563,92 @@
 
     <section class="footer">
       <div class="container">
-          <div class="row">
-              
-              <div class="col-md-3 footer-col text-center">
-                  <img src="./images/logo.webp" alt="School Logo" class="img-fluid footer-logo mb-3">
-                  <p>Bhalla Farm Pratappur, Ramnagar Road,<br> Kashipur-244713, Distt. U.S.Nagar</p>
-                  <div class="social-icons">
-                      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-                  </div>
-              </div>
-    
-              <div class="col-md-3 footer-col">
-                  <h5>Birthdays</h5>
-                  <ul class="birthdays">
-                      <li>
-                          <img src="./images/p1.webp" alt="Person Image">
-                          <strong> Daksh Gehlot</strong><br><span>August 2nd, 2024</span>
-                      </li>
-                      <li>
-                          <img src="./images/p2.webp" alt="Person Image">
-                          <strong> Karan Kumar</strong><br><span>July 26th, 2024</span>
-                      </li>
-                      <li>
-                          <img src="./images/p4.webp" alt="Person Image">
-                          <strong> Tazeem Khan</strong><br><span>July 18th, 2024</span>
-                      </li>
-                     
-                      <li>
-                          <img src="./images/p3.webp" alt="Person Image">
-                          <strong> Ramesh Singh</strong><br><span>June 5th, 2024</span>
-                      </li>
-                  </ul>
-              </div>
-    
-           
-              <div class="col-md-3 footer-col useful-links">
-                  <h5>Useful Links</h5>
-                  <a href="#" onclick="displayContent('privacyPolicy')"><i class="fas fa-angle-right"></i> Privacy Policy</a>
-                  <a href="#" onclick="displayContent('terms')"><i class="fas fa-angle-right"></i> Terms & Conditions</a>
-                  <a href="#" onclick="displayContent('contact')"><i class="fas fa-angle-right"></i> Contact</a>
-                  <a href="#" onclick="displayContent('sitemap')"><i class="fas fa-angle-right"></i> Sitemap</a>
-                  
-                  <div id="contentDisplay" class="content-display"></div>
-              </div>
-    
-              <div class="col-md-3 footer-col">
-                  <h5>School Timings</h5>
-                  <p>Summers: 07:20 am - 1:30 pm</p>
-                  <p>Winters: 07:50 am - 2:00 pm</p>
-                  <p>Total Visits: 8723</p>
-              </div>
+        <div class="row">
+          <div class="col-md-3 footer-col text-center">
+            <img
+              src="./images/logo.webp"
+              alt="School Logo"
+              class="img-fluid footer-logo mb-3"
+            />
+            <p>
+              Bhalla Farm Pratappur, Ramnagar Road,<br />
+              Kashipur-244713, Distt. U.S.Nagar
+            </p>
+            <div class="social-icons">
+              <a href="https://facebook.com" target="_blank"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="https://instagram.com" target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://youtube.com" target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
           </div>
+
+          <div class="col-md-3 footer-col">
+            <h5>Birthdays</h5>
+            <ul class="birthdays">
+              <li>
+                <img src="./images/p1.webp" alt="Person Image" />
+                <strong> Daksh Gehlot</strong><br /><span
+                  >August 2nd, 2024</span
+                >
+              </li>
+              <li>
+                <img src="./images/p2.webp" alt="Person Image" />
+                <strong> Karan Kumar</strong><br /><span>July 26th, 2024</span>
+              </li>
+              <li>
+                <img src="./images/p4.webp" alt="Person Image" />
+                <strong> Tazeem Khan</strong><br /><span>July 18th, 2024</span>
+              </li>
+
+              <li>
+                <img src="./images/p3.webp" alt="Person Image" />
+                <strong> Ramesh Singh</strong><br /><span>June 5th, 2024</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-3 footer-col useful-links">
+            <h5>Useful Links</h5>
+            <a href="#" onclick="displayContent('privacyPolicy')"
+              ><i class="fas fa-angle-right"></i> Privacy Policy</a
+            >
+            <a href="#" onclick="displayContent('terms')"
+              ><i class="fas fa-angle-right"></i> Terms & Conditions</a
+            >
+            <a href="#" onclick="displayContent('contact')"
+              ><i class="fas fa-angle-right"></i> Contact</a
+            >
+            <a href="#" onclick="displayContent('sitemap')"
+              ><i class="fas fa-angle-right"></i> Sitemap</a
+            >
+
+            <div id="contentDisplay" class="content-display"></div>
+          </div>
+
+          <div class="col-md-3 footer-col">
+            <h5>School Timings</h5>
+            <p>Summers: 07:20 am - 1:30 pm</p>
+            <p>Winters: 07:50 am - 2:00 pm</p>
+            <p>Total Visits: 8723</p>
+          </div>
+        </div>
       </div>
       <div class="footer-bottom">
-          <p>© 2024 Little Scholars. All Rights Reserved.</p>
-          <p>Made with <i class="fas fa-heart text-danger"></i> by <a href="https://puminatidigital.com" target="_blank">Puminati Digital</a></p>
+        <p>© 2024 Little Scholars. All Rights Reserved.</p>
+        <p>
+          Made with <i class="fas fa-heart text-danger"></i> by
+          <a href="https://puminatidigital.com" target="_blank"
+            >Puminati Digital</a
+          >
+        </p>
       </div>
     </section>
-    
-    
+
     <div class="back-to-top" onclick="scrollToTop()">
       <i class="fas fa-chevron-up"></i>
     </div>
