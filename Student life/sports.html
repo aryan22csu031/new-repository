@@ -1,18 +1,572 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
     <title>Sports</title>
     <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
 
+      a:hover {
+        color: black;
+        text-decoration: none;
+        cursor: auto;
+      }
+
+      .navbar-sections {
+        color: black;
+        font-size: 17px;
+      }
+
+      .navbar-nav .nav-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .navbarSection {
+        gap: 0.7rem;
+      }
+
+      .navbar-div {
+        height: 8rem;
+        width: 100%;
+      }
+
+      .sports-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        color: white;
+        background-image: url("https://cdn.pixabay.com/photo/2015/07/19/10/00/school-work-851328_1280.jpg");
+        background-size: cover;
+      }
+
+      .sports-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: 20px;
+      }
+
+      .sports-list ul {
+        display: flex;
+        gap: 0.5rem;
+        list-style: none;
+      }
+
+      .sports-list ul .active-head {
+        font-weight: 100;
+      }
+
+      .sports-info {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 4rem;
+        padding: 2rem;
+        align-items: start;
+        width: 100%;
+      }
+
+      hr {
+        background-color: #000;
+      }
+
+      .active {
+        color: #007bff;
+      }
+
+      /* PDF Viewer Styling */
+      .viewer {
+        flex: 1;
+        background-color: #ffffff;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      iframe {
+        width: 90%;
+        height: 90%;
+        border: none;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .dep-container {
+        display: flex;
+        margin-top: 3rem;
+      }
+      .dep-sidebar {
+        width: 250px;
+        color: black;
+        padding: 20px;
+        height: 60%;
+      }
+
+      .dep-sidebar h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .dep-nav-item {
+        padding: 15px;
+        margin: 10px 0;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      .dep-viewer {
+        display: flex;
+        flex-direction: column;
+      }
+      #dep-pdf-viewer {
+        background-size: contain;
+        height: 50%;
+        overflow: auto;
+        width: 50rem;
+      }
     </style>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <div>
+      <marquee behavior="" direction="" class="bg-danger text-white"
+        ><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee
+      >
+      <nav class="navbar navbar-expand-lg navbar-light navbar-div">
+        <!-- here keep the logo -->
+        <a class="navbar-brand" href="./homepage.html"
+          ><div class="container text-center my-5">
+            <img
+              src="./images/logo.webp"
+              alt="Logo"
+              class="rounded-circle img-fluid"
+              style="width: 100px; height: 100px"
+            />
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto navbarSection">
+            <!-- About Us Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="aboutUsDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">About Us</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="aboutUsDropdown">
+                <a class="dropdown-item" href="#">Founder's Desk</a>
+                <a class="dropdown-item" href="#">Principal Desk</a>
+                <a class="dropdown-item" href="#">School Management</a>
+                <a class="dropdown-item" href="#">Managing Committee</a>
+                <a class="dropdown-item" href="#">Princples & Policies</a>
+                <a class="dropdown-item" href="#">Infrastructure</a>
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+
+            <!-- Admissions Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="admissionsUsDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">Admissions</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
+                <a class="dropdown-item" href="#">Admissions HelpDesk/school</a>
+                <a class="dropdown-item" href="#">Admissions Procedure</a>
+                <a class="dropdown-item" href="#">Registration</a>
+                <a class="dropdown-item" href="#">Free Structure</a>
+                <a class="dropdown-item" href="#">School Timings</a>
+                <a class="dropdown-item" href="#">FAQ's</a>
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+            <!-- Student Life Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="StudentLifeDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">Student Life</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="StudentLifeDropdown">
+                <a class="dropdown-item" href="./Student life/academics.html"
+                  >Academics</a
+                >
+                <a class="dropdown-item" href="./Student life/sports.html"
+                  >Sports</a
+                >
+                <a class="dropdown-item" href="#">Co-curriculum</a>
+                <a class="dropdown-item" href="#"
+                  >Social-Cultural Development</a
+                >
+                <a class="dropdown-item" href="#">Counselling</a>
+                <a class="dropdown-item" href="#">Achievements</a>
+                <a class="dropdown-item" href="#">Event Calender</a>
+                <a class="dropdown-item" href="#">Toppers</a>
+                <a class="dropdown-item" href="#">Cabinet</a>
+                <a class="dropdown-item" href="#">Transfer Cerificate</a>
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+            <!-- News $ Calender Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="news&CalenderDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">News & Calender</h5>
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="news&CalenderDropdown"
+              >
+                <a class="dropdown-item" href="#">Studet Hand Book</a>
+                <a class="dropdown-item" href="#">NewsLetter/Scholars Times</a>
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+            <!-- Mandatory Disclosures -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="mandatoryDisclosureDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">Mandatory Disclosures</h5>
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="mandatoryDisclosureDropdown"
+              >
+                <a class="dropdown-item" href="#">Booklist</a>
+                <a class="dropdown-item" href="#"
+                  >Safety Certificates & Affiliations</a
+                >
+                <a class="dropdown-item" href="#">CBSE-OASIS</a>
+                <a class="dropdown-item" href="#"
+                  >Mandatory Public Disclosures</a
+                >
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+            <!-- Contact Us  -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="contactUsDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">Contact Us</h5>
+              </a>
+            </li>
+            <!-- Add additional nav items here if needed -->
+
+            <!-- Notice -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="noticeDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">Notice</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="noticeDropdown">
+                <a class="dropdown-item" href="#">Notice 1</a>
+                <a class="dropdown-item" href="#">Notice 2</a>
+                <a class="dropdown-item" href="#">Notice 3</a>
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="sports-header">
+      <div>
+        <h1>Sports</h1>
+      </div>
+      <div class="sports-list">
+        <ul>
+          <li>Home ></li>
+          <li>Student Life ></li>
+          <li class="active-head">Sports</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sports-info">
+      <div class="list-group" style="width: 40%">
+        <button
+          type="button"
+          class="list-group-item list-group-item-action"
+          aria-current="true"
+        >
+          Sports
+        </button>
+        <button type="button" class="list-group-item list-group-item-action">
+          Department
+        </button>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <h2>Sports</h2>
+        <hr />
+        <p>
+          In the Junior Section, depending upon the season, students are
+          required to train in a minimum of two sports. They undergo training in
+          Football, Cricket, Athletics, Basketball, Tennis, Squash, Kho-Kho,
+          Table Tennis and Swimming. The students are encouraged to specialize
+          in the sport according to their inclination and also based on the
+          suggestions of the expert Coaches for at least one whole year. Many of
+          them stay specialised with that sport and acquire special skills.
+          However, the students are encouraged to play inter-house tournaments
+          and participate in other sports, to promote all-rounder sportsmen.
+          This emphasis also instils team spirit skills for life beyond the
+          school days, and a wider appreciation of sport in general. The
+          marathon is a mandatory event and is one of the key resources for the
+          assessment of student health and wellbeing. Every student on an
+          average is required to play for an hour of sports every day. Further,
+          the school has a mission that every student must be able to swim.
+          <br /><br />
+          The students regularly represent National, State, District, Inter
+          School and CBSE tournaments. Many national level sportsmen have
+          emerged from the school. Apart from outdoor sports, the students are
+          encouraged to play cerebral games like Chess. <br />
+          <br />
+          Adventure Camps are a yearly feature of the school and a lifetime
+          experience for the students.
+        </p>
+        <div>
+          <a href=""><h1 style="margin-top: 3rem">Department</h1></a>
+          <hr />
+          <div class="dep-container">
+            <div class="dep-sidebar">
+              <div class="dep-nav-item active" data-pdf="pdf1.pdf">
+                Football
+              </div>
+              <div class="dep-nav-item">Cricket</div>
+              <div class="dep-nav-item">Volleyball</div>
+              <div class="dep-nav-item">Basketball</div>
+              <div class="dep-nav-item">Badminton</div>
+              <div class="dep-nav-item">Kho-Kho</div>
+              <div class="dep-nav-item">Swimming</div>
+              <div class="dep-nav-item">Chess</div>
+            </div>
+
+            <div class="dep-viewer">
+              <h3
+                class="dep-name"
+                style="
+                  font-weight: 100;
+                  font-family: Cambria, Cochin, Georgia, Times,
+                    'Times New Roman', serif;
+                "
+              >
+                Football Department
+              </h3>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 2px;
+                  width: 100%;
+                  justify-content: space-between;
+                "
+                class="football-img-container"
+              >
+                <h1
+                  style="
+                    background-color: white;
+                    border-radius: 5px;
+                    cursor: pointer;
+                  "
+                  class="football-minus"
+                >
+                  <
+                </h1>
+                <img
+                  src="./images/football1.webp"
+                  alt=""
+                  class="football-img"
+                />
+                <h1
+                  style="
+                    position: relative;
+                    background-color: white;
+                    border-radius: 5px;
+                    cursor: pointer;
+                  "
+                  class="football-plus"
+                >
+                  >
+                </h1>
+              </div>
+              <p class="viewer-content" style="margin-top: 1rem">
+                WORLD'S MOST POPULAR GAME-- Football or Soccer Is A Way of Life
+                in Little Scholars Equipped with the best playing facilities,
+                our school boasts of a full dimension football field. Under the
+                able guidance of their coaches, our footballers have always been
+                at the forefront in various tournaments. As a well spun and
+                conditioned outfit, they have brought home many a laurels. In
+                the post- pandemic phase, we are quite optimistic that our
+                soccer team will be in the reckoning at various competitions.
+              </p>
+
+              <h3
+                class="dep-name"
+                style="
+                  font-weight: 100;
+                  font-family: Cambria, Cochin, Georgia, Times,
+                    'Times New Roman', serif;
+                "
+              >
+                Teachers and Staff
+              </h3>
+              <div
+                class="staff"
+                style="
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 8px;
+                  align-items: center;
+                  width: 100%;
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script>
-        
+      const dep_navItems = document.querySelectorAll(".dep-nav-item");
+      const dep_pdfViewer = document.getElementById("dep-pdf-viewer");
+      const dep_content = document.querySelector(".viewer-content");
+      const football_corousal = document.querySelector(".football-img");
+      const football_plus = document.querySelector(".football-plus");
+      const football_minus = document.querySelector(".football-minus");
+      const football_imgs = [
+        "football1",
+        "football2",
+        "football3",
+        "football4",
+      ];
+      let i = 1; 
+
+football_plus.addEventListener("click", () => {
+    if (i >= 4) {
+        i = 1;
+    } else {
+        i++;
+    }
+    console.log(i);
+    let img_url = `./images/football${i}.webp`;
+    console.log(img_url);
+    football_corousal.src = img_url;
+});
+
+// Event listener for decrementing the image
+football_minus.addEventListener("click", () => {
+    if (i <= 1) {
+        i = 4;
+    } else {
+        i--;
+    }
+    console.log(i);
+    let img_url = `./images/football${i}.webp`;
+    console.log(img_url);
+    football_corousal.src = img_url;
+});
     </script>
-</body>
+  </body>
 </html>
