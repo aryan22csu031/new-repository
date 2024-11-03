@@ -24,3 +24,128 @@ body{
     width: 100%;
 }
 
+/* Modal Styling  */
+
+.modal-header {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/*Notice Modal Styling Ending*/
+
+
+
+/* Footer Styling */
+.footer {
+    background-color: #333333;
+    color: #b0b0b0;
+    padding: 40px 0;
+}
+.footer .footer-col h5 {
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.footer .footer-col p, .footer .footer-col li, .footer .footer-col a {
+    color: #b0b0b0;
+    font-size: 14px;
+}
+.footer .footer-col li {
+    list-style-type: none;
+    margin-bottom: 8px;
+}
+.footer .footer-col li a {
+    display: flex;
+    align-items: center;
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer .footer-col li a:hover {
+    color: #ffffff;
+}
+.footer .footer-col li a i {
+    margin-right: 8px; 
+    color: #ffffff;
+}
+.footer .footer-col a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+.footer .social-icons a {
+    color: #b0b0b0;
+    font-size: 18px;
+    margin-right: 10px;
+}
+.footer .social-icons a:hover {
+    color: #ffffff;
+}
+.footer .footer-col img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.footer-logo {
+    width: 180px; 
+    height: auto;
+}
+
+.footer .birthdays {
+    max-height: 150px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+.footer .birthdays::-webkit-scrollbar {
+    width: 8px;
+}
+.footer .birthdays::-webkit-scrollbar-thumb {
+    background-color: #555555;
+    border-radius: 4px;
+}
+.footer .birthdays::-webkit-scrollbar-thumb:hover {
+    background-color: #777777;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 0.5px;
+    color: #b0b0b0;
+    font-size: 12px;
+    border-top: 1px solid #444;
+}
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333333;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.back-to-top:hover {
+    background-color: #555555;
+}
+.footer .useful-links a {
+    display: block;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+    text-decoration:none;
+}
+.footer .useful-links a:hover {
+    color: #ffffff;
+    padding-left: 10px;
+}
+
+.content-display {
+    display: none;
+    color: #ffffff;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #444;
+    border-radius: 5px;
+}
+/* Footer Styling End*/

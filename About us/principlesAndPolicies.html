@@ -1,264 +1,565 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
     <title>Principles and Policies</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+      .navbar-sections {
+        color: black;
+        font-size: 17px;
+      }
 
-        body {
-            font-family: Arial, sans-serif;
-        }
+      .navbar-nav .nav-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+      }
 
-        .breadcrumb { 
-            background-image: url('images/Header-bg.jpg');
-            background-position: center;
-            background-size: cover;
-            height: 200px;
-            color: white;
-            position: relative;
-            display: flex;
-            align-items: center; /* Centers the breadcrumb content vertically */
-            justify-content: center; /* Centers the breadcrumb content horizontally */
-        }
+      .navbarSection {
+        gap: 0.7rem;
+      }
 
-        .breadcrumb::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent black overlay */
-            z-index: 1; /* Places overlay behind content */
-        }
+      .navbar-div {
+        height: 8rem;
+        width: 100%;
+      }
 
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .breadcrumb {
+        background-image: url("./images/Header-bg.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 200px;
+        color: white;
+        position: relative;
+        display: flex;
+        align-items: center; /* Centers the breadcrumb content vertically */
+        justify-content: center; /* Centers the breadcrumb content horizontally */
+      }
+
+      .breadcrumb::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.85
+        ); /* Semi-transparent black overlay */
+        z-index: 1; /* Places overlay behind content */
+      }
+
+      .breadcrumb-content {
+        position: relative;
+        z-index: 2; /* Ensures content is above the overlay */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 50px;
+      }
+
+      @media (min-width: 640px) {
         .breadcrumb-content {
-            position: relative;
-            z-index: 2; /* Ensures content is above the overlay */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 50px;
+          width: 80%;
+          gap: 1.5rem;
         }
+      }
 
+      .title {
+        font-size: 1.75rem;
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 0.05em;
+      }
 
-        @media (min-width: 640px) {
-            .breadcrumb-content {
-                width: 80%;
-                gap: 1.5rem;
-            }
-        }
-
+      @media (min-width: 640px) {
         .title {
-            font-size: 1.75rem;
-            font-weight: 600;
-            text-align: center;
-            letter-spacing: 0.05em;
+          font-size: 2.5rem;
         }
+      }
 
-        @media (min-width: 640px) {
-            .title {
-                font-size: 2.5rem;
-            }
-        }
+      .breadcrumb-links {
+        display: flex;
+        gap: 0.25rem;
+        font-size: 1rem;
+      }
 
+      @media (min-width: 640px) {
         .breadcrumb-links {
-            display: flex;
-            gap: 0.25rem;
-            font-size: 1rem;
+          font-size: 1.125rem;
         }
+      }
 
-        @media (min-width: 640px) {
-            .breadcrumb-links {
-                font-size: 1.125rem;
-            }
-        }
+      .breadcrumb-item {
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        text-decoration: none;
+        color: white;
+      }
 
-        .breadcrumb-item {
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            text-decoration: none;
-            color: white;
-        }
+      .current {
+        font-weight: 300;
+      }
 
-        .current {
-            font-weight: 300;
-        }
+      .icon {
+        display: inline-block;
+        font-size: 1em;
+      }
+      .container {
+        max-width: 90%;
+        margin: 0 auto;
+        background-color: #fff;
+      }
 
-        .icon {
-            display: inline-block;
-            font-size: 1em;
-        }
-        .container {
-    max-width: 90%;
-    margin: 0 auto;
-    background-color: #fff;
-}
+      .content-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5rem 0;
+        overflow: hidden;
+        text-align: left;
+        border-radius: 0.5rem;
+      }
 
-.content-container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 5rem 0;
-    overflow: hidden;
-    text-align: left;
-    border-radius: 0.5rem;
-}
+      .sidebar {
+        margin: 1.25rem auto;
+        overflow-y: auto;
+        text-align: center;
+      }
 
-.sidebar {
-    margin: 1.25rem auto;
-    overflow-y: auto;
-    text-align: center;
-}
+      .menu {
+        list-style: none;
+        padding: 0;
+        border: 0.2px solid rgb(211, 203, 203);
+        border-radius: 0.5rem;
+      }
 
-.menu {
-    list-style: none;
-    padding: 0;
-    border: 0.2px solid rgb(211, 203, 203);
-    border-radius: 0.5rem;
-}
+      .menu-item {
+        border-bottom: 0.2px solid rgb(211, 203, 203);
+        line-height: 1.8rem;
+      }
 
-.menu-item {
-    border-bottom: 0.2px solid rgb(211, 203, 203);
-    line-height: 1.8rem;
-}
+      .menu-link {
+        display: block;
+        margin-left: 0.75rem;
+        padding: 0.5rem 0;
+        font-size: 0.95rem;
+        color: #000;
+        font-weight: 400;
+        font-family: "Open Sans", sans-serif;
+        word-break: break-word;
+        transition: background 0.3s;
+      }
 
-.menu-link {
-    display: block;
-    margin-left: 0.75rem;
-    padding: 0.5rem 0;
-    font-size: 0.95rem;
-    color: #000;
-    font-weight: 400;
-    font-family: 'Open Sans', sans-serif;
-    word-break: break-word;
-    transition: background 0.3s;
-}
+      .menu-link:hover {
+        background-color: rgb(244, 243, 243);
+      }
 
-.menu-link:hover {
-    background-color: rgb(244, 243, 243);
-}
+      .content {
+        width: 75%;
+        padding: 1rem;
+        overflow-y: auto;
+      }
 
-.content {
-    width: 75%;
-    padding: 1rem;
-    overflow-y: auto;
-}
+      .section {
+        width: 100%;
+        padding: 1rem;
+        border-bottom: 0.2px solid rgb(173, 172, 172);
+      }
 
-.section {
-    width: 100%;
-    padding: 1rem;
-    border-bottom: 0.2px solid rgb(173, 172, 172);
-}
+      .section-content {
+        padding-bottom: 2.5rem;
+        border-radius: 0.5rem;
+      }
 
-.section-content {
-    padding-bottom: 2.5rem;
-    border-radius: 0.5rem;
-}
+      .section-title {
+        font-size: 1.8rem;
+        padding: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        border-bottom: 0.2px solid rgb(173, 172, 172);
+      }
 
-.section-title {
-    font-size: 1.8rem;
-    padding: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    border-bottom: 0.2px solid rgb(173, 172, 172);
-}
+      .section-image {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
 
-.section-image {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.section-text {
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-    font-weight: 300;
-    font-family: 'Open Sans', sans-serif;
-}
-
+      .section-text {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        font-weight: 300;
+        font-family: "Open Sans", sans-serif;
+      }
     </style>
-</head>
-<body>
-    <div class="breadcrumb">
-        <div class="breadcrumb-content">
-            <h1 class="title">Principles & Policies</h1>
-            <div class="breadcrumb-links">
-                <a href="/" class="breadcrumb-item">
-                    Home
-                    <span class="icon">
-                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
-                        </svg>
-                    </span>
-                </a>
-                <p class="breadcrumb-item">
-                    About us
-                    <span class="icon">
-                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
-                        </svg>
-                    </span>
-                </p>
-                <span class="breadcrumb-item current">Principles & Policies</span>
-            </div>
-        </div>
-    </div>
+  </head>
+  <body>
+    <marquee behavior="" direction="" class="bg-danger text-white "><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee>
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-light navbar-div">
+        <!-- here keep the logo -->
+        <a class="navbar-brand" href="./homepage.html"
+          ><div class="container text-center my-5">
+            <img
+              src="./images/logo.webp"
+              alt="Logo"
+              class="rounded-circle img-fluid"
+              style="width: 100px; height: 100px"
+            />
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto navbarSection">
+            <!-- About Us Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="aboutUsDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">About Us</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="aboutUsDropdown">
+                <a class="dropdown-item" href="/About us/foundersDesk.html"
+                  >Founder's Desk</a
+                >
+                <a class="dropdown-item" href="#">Principal Desk</a>
+                <a class="dropdown-item" href="#">School Management</a>
+                <a class="dropdown-item" href="#">Managing Committee</a>
+                <a class="dropdown-item" href="#">Princples & Policies</a>
+                <a class="dropdown-item" href="#">Infrastructure</a>
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
 
+            <!-- Admissions Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="admissionsUsDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">Admissions</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
+                <a class="dropdown-item" href="#">Admissions HelpDesk/school</a>
+                <a class="dropdown-item" href="#">Admissions Procedure</a>
+                <a class="dropdown-item" href="#">Registration</a>
+                <a class="dropdown-item" href="#">Free Structure</a>
+                <a class="dropdown-item" href="#">School Timings</a>
+                <a class="dropdown-item" href="#">FAQ's</a>
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+            <!-- Student Life Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="StudentLifeDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">Student Life</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="StudentLifeDropdown">
+                <a class="dropdown-item" href="./Student life/academics.html"
+                  >Academics</a
+                >
+                <a class="dropdown-item" href="./Student life/sports.html"
+                  >Sports</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="./Student life/co-curricular.html"
+                  >Co-curriculum</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="./Student life/social-culturalDevelopment.html"
+                  >Social-Cultural Development</a
+                >
+                <a class="dropdown-item" href="./Student life/counselling.html"
+                  >Counselling</a
+                >
+                <a class="dropdown-item" href="./Student life/">Achievements</a>
+                <a
+                  class="dropdown-item"
+                  href="./Student life/eventsCalender.html"
+                  >Event Calender</a
+                >
+                <a class="dropdown-item" href="./Student life/toppers.html"
+                  >Toppers</a
+                >
+                <a class="dropdown-item" href="./Student life/cabinet.html"
+                  >Cabinet</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="./Student life/transferCertificate.html"
+                  >Transfer Cerificate</a
+                >
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+            <!-- News $ Calender Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="news&CalenderDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">News & Calender</h5>
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="news&CalenderDropdown"
+              >
+                <a class="dropdown-item" href="#">Studet Hand Book</a>
+                <a class="dropdown-item" href="#">NewsLetter/Scholars Times</a>
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+            <!-- Mandatory Disclosures -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="mandatoryDisclosureDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">Mandatory Disclosures</h5>
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="mandatoryDisclosureDropdown"
+              >
+                <a class="dropdown-item" href="#">Booklist</a>
+                <a class="dropdown-item" href="#"
+                  >Safety Certificates & Affiliations</a
+                >
+                <a class="dropdown-item" href="#">CBSE-OASIS</a>
+                <a class="dropdown-item" href="#"
+                  >Mandatory Public Disclosures</a
+                >
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+            <!-- Contact Us  -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="contactUsDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">Contact Us</h5>
+              </a>
+            </li>
+            <!-- Add additional nav items here if needed -->
+
+            <!-- Notice -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="noticeDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">Notice</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="noticeDropdown">
+                <a class="dropdown-item" href="#">Notice 1</a>
+                <a class="dropdown-item" href="#">Notice 2</a>
+                <a class="dropdown-item" href="#">Notice 3</a>
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="breadcrumb">
+      <div class="breadcrumb-content">
+        <h1 class="title">Principles & Policies</h1>
+        <div class="breadcrumb-links">
+          <a href="/" class="breadcrumb-item">
+            Home
+            <span class="icon">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 320 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+                ></path>
+              </svg>
+            </span>
+          </a>
+          <p class="breadcrumb-item">
+            About us
+            <span class="icon">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 320 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+                ></path>
+              </svg>
+            </span>
+          </p>
+          <span class="breadcrumb-item current">Principles & Policies</span>
+        </div>
+      </div>
+    </div>
 
     <div class="container w-11/12 mx-auto bg-white App">
-        <div class="content-container flex-wrap py-20 overflow-hidden text-left rounded-lg md:flex overscroll-y-contain 2xl:flex 2xl:flex-nowrap">
-            <div class="sidebar mx-auto mt-5 overflow-y-auto text-center md:w-8/12 md:overflow-hidden scroll-mx-0 2xl:w-1/4 lg:text-left">
-                <ul class="menu list-none border-list">
-                    <li class="menu-item">
-                        <a href="#section-0" class="menu-link">Behaviour/Code of Conduct</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#section-1" class="menu-link">Library</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#section-2" class="menu-link">Transport Rules</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#section-3" class="menu-link">School Uniform</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#section-4" class="menu-link">House System</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#section-5" class="menu-link">Withdrawal from School</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#section-6" class="menu-link">Faculty</a>
-                    </li>
-                </ul>
-            </div>
-    
-            <div class="content w-3/4 p-4 overflow-y-auto">
-                <div id="section-0" class="section">
-                    <div class="section-content pb-10 rounded-lg">
-                        <h2 class="section-title">Behaviour/Code of Conduct</h2>
-                        <img src="/static/media/Pic_of_students.ba65281cd9bf9609e6e9.webp" alt="Behaviour/Code of Conduct" class="section-image">
-                        <p class="section-text">Students are expected to adhere to the code of conduct at all times.</p>
-                    </div>
-                </div>
-                <!-- Additional sections would follow similarly with unique content -->
-            </div>
+      <div
+        class="content-container flex-wrap py-20 overflow-hidden text-left rounded-lg md:flex overscroll-y-contain 2xl:flex 2xl:flex-nowrap"
+      >
+        <div
+          class="sidebar mx-auto mt-5 overflow-y-auto text-center md:w-8/12 md:overflow-hidden scroll-mx-0 2xl:w-1/4 lg:text-left"
+        >
+          <ul class="menu list-none border-list">
+            <li class="menu-item">
+              <a href="#section-0" class="menu-link"
+                >Behaviour/Code of Conduct</a
+              >
+            </li>
+            <li class="menu-item">
+              <a href="#section-1" class="menu-link">Library</a>
+            </li>
+            <li class="menu-item">
+              <a href="#section-2" class="menu-link">Transport Rules</a>
+            </li>
+            <li class="menu-item">
+              <a href="#section-3" class="menu-link">School Uniform</a>
+            </li>
+            <li class="menu-item">
+              <a href="#section-4" class="menu-link">House System</a>
+            </li>
+            <li class="menu-item">
+              <a href="#section-5" class="menu-link">Withdrawal from School</a>
+            </li>
+            <li class="menu-item">
+              <a href="#section-6" class="menu-link">Faculty</a>
+            </li>
+          </ul>
         </div>
+
+        <div class="content w-3/4 p-4 overflow-y-auto">
+          <div id="section-0" class="section">
+            <div class="section-content pb-10 rounded-lg">
+              <h2 class="section-title">Behaviour/Code of Conduct</h2>
+              <img
+                src="/static/media/Pic_of_students.ba65281cd9bf9609e6e9.webp"
+                alt="Behaviour/Code of Conduct"
+                class="section-image"
+              />
+              <p class="section-text">
+                Students are expected to adhere to the code of conduct at all
+                times.
+              </p>
+            </div>
+          </div>
+          <!-- Additional sections would follow similarly with unique content -->
+        </div>
+      </div>
     </div>
-    
-    <script>
-        
-    </script>
-</body>
+
+    <script></script>
+  </body>
 </html>

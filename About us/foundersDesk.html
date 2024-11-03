@@ -1,238 +1,542 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Founder's desk</title>
-        <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <title>Founder's desk</title>
+    <style>
+      .navbar-sections {
+        color: black;
+        font-size: 17px;
+      }
 
-        body {
-            font-family: Arial, sans-serif;
-        }
+      .navbar-nav .nav-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+      }
 
-        .breadcrumb { 
-            background-image: url('images/Header-bg.jpg');
-            background-position: center;
-            background-size: cover;
-            height: 200px;
-            color: white;
-            position: relative;
-            display: flex;
-            align-items: center; /* Centers the breadcrumb content vertically */
-            justify-content: center; /* Centers the breadcrumb content horizontally */
-        }
+      .navbarSection {
+        gap: 0.7rem;
+      }
 
-        .breadcrumb::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent black overlay */
-            z-index: 1; /* Places overlay behind content */
-        }
+      .navbar-div {
+        height: 8rem;
+        width: 100%;
+      }
 
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .breadcrumb {
+        background-image: url("./images/Header-bg.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 200px;
+        color: white;
+        position: relative;
+        display: flex;
+        align-items: center; /* Centers the breadcrumb content vertically */
+        justify-content: center; /* Centers the breadcrumb content horizontally */
+      }
+
+      .breadcrumb::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.85
+        ); /* Semi-transparent black overlay */
+        z-index: 1; /* Places overlay behind content */
+      }
+
+      .breadcrumb-content {
+        position: relative;
+        z-index: 2; /* Ensures content is above the overlay */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 50px;
+      }
+
+      @media (min-width: 640px) {
         .breadcrumb-content {
-            position: relative;
-            z-index: 2; /* Ensures content is above the overlay */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 50px;
+          width: 80%;
+          gap: 1.5rem;
         }
+      }
 
+      .title {
+        font-size: 1.75rem;
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 0.05em;
+      }
 
-        @media (min-width: 640px) {
-            .breadcrumb-content {
-                width: 80%;
-                gap: 1.5rem;
-            }
-        }
-
+      @media (min-width: 640px) {
         .title {
-            font-size: 1.75rem;
-            font-weight: 600;
-            text-align: center;
-            letter-spacing: 0.05em;
+          font-size: 2.5rem;
         }
+      }
 
-        @media (min-width: 640px) {
-            .title {
-                font-size: 2.5rem;
-            }
-        }
+      .breadcrumb-links {
+        display: flex;
+        gap: 0.25rem;
+        font-size: 1rem;
+      }
 
+      @media (min-width: 640px) {
         .breadcrumb-links {
-            display: flex;
-            gap: 0.25rem;
-            font-size: 1rem;
+          font-size: 1.125rem;
         }
+      }
 
-        @media (min-width: 640px) {
-            .breadcrumb-links {
-                font-size: 1.125rem;
-            }
-        }
+      .breadcrumb-item {
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        text-decoration: none;
+        color: white;
+      }
 
-        .breadcrumb-item {
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            text-decoration: none;
-            color: white;
-        }
+      .current {
+        font-weight: 300;
+      }
 
-        .current {
-            font-weight: 300;
-        }
+      .icon {
+        display: inline-block;
+        font-size: 1em;
+      }
 
-        .icon {
-            display: inline-block;
-            font-size: 1em;
-        }
+      .container {
+        position: relative;
+        background-image: url("/images/background-img-aboutus.png");
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 130px;
+      }
 
+      @media (min-width: 768px) {
         .container {
-            position: relative;
-            background-image: url('/images/background-img-aboutus.png');
-            display: flex;
-            flex-direction: column-reverse;
-            padding: 130px;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          gap: 1.5rem;
+          padding-top: 3.5rem;
         }
+      }
 
-        @media (min-width: 768px) {
-            .container {
-                flex-direction: row;
-                flex-wrap: nowrap;
-                gap: 1.5rem;
-                padding-top: 3.5rem;
-            }
-        }
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
 
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1rem;
-        }
+      .heading1 {
+        color: #666;
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+      }
 
-        .heading1 {
-            color: #666;
-            font-size: 2rem;
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-        }
+      .heading2 {
+        color: #e53e3e;
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
 
-        .heading2 {
-            color: #e53e3e;
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
+      .description {
+        color: #000;
+        font-weight: 600;
+        line-height: 1.75;
+        font-size: 0.875rem;
+        text-align: justify;
+        margin-bottom: 2rem;
+        word-spacing: 3px;
+      }
 
-        .description {
-            color: #000;
-            font-weight: 600;
-            line-height: 1.75;
-            font-size: 0.875rem;
-            text-align: justify;
-            margin-bottom: 2rem;
-            word-spacing: 3px;
-        }
+      .additional-text {
+        color: #000;
+        font-weight: 300;
+        line-height: 1.75;
+        font-size: 1rem;
+        text-align: justify;
+      }
 
-        .additional-text {
-            color: #000;
-            font-weight: 300;
-            line-height: 1.75;
-            font-size: 1rem;
-            text-align: justify;
-        }
+      .image-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 100%;
+      }
 
+      @media (min-width: 768px) {
         .image-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            width: 100%;
+          justify-content: flex-end;
+          width: 40%;
         }
+      }
 
-        @media (min-width: 768px) {
-            .image-container {
-                justify-content: flex-end;
-                width: 40%;
-            }
-        }
+      .image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border: 4px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <marquee behavior="" direction="" class="bg-danger text-white "><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee>
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-light navbar-div">
+        <!-- here keep the logo -->
+        <a class="navbar-brand" href="./homepage.html"
+          ><div class="container text-center my-5">
+            <img
+              src="./images/logo.webp"
+              alt="Logo"
+              class="rounded-circle img-fluid"
+              style="width: 100px; height: 100px"
+            />
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto navbarSection">
+            <!-- About Us Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="aboutUsDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">About Us</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="aboutUsDropdown">
+                <a class="dropdown-item" href="./About us/foundersDesk.html"
+                  >Founder's Desk</a
+                >
+                <a class="dropdown-item" href="#">Principal Desk</a>
+                <a class="dropdown-item" href="#">School Management</a>
+                <a class="dropdown-item" href="#">Managing Committee</a>
+                <a class="dropdown-item" href="#">Princples & Policies</a>
+                <a class="dropdown-item" href="#">Infrastructure</a>
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
 
-        .image {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border: 4px solid #333;
-        }
+            <!-- Admissions Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="admissionsUsDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">Admissions</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
+                <a class="dropdown-item" href="#">Admissions HelpDesk/school</a>
+                <a class="dropdown-item" href="#">Admissions Procedure</a>
+                <a class="dropdown-item" href="#">Registration</a>
+                <a class="dropdown-item" href="#">Free Structure</a>
+                <a class="dropdown-item" href="#">School Timings</a>
+                <a class="dropdown-item" href="#">FAQ's</a>
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+            <!-- Student Life Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="StudentLifeDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">Student Life</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="StudentLifeDropdown">
+                <a class="dropdown-item" href="./Student life/academics.html"
+                  >Academics</a
+                >
+                <a class="dropdown-item" href="./Student life/sports.html"
+                  >Sports</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="./Student life/co-curricular.html"
+                  >Co-curriculum</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="./Student life/social-culturalDevelopment.html"
+                  >Social-Cultural Development</a
+                >
+                <a class="dropdown-item" href="./Student life/counselling.html"
+                  >Counselling</a
+                >
+                <a class="dropdown-item" href="./Student life/">Achievements</a>
+                <a
+                  class="dropdown-item"
+                  href="./Student life/eventsCalender.html"
+                  >Event Calender</a
+                >
+                <a class="dropdown-item" href="./Student life/toppers.html"
+                  >Toppers</a
+                >
+                <a class="dropdown-item" href="./Student life/cabinet.html"
+                  >Cabinet</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="./Student life/transferCertificate.html"
+                  >Transfer Cerificate</a
+                >
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+            <!-- News $ Calender Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="news&CalenderDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">News & Calender</h5>
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="news&CalenderDropdown"
+              >
+                <a class="dropdown-item" href="#">Studet Hand Book</a>
+                <a class="dropdown-item" href="#">NewsLetter/Scholars Times</a>
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+            <!-- Mandatory Disclosures -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="mandatoryDisclosureDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">Mandatory Disclosures</h5>
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="mandatoryDisclosureDropdown"
+              >
+                <a class="dropdown-item" href="#">Booklist</a>
+                <a class="dropdown-item" href="#"
+                  >Safety Certificates & Affiliations</a
+                >
+                <a class="dropdown-item" href="#">CBSE-OASIS</a>
+                <a class="dropdown-item" href="#"
+                  >Mandatory Public Disclosures</a
+                >
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+            <!-- Contact Us  -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="contactUsDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">Contact Us</h5>
+              </a>
+            </li>
+            <!-- Add additional nav items here if needed -->
 
-        </style>
-    </head>
-    <body>
-       <div>
-            <div class="breadcrumb">
-                <div class="breadcrumb-content">
-                    <h1 class="title">Founder Desk</h1>
-                    <div class="breadcrumb-links">
-                        <a href="/" class="breadcrumb-item">
-                            Home
-                            <span class="icon">
-                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
-                                </svg>
-                            </span>
-                        </a>
-                        <p class="breadcrumb-item">
-                            About us
-                            <span class="icon">
-                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
-                                </svg>
-                            </span>
-                        </p>
-                        <span class="breadcrumb-item current">Founder Desk</span>
-                    </div>
-                </div>
-            </div>
-        
-            <div>
-                <div class="container">
-                    <div class="content">
-                        <h3 class="heading1">Welcome To</h3>
-                        <h2 class="heading2">Little Scholars</h2>
-                        <p class="description">
-                            Little Scholars is a journey of self-discovery for a child as they grow to become young adults.
-                            The school will equip him to excel in academics, and to be savvy in through a Hybrid learning platform.
-                        </p>
-                        <p class="additional-text">
-                            The student will be encouraged to discover their interests, talents and aptitudes, and learn to form their opinions and role in society.
-                            This is achieved in a nurturing environment, where the Mentor enacts the role of a Second Parent. An important feature of this process is the school’s provision of rich choices, be they in courses of academics, co-curricular activities in artistic, creative and intellectual activities, and in sports and adventure.
-                            Engagements with ecology and heritage allow engagements with the community, within the school, in rural areas, or through NGOs, nurturing the ideologies of the school motto ‘Service before self’.
-                            Leadership abilities to take decisions and to find solutions are imbibed on the sports field, through social interactions, and through positions of responsibility provided in school, aiming not just to nurture the students through their formative years, but also to place them on a continuous curiosity to learn, while carrying the responsibilities of leader with understanding, intelligence, sensitivity and an inclusive attitude.
-                        </p>
-                    </div>
-                    <div class="image-container">
-                        <picture>
-                            <source srcset="/images/Founder_img.jpeg" type="image/jpeg">
-                            <img src="/images/Founder_img.jpeg" alt="desk" class="image">
-                        </picture>
-                    </div>
-            </div>
-            </div>
-       </div>
-        <script>
-            
-        </script>
-    </body>
+            <!-- Notice -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="noticeDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-info-circle"></i>
+                <h5 class="navbar-sections">Notice</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="noticeDropdown">
+                <a class="dropdown-item" href="#">Notice 1</a>
+                <a class="dropdown-item" href="#">Notice 2</a>
+                <a class="dropdown-item" href="#">Notice 3</a>
+              </div>
+            </li>
+            <!-- Add additional nav items here if needed -->
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div>
+      <div class="breadcrumb">
+        <div class="breadcrumb-content">
+          <h1 class="title">Founder Desk</h1>
+          <div class="breadcrumb-links">
+            <a href="/" class="breadcrumb-item">
+              Home
+              <span class="icon">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 320 512"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+                  ></path>
+                </svg>
+              </span>
+            </a>
+            <p class="breadcrumb-item">
+              About us
+              <span class="icon">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 320 512"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+                  ></path>
+                </svg>
+              </span>
+            </p>
+            <span class="breadcrumb-item current">Founder Desk</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="container">
+          <div class="content">
+            <h3 class="heading1">Welcome To</h3>
+            <h2 class="heading2">Little Scholars</h2>
+            <p class="description">
+              Little Scholars is a journey of self-discovery for a child as they
+              grow to become young adults. The school will equip him to excel in
+              academics, and to be savvy in through a Hybrid learning platform.
+            </p>
+            <p class="additional-text">
+              The student will be encouraged to discover their interests,
+              talents and aptitudes, and learn to form their opinions and role
+              in society. This is achieved in a nurturing environment, where the
+              Mentor enacts the role of a Second Parent. An important feature of
+              this process is the school’s provision of rich choices, be they in
+              courses of academics, co-curricular activities in artistic,
+              creative and intellectual activities, and in sports and adventure.
+              Engagements with ecology and heritage allow engagements with the
+              community, within the school, in rural areas, or through NGOs,
+              nurturing the ideologies of the school motto ‘Service before
+              self’. Leadership abilities to take decisions and to find
+              solutions are imbibed on the sports field, through social
+              interactions, and through positions of responsibility provided in
+              school, aiming not just to nurture the students through their
+              formative years, but also to place them on a continuous curiosity
+              to learn, while carrying the responsibilities of leader with
+              understanding, intelligence, sensitivity and an inclusive
+              attitude.
+            </p>
+          </div>
+          <div class="image-container">
+            <picture>
+              <source srcset="./images/Founder_img.jpeg" type="image/jpeg" />
+              <img src="./images/Founder_img.jpeg" alt="desk" class="image" />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script></script>
+  </body>
 </html>
