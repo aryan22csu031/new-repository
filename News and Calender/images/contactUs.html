@@ -1,611 +1,998 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+			crossorigin="anonymous" />
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+			integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+			integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+			crossorigin="anonymous"></script>
 
+		<title>Contact Us</title>
 
-   <title>Contact Us</title>   
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.navbar-sections {
+				color: black;
+				font-size: 17px;
+			}
 
-   <style>
-       body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.navbar-sections{
-    color: black;
-    font-size: 17px;
-}
+			.navbar-nav .nav-link {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 4px;
+			}
 
-.navbar-nav .nav-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-}
+			.navbarSection {
+				gap: 0.7rem;
+			}
 
-.navbarSection {
-    gap: 0.7rem;
-}
+			.navbar-div {
+				height: 8rem;
+				width: 100%;
+			}
 
-.navbar-div{
-    height: 8rem;
-    width: 100%;
-}
+			/* Modal Styling */
 
+			.modal-header {
+				background-color: #333333;
+				color: #ffffff;
+			}
 
+			/*Notice Modal Styling Ending*/
 
-/* Modal Styling */
+			/* Footer Styling */
+			.footer {
+				background-color: #333333;
+				color: #b0b0b0;
+				padding: 40px 0;
+			}
+			.footer .footer-col h5 {
+				color: #ffffff;
+				font-weight: bold;
+				margin-bottom: 20px;
+			}
+			.footer .footer-col p,
+			.footer .footer-col li,
+			.footer .footer-col a {
+				color: #b0b0b0;
+				font-size: 14px;
+			}
+			.footer .footer-col li {
+				list-style-type: none;
+				margin-bottom: 8px;
+			}
+			.footer .footer-col li a {
+				display: flex;
+				align-items: center;
+				color: #b0b0b0;
+				text-decoration: none;
+				transition: color 0.3s ease;
+			}
+			.footer .footer-col li a:hover {
+				color: #ffffff;
+			}
+			.footer .footer-col li a i {
+				margin-right: 8px;
+				color: #ffffff;
+			}
+			.footer .footer-col a:hover {
+				color: #ffffff;
+				text-decoration: underline;
+			}
+			.footer .social-icons a {
+				color: #b0b0b0;
+				font-size: 18px;
+				margin-right: 10px;
+			}
+			.footer .social-icons a:hover {
+				color: #ffffff;
+			}
+			.footer .footer-col img {
+				border-radius: 50%;
+				width: 40px;
+				height: 40px;
+			}
+			.footer-logo {
+				width: 180px;
+				height: auto;
+			}
 
-.modal-header {
-    background-color: #333333;
-    color: #ffffff;
-}
+			.footer .birthdays {
+				max-height: 150px;
+				overflow-y: auto;
+				padding-right: 15px;
+			}
+			.footer .birthdays::-webkit-scrollbar {
+				width: 8px;
+			}
+			.footer .birthdays::-webkit-scrollbar-thumb {
+				background-color: #555555;
+				border-radius: 4px;
+			}
+			.footer .birthdays::-webkit-scrollbar-thumb:hover {
+				background-color: #777777;
+			}
+			.footer-bottom {
+				text-align: center;
+				padding-top: 20px;
+				padding-bottom: 0.5px;
+				color: #b0b0b0;
+				font-size: 12px;
+				border-top: 1px solid #444;
+			}
+			.back-to-top {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				background-color: #333333;
+				color: #ffffff;
+				border-radius: 50%;
+				width: 40px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+				cursor: pointer;
+			}
+			.back-to-top:hover {
+				background-color: #555555;
+			}
+			.footer .useful-links a {
+				display: block;
+				padding: 8px 0;
+				transition: all 0.3s ease;
+				text-decoration: none;
+			}
+			.footer .useful-links a:hover {
+				color: #ffffff;
+				padding-left: 10px;
+			}
 
-/*Notice Modal Styling Ending*/
+			.content-display {
+				display: none;
+				color: #ffffff;
+				margin-top: 15px;
+				padding: 10px;
+				background-color: #444;
+				border-radius: 5px;
+			}
+			/* Footer Styling End*/
+			.contact-container {
+				max-width: 900px;
+				margin: 2rem auto;
+				padding: 1rem;
+				background-color: #ffffff;
+				border-radius: 8px;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+			}
+			.contact-header {
+				text-align: center;
+				margin-bottom: 1.5rem;
+			}
+			.contact-header h1 {
+				font-weight: bold;
+				color: #333333;
+			}
+			.contact-header p {
+				color: #6c757d;
+			}
+			.info-box {
+				background-color: #333333;
+				color: #ffffff;
+				padding: 20px;
+				border-radius: 8px;
+			}
+			.info-box h4 {
+				font-weight: bold;
+				margin-bottom: 15px;
+			}
+			.info-box p {
+				font-size: 14px;
+				line-height: 1.6;
+			}
+			.info-box a {
+				color: #ffffff;
+				text-decoration: none;
+			}
+			.info-box a:hover {
+				text-decoration: underline;
+			}
+			.contact-form {
+				padding: 20px;
+			}
+			.contact-form input,
+			.contact-form textarea {
+				border: 1px solid #ced4da;
+				border-radius: 5px;
+			}
+			.btn-submit {
+				background-color: #333333;
+				color: #ffffff;
+				border: none;
+				padding: 10px 20px;
+				border-radius: 5px;
+				font-weight: bold;
+			}
+			.btn-submit:hover {
+				background-color: #555555;
+			}
+			.social-icons a {
+				color: #ffffff;
+				font-size: 20px;
+				margin-right: 10px;
+			}
+			.social-icons a:hover {
+				color: #adb5bd;
+			}
 
+			.ContactUs-header {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding-top: 3rem;
+				padding-bottom: 3rem;
+				background-color: black;
+				color: white;
+			}
 
+			.contact-list {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				font-size: 20px;
+			}
 
-/* Footer Styling */
-.footer {
-    background-color: #333333;
-    color: #b0b0b0;
-    padding: 40px 0;
-}
-.footer .footer-col h5 {
-    color: #ffffff;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-.footer .footer-col p, .footer .footer-col li, .footer .footer-col a {
-    color: #b0b0b0;
-    font-size: 14px;
-}
-.footer .footer-col li {
-    list-style-type: none;
-    margin-bottom: 8px;
-}
-.footer .footer-col li a {
-    display: flex;
-    align-items: center;
-    color: #b0b0b0;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-.footer .footer-col li a:hover {
-    color: #ffffff;
-}
-.footer .footer-col li a i {
-    margin-right: 8px; 
-    color: #ffffff;
-}
-.footer .footer-col a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-.footer .social-icons a {
-    color: #b0b0b0;
-    font-size: 18px;
-    margin-right: 10px;
-}
-.footer .social-icons a:hover {
-    color: #ffffff;
-}
-.footer .footer-col img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-}
-.footer-logo {
-    width: 180px; 
-    height: auto;
-}
+			.contact-list ul {
+				display: flex;
+				gap: 0.5rem;
+				list-style: none;
+			}
 
-.footer .birthdays {
-    max-height: 150px;
-    overflow-y: auto;
-    padding-right: 15px;
-}
-.footer .birthdays::-webkit-scrollbar {
-    width: 8px;
-}
-.footer .birthdays::-webkit-scrollbar-thumb {
-    background-color: #555555;
-    border-radius: 4px;
-}
-.footer .birthdays::-webkit-scrollbar-thumb:hover {
-    background-color: #777777;
-}
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 0.5px;
-    color: #b0b0b0;
-    font-size: 12px;
-    border-top: 1px solid #444;
-}
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333333;
-    color: #ffffff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    cursor: pointer;
-}
-.back-to-top:hover {
-    background-color: #555555;
-}
-.footer .useful-links a {
-    display: block;
-    padding: 8px 0;
-    transition: all 0.3s ease;
-    text-decoration:none;
-}
-.footer .useful-links a:hover {
-    color: #ffffff;
-    padding-left: 10px;
-}
+			.contact-list ul .active-head {
+				font-weight: 100;
+			}
+		</style>
+	</head>
 
-.content-display {
-    display: none;
-    color: #ffffff;
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #444;
-    border-radius: 5px;
-}
-/* Footer Styling End*/
-        .contact-container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .contact-header {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        .contact-header h1 {
-            font-weight: bold;
-            color: #333333;
-        }
-        .contact-header p {
-            color: #6c757d;
-        }
-        .info-box {
-            background-color: #333333;
-            color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .info-box h4 {
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        .info-box p {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        .info-box a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-        .info-box a:hover {
-            text-decoration: underline;
-        }
-        .contact-form {
-            padding: 20px;
-        }
-        .contact-form input,
-        .contact-form textarea {
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-        }
-        .btn-submit {
-            background-color: #333333;
-            color: #ffffff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .btn-submit:hover {
-            background-color: #555555;
-        }
-        .social-icons a {
-            color: #ffffff;
-            font-size: 20px;
-            margin-right: 10px;
-        }
-        .social-icons a:hover {
-            color: #adb5bd;
-        }
+	<body>
+		<div>
+			<marquee
+				behavior=""
+				direction=""
+				class="bg-danger text-white"
+				><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee
+			>
 
-        .ContactUs-header{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-        background-color: black;
-        color: white;
-        
-        }
+			<nav class="navbar navbar-expand-lg navbar-light navbar-div">
+				<!-- here keep the logo -->
+				<a
+					class="navbar-brand"
+					href="./images/logo.webp"
+					><div class="container text-center my-5">
+						<img
+							src="./images/logo.webp"
+							alt="Logo"
+							class="rounded-circle img-fluid"
+							style="width: 100px; height: 100px" />
+					</div>
+				</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div
+					class="collapse navbar-collapse"
+					id="navbarNav">
+					<ul class="navbar-nav ml-auto navbarSection">
+						<!-- About Us Dropdown -->
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								id="aboutUsDropdown"
+								role="button"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false">
+								<i class="fas fa-info-circle"></i>
+								<h5 class="navbar-sections">About Us</h5>
+							</a>
+							<div
+								class="dropdown-menu"
+								aria-labelledby="aboutUsDropdown">
+								<a
+									class="dropdown-item"
+									href="/About us/foundersDesk.html"
+									>Founder's Desk</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Principal Desk</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>School Management</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Managing Committee</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Princples & Policies</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Infrastructure</a
+								>
+							</div>
+						</li>
+						<!-- Add additional nav items here if needed -->
 
+						<!-- Admissions Dropdown -->
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								id="admissionsUsDropdown"
+								role="button"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false">
+								<i class="fas fa-info-circle"></i>
+								<h5 class="navbar-sections">Admissions</h5>
+							</a>
+							<div
+								class="dropdown-menu"
+								aria-labelledby="admissionsDropdown">
+								<a
+									class="dropdown-item"
+									href="#"
+									>Admissions HelpDesk/school</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Admissions Procedure</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Registration</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Free Structure</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>School Timings</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>FAQ's</a
+								>
+							</div>
+						</li>
+						<!-- Add additional nav items here if needed -->
+						<!-- Student Life Dropdown -->
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								id="StudentLifeDropdown"
+								role="button"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false">
+								<i class="fas fa-info-circle"></i>
+								<h5 class="navbar-sections">Student Life</h5>
+							</a>
+							<div
+								class="dropdown-menu"
+								aria-labelledby="StudentLifeDropdown">
+								<a
+									class="dropdown-item"
+									href="./Student life/academics.html"
+									>Academics</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Sports</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Co-curriculum</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Social-Cultural Development</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Counselling</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Achievements</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Event Calender</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Toppers</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Cabinet</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Transfer Cerificate</a
+								>
+							</div>
+						</li>
+						<!-- Add Additional nav items here if needed -->
+						<!-- News $ Calender Dropdown -->
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								id="news&CalenderDropdown"
+								role="button"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false">
+								<i class="fas fa-info-circle"></i>
+								<h5 class="navbar-sections">News & Calender</h5>
+							</a>
+							<div
+								class="dropdown-menu"
+								aria-labelledby="news&CalenderDropdown">
+								<a
+									class="dropdown-item"
+									href="#"
+									>Studet Hand Book</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>NewsLetter/Scholars Times</a
+								>
+							</div>
+						</li>
+						<!-- Add additional nav items here if needed -->
+						<!-- Mandatory Disclosures -->
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								id="mandatoryDisclosureDropdown"
+								role="button"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false">
+								<i class="fas fa-info-circle"></i>
+								<h5 class="navbar-sections">Mandatory Disclosures</h5>
+							</a>
+							<div
+								class="dropdown-menu"
+								aria-labelledby="mandatoryDisclosureDropdown">
+								<a
+									class="dropdown-item"
+									href="#"
+									>Booklist</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Safety Certificates & Affiliations</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>CBSE-OASIS</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									>Mandatory Public Disclosures</a
+								>
+							</div>
+						</li>
+						<!-- Add additional nav items here if needed -->
+						<!-- Contact Us  -->
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								id="contactUsDropdown"
+								role="button"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false">
+								<i class="fas fa-info-circle"></i>
+								<h5 class="navbar-sections">Contact Us</h5>
+							</a>
+							<div
+								class="dropdown-menu"
+								aria-labelledby="ContactDropdown">
+								<a
+									class="dropdown-item"
+									href="./Contact us/contactUs.html"
+									>Contact info</a
+								>
+							</div>
+						</li>
+						<!-- Add additional nav items here if needed -->
 
-        .contact-list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        font-size: 20px;
-        }
+						<!-- Notice -->
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								id="noticeDropdown"
+								role="button"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false">
+								<i class="fas fa-info-circle"></i>
+								<h5 class="navbar-sections">Notice</h5>
+							</a>
+							<div
+								class="dropdown-menu"
+								aria-labelledby="noticeDropdown">
+								<a
+									class="dropdown-item"
+									href="#"
+									onclick="showNotice('School Event Announcement', 'Join us for the annual school cultural event on November 15th. Students from all grades are welcome to participate. For more details, please visit the school office or check our website.');"
+									>Notice 1
+								</a>
+								<a
+									class="dropdown-item"
+									href="#"
+									onclick="showNotice('Parent-Teacher Meeting', 'A parent-teacher meeting will be held on October 25th from 10:00 AM to 2:00 PM. This meeting aims to discuss student progress and address any concerns.');"
+									>Notice 2</a
+								>
+								<a
+									class="dropdown-item"
+									href="#"
+									onclick="showNotice('Holiday Notice', 'The school will remain closed from April 24th to June 2nd for the Summer break. Classes will resume on June 3rd. We wish everyone a joyful holiday season!');"
+									>Notice 3</a
+								>
+							</div>
+						</li>
+						<!-- Add additional nav items here if needed -->
+					</ul>
+				</div>
+			</nav>
+			<div class="ContactUs-header">
+				<div>
+					<h1>Contact Us</h1>
+				</div>
+				<div class="contact-list">
+					<ul>
+						<li>Home ></li>
+						<li>Contact Us ></li>
+						<li class="active-head">Contact</li>
+					</ul>
+				</div>
+			</div>
 
-        .contact-list ul {
-        display: flex;
-        gap: 0.5rem;
-        list-style: none;
-        }
+			<!-- Notice Modal -->
+			<div
+				class="modal fade"
+				id="noticeModal"
+				tabindex="-1"
+				aria-labelledby="noticeModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5
+								class="modal-title"
+								id="noticeModalLabel">
+								Notice Title
+							</h5>
+							<button
+								type="button"
+								class="btn-close btn-close-white"
+								data-bs-dismiss="modal"
+								aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<p id="noticeContent">Notice content goes here...</p>
+						</div>
+						<div class="modal-footer">
+							<button
+								type="button"
+								class="btn btn-secondary"
+								data-bs-dismiss="modal">
+								Close
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
 
-        .contact-list ul .active-head {
-        font-weight: 100;
-        }
-    </style>
+			<div class="contact-container">
+				<div class="contact-header">
+					<h1>Contact Us</h1>
+					<p>You can get in touch with us here!</p>
+				</div>
 
-</head>
+				<div class="row">
+					<div class="col-md-5">
+						<div class="info-box">
+							<h4>Happy to help!</h4>
+							<p>
+								If you need someone to talk to, we listen. We won’t judge or
+								tell you what to do.
+							</p>
+							<p>
+								<i class="fas fa-phone-alt"></i> <strong>Phone:</strong> +91
+								9105666371
+							</p>
+							<p>
+								<i class="fas fa-envelope"></i> <strong>Email:</strong>
+								<a href="mailto:littlescholars.kashipur@gmail.com"
+									>littlescholars.kashipur@gmail.com</a
+								>
+							</p>
+							<p>
+								<i class="fas fa-map-marker-alt"></i>
+								<strong>Address:</strong> Bhalla Farm Pratappur, Ramnagar Road,
+								Kashipur-244713, Distt. U.S.Nagar
+							</p>
+							<div class="social-icons mt-3">
+								<a
+									href="https://facebook.com"
+									target="_blank"
+									><i class="fab fa-facebook"></i
+								></a>
+								<a
+									href="https://instagram.com"
+									target="_blank"
+									><i class="fab fa-instagram"></i
+								></a>
+								<a
+									href="https://youtube.com"
+									target="_blank"
+									><i class="fab fa-youtube"></i
+								></a>
+							</div>
+						</div>
+					</div>
 
+					<div class="col-md-7">
+						<form class="contact-form">
+							<div class="row">
+								<div class="col-md-6 mb-3">
+									<label
+										for="firstName"
+										class="form-label"
+										>First Name</label
+									>
+									<input
+										type="text"
+										class="form-control"
+										id="firstName"
+										placeholder="First Name"
+										required />
+								</div>
+								<div class="col-md-6 mb-3">
+									<label
+										for="lastName"
+										class="form-label"
+										>Last Name</label
+									>
+									<input
+										type="text"
+										class="form-control"
+										id="lastName"
+										placeholder="Last Name"
+										required />
+								</div>
+							</div>
 
-<body>
-  <div>
-  <marquee behavior="" direction="" class="bg-danger text-white "><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee>
+							<div class="row">
+								<div class="col-md-6 mb-3">
+									<label
+										for="email"
+										class="form-label"
+										>Email</label
+									>
+									<input
+										type="email"
+										class="form-control"
+										id="email"
+										placeholder="Email"
+										required />
+								</div>
+								<div class="col-md-6 mb-3">
+									<label
+										for="phone"
+										class="form-label"
+										>Phone Number</label
+									>
+									<input
+										type="tel"
+										class="form-control"
+										id="phone"
+										placeholder="Phone Number"
+										required />
+								</div>
+							</div>
 
-<nav class="navbar navbar-expand-lg navbar-light navbar-div">
-  <!-- here keep the logo -->
-   <a class="navbar-brand" href="./images/logo.webp"><div class="container text-center my-5">
-    <img src="./images/logo.webp" alt="Logo" class="rounded-circle img-fluid" style="width: 100px; height: 100px;">
-  </div>
-  </a>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-     <span class="navbar-toggler-icon"></span>
-   </button>
-   <div class="collapse navbar-collapse" id="navbarNav">
-     <ul class="navbar-nav ml-auto navbarSection">
-       <!-- About Us Dropdown -->
-       <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" id="aboutUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">About Us</h5>
-         </a>
-         <div class="dropdown-menu" aria-labelledby="aboutUsDropdown">
-           <a class="dropdown-item" href="/About us/foundersDesk.html">Founder's Desk</a>
-           <a class="dropdown-item" href="#">Principal Desk</a>
-           <a class="dropdown-item" href="#">School Management</a>
-           <a class="dropdown-item" href="#">Managing Committee</a>
-           <a class="dropdown-item" href="#">Princples & Policies</a>
-           <a class="dropdown-item" href="#">Infrastructure</a>
-         </div>
-       </li>
-       <!-- Add additional nav items here if needed -->
+							<div class="mb-3">
+								<label
+									for="subject"
+									class="form-label"
+									>Select Subject</label
+								><br />
+								<input
+									type="radio"
+									id="generalInquiry"
+									name="subject"
+									value="General Inquiry"
+									required />
+								<label for="generalInquiry">General Inquiry</label>
+								<input
+									type="radio"
+									id="support"
+									name="subject"
+									value="Support"
+									required />
+								<label for="support">Support</label>
+								<input
+									type="radio"
+									id="feedback"
+									name="subject"
+									value="Feedback"
+									required />
+								<label for="feedback">Feedback</label>
+							</div>
 
-        <!-- Admissions Dropdown -->
-        <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" id="admissionsUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Admissions</h5>
-         </a>
-         <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
-           <a class="dropdown-item" href="#">Admissions HelpDesk/school</a>
-           <a class="dropdown-item" href="#">Admissions Procedure</a>
-           <a class="dropdown-item" href="#">Registration</a>
-           <a class="dropdown-item" href="#">Free Structure</a>
-           <a class="dropdown-item" href="#">School Timings</a>
-           <a class="dropdown-item" href="#">FAQ's</a>
-         </div>
-       </li>
-       <!-- Add additional nav items here if needed -->
-         <!-- Student Life Dropdown -->
-       <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" id="StudentLifeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Student Life</h5>
-         </a>
-         <div class="dropdown-menu" aria-labelledby="StudentLifeDropdown">
-           <a class="dropdown-item" href="./Student life/academics.html">Academics</a>
-           <a class="dropdown-item" href="#">Sports</a>
-           <a class="dropdown-item" href="#">Co-curriculum</a>
-           <a class="dropdown-item" href="#">Social-Cultural Development</a>
-           <a class="dropdown-item" href="#">Counselling</a>
-           <a class="dropdown-item" href="#">Achievements</a>
-           <a class="dropdown-item" href="#">Event Calender</a>
-           <a class="dropdown-item" href="#">Toppers</a>
-           <a class="dropdown-item" href="#">Cabinet</a>
-           <a class="dropdown-item" href="#">Transfer Cerificate</a>
-         </div>
-       </li>
-       <!-- Add Additional nav items here if needed -->
-            <!-- News $ Calender Dropdown -->
-       <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" id="news&CalenderDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">News & Calender</h5>
-         </a>
-         <div class="dropdown-menu" aria-labelledby="news&CalenderDropdown">
-           <a class="dropdown-item" href="#">Studet Hand Book</a>
-           <a class="dropdown-item" href="#">NewsLetter/Scholars Times</a>
-         </div>
-         
-       </li>
-       <!-- Add additional nav items here if needed -->
-               <!-- Mandatory Disclosures -->
-       <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" id="mandatoryDisclosureDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Mandatory Disclosures</h5>
-         </a>
-         <div class="dropdown-menu" aria-labelledby="mandatoryDisclosureDropdown">
-           <a class="dropdown-item" href="#">Booklist</a>
-           <a class="dropdown-item" href="#">Safety Certificates & Affiliations</a>
-           <a class="dropdown-item" href="#">CBSE-OASIS</a>
-           <a class="dropdown-item" href="#">Mandatory Public Disclosures</a>
-         </div>
-         
-       </li>
-       <!-- Add additional nav items here if needed -->
-        <!-- Contact Us  -->
-       <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" id="contactUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-          <i class="fas fa-info-circle"></i><h5 class="navbar-sections">Contact Us</h5>
-        </a> 
-        <div class="dropdown-menu" aria-labelledby="ContactDropdown">
-           <a class="dropdown-item" href="./Contact us/contactUs.html">Contact info</a>
-        </div>
-        
-       </li>
-       <!-- Add additional nav items here if needed -->
+							<div class="mb-3">
+								<label
+									for="message"
+									class="form-label"
+									>Message</label
+								>
+								<textarea
+									class="form-control"
+									id="message"
+									rows="4"
+									placeholder="Write your message..."
+									required></textarea>
+							</div>
 
-       <!-- Notice -->
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="noticeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Notice</h5>
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="noticeDropdown">
-                    <a class="dropdown-item" href="#" onclick="showNotice('School Event Announcement', 'Join us for the annual school cultural event on November 15th. Students from all grades are welcome to participate. For more details, please visit the school office or check our website.');">Notice 1 </a>
-                    <a class="dropdown-item" href="#" onclick="showNotice('Parent-Teacher Meeting', 'A parent-teacher meeting will be held on October 25th from 10:00 AM to 2:00 PM. This meeting aims to discuss student progress and address any concerns.');">Notice 2</a>
-                    <a class="dropdown-item" href="#" onclick="showNotice('Holiday Notice', 'The school will remain closed from April 24th to June 2nd for the Summer break. Classes will resume on June 3rd. We wish everyone a joyful holiday season!');">Notice 3</a>
-                  
-                
-                   
-                  </div>
-                  
-                </li>
-                <!-- Add additional nav items here if needed -->
+							<button
+								type="submit"
+								class="btn btn-submit">
+								Send Message
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- Footer Section -->
+			<section class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 footer-col text-center">
+							<img
+								src="./images/logo.webp"
+								alt="School Logo"
+								class="img-fluid footer-logo mb-3" />
+							<p>
+								Bhalla Farm Pratappur, Ramnagar Road,<br />
+								Kashipur-244713, Distt. U.S.Nagar
+							</p>
+							<div class="social-icons">
+								<a
+									href="https://facebook.com"
+									target="_blank"
+									><i class="fab fa-facebook"></i
+								></a>
+								<a
+									href="https://instagram.com"
+									target="_blank"
+									><i class="fab fa-instagram"></i
+								></a>
+								<a
+									href="https://youtube.com"
+									target="_blank"
+									><i class="fab fa-youtube"></i
+								></a>
+							</div>
+						</div>
 
-      
-     </ul>
-   </div>
- </nav>
- <div class="ContactUs-header">
-      <div>
-        <h1>Contact Us</h1>
-        </div>
-        <div class="contact-list">
-          <ul>
-            <li>Home ></li>
-            <li>Contact Us ></li>
-            <li class="active-head">Contact</li>
-          </ul>
-      </div>
-    </div>
+						<div class="col-md-3 footer-col">
+							<h5>Birthdays</h5>
+							<ul class="birthdays">
+								<li>
+									<img
+										src="./images/p1.webp"
+										alt="Person Image" />
+									<strong> Daksh Gehlot</strong><br /><span
+										>August 2nd, 2024</span
+									>
+								</li>
+								<li>
+									<img
+										src="./images/p2.webp"
+										alt="Person Image" />
+									<strong> Karan Kumar</strong><br /><span
+										>July 26th, 2024</span
+									>
+								</li>
+								<li>
+									<img
+										src="./images/p4.webp"
+										alt="Person Image" />
+									<strong> Tazeem Khan</strong><br /><span
+										>July 18th, 2024</span
+									>
+								</li>
 
-<!-- Notice Modal -->
-<div class="modal fade" id="noticeModal" tabindex="-1" aria-labelledby="noticeModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="noticeModalLabel">Notice Title</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p id="noticeContent">Notice content goes here...</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
+								<li>
+									<img
+										src="./images/p3.webp"
+										alt="Person Image" />
+									<strong> Ramesh Singh</strong><br /><span
+										>June 5th, 2024</span
+									>
+								</li>
+							</ul>
+						</div>
 
+						<div class="col-md-3 footer-col useful-links">
+							<h5>Useful Links</h5>
+							<a
+								href="#"
+								onclick="displayContent('privacyPolicy')"
+								><i class="fas fa-angle-right"></i> Privacy Policy</a
+							>
+							<a
+								href="#"
+								onclick="displayContent('terms')"
+								><i class="fas fa-angle-right"></i> Terms & Conditions</a
+							>
+							<a
+								href="#"
+								onclick="displayContent('contact')"
+								><i class="fas fa-angle-right"></i> Contact</a
+							>
+							<a
+								href="#"
+								onclick="displayContent('sitemap')"
+								><i class="fas fa-angle-right"></i> Sitemap</a
+							>
 
+							<div
+								id="contentDisplay"
+								class="content-display"></div>
+						</div>
 
-<div class="contact-container">
-    <div class="contact-header">
-        <h1>Contact Us</h1>
-        <p>You can get in touch with us here!</p>
-    </div>
-    
-    <div class="row">
-        <div class="col-md-5">
-            <div class="info-box">
-                <h4>Happy to help!</h4>
-                <p>If you need someone to talk to, we listen. We won’t judge or tell you what to do.</p>
-                <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> +91 9105666371</p>
-                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:littlescholars.kashipur@gmail.com">littlescholars.kashipur@gmail.com</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Bhalla Farm Pratappur, Ramnagar Road, Kashipur-244713, Distt. U.S.Nagar</p>
-                <div class="social-icons mt-3">
-                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-7">
-            <form class="contact-form">
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="phone" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="phone" placeholder="Phone Number" required>
-                    </div>
-                </div>
-                
-                <div class="mb-3">
-                    <label for="subject" class="form-label">Select Subject</label><br>
-                    <input type="radio" id="generalInquiry" name="subject" value="General Inquiry" required>
-                    <label for="generalInquiry">General Inquiry</label>
-                    <input type="radio" id="support" name="subject" value="Support" required>
-                    <label for="support">Support</label>
-                    <input type="radio" id="feedback" name="subject" value="Feedback" required>
-                    <label for="feedback">Feedback</label>
-                </div>
-                
-                <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" rows="4" placeholder="Write your message..." required></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-submit">Send Message</button>
-            </form>
-        </div>
-    </div>
-</div>
-<!-- Footer Section -->
-<section class="footer">
-    <div class="container">
-        <div class="row">
-            
-            <div class="col-md-3 footer-col text-center">
-                <img src="./images/logo.webp" alt="School Logo" class="img-fluid footer-logo mb-3">
-                <p>Bhalla Farm Pratappur, Ramnagar Road,<br> Kashipur-244713, Distt. U.S.Nagar</p>
-                <div class="social-icons">
-                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
+						<div class="col-md-3 footer-col">
+							<h5>School Timings</h5>
+							<p>Summers: 07:20 am - 1:30 pm</p>
+							<p>Winters: 07:50 am - 2:00 pm</p>
+							<p>Total Visits: 8723</p>
+						</div>
+					</div>
+				</div>
+				<div class="footer-bottom">
+					<p>© 2024 Little Scholars. All Rights Reserved.</p>
+					<p>
+						Made with <i class="fas fa-heart text-danger"></i> by
+						<a
+							href="https://puminatidigital.com"
+							target="_blank"
+							>Puminati Digital</a
+						>
+					</p>
+				</div>
+			</section>
 
-            <div class="col-md-3 footer-col">
-                <h5>Birthdays</h5>
-                <ul class="birthdays">
-                    <li>
-                        <img src="./images/p1.webp" alt="Person Image">
-                        <strong> Daksh Gehlot</strong><br><span>August 2nd, 2024</span>
-                    </li>
-                    <li>
-                        <img src="./images/p2.webp" alt="Person Image">
-                        <strong> Karan Kumar</strong><br><span>July 26th, 2024</span>
-                    </li>
-                    <li>
-                        <img src="./images/p4.webp" alt="Person Image">
-                        <strong> Tazeem Khan</strong><br><span>July 18th, 2024</span>
-                    </li>
-                   
-                    <li>
-                        <img src="./images/p3.webp" alt="Person Image">
-                        <strong> Ramesh Singh</strong><br><span>June 5th, 2024</span>
-                    </li>
-                </ul>
-            </div>
+			<div
+				class="back-to-top"
+				onclick="scrollToTop()">
+				<i class="fas fa-chevron-up"></i>
+			</div>
 
-         
-            <div class="col-md-3 footer-col useful-links">
-                <h5>Useful Links</h5>
-                <a href="#" onclick="displayContent('privacyPolicy')"><i class="fas fa-angle-right"></i> Privacy Policy</a>
-                <a href="#" onclick="displayContent('terms')"><i class="fas fa-angle-right"></i> Terms & Conditions</a>
-                <a href="#" onclick="displayContent('contact')"><i class="fas fa-angle-right"></i> Contact</a>
-                <a href="#" onclick="displayContent('sitemap')"><i class="fas fa-angle-right"></i> Sitemap</a>
-                
-                <div id="contentDisplay" class="content-display"></div>
-            </div>
+			<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+		</div>
 
-            <div class="col-md-3 footer-col">
-                <h5>School Timings</h5>
-                <p>Summers: 07:20 am - 1:30 pm</p>
-                <p>Winters: 07:50 am - 2:00 pm</p>
-                <p>Total Visits: 8723</p>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>© 2024 Little Scholars. All Rights Reserved.</p>
-        <p>Made with <i class="fas fa-heart text-danger"></i> by <a href="https://puminatidigital.com" target="_blank">Puminati Digital</a></p>
-    </div>
-</section>
+		<script>
+			// Modal Implementation
+			function showNotice(title, content) {
+				document.getElementById("noticeModalLabel").textContent = title;
+				document.getElementById("noticeContent").textContent = content;
+				var noticeModal = new bootstrap.Modal(
+					document.getElementById("noticeModal")
+				);
+				noticeModal.show();
+			}
 
+			//Scroll Up button
+			function scrollToTop() {
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			}
 
-<div class="back-to-top" onclick="scrollToTop()">
-    <i class="fas fa-chevron-up"></i>
-</div>
+			// Useful Links Information
+			function displayContent(section) {
+				const contentDisplay = document.getElementById("contentDisplay");
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+				let content = "";
 
-</div>
+				if (section === "privacyPolicy") {
+					content =
+						"<strong>Privacy Policy:</strong> Here you'll find information on how we handle your data.";
+				} else if (section === "terms") {
+					content =
+						"<strong>Terms & Conditions:</strong> Please read the terms and conditions of our service.";
+				} else if (section === "contact") {
+					content =
+						"<strong>Contact:</strong> Feel free to reach out via our contact page for support.";
+				} else if (section === "sitemap") {
+					content =
+						"<strong>Sitemap:</strong> View the structure of our website for easy navigation.";
+				}
 
-
-
-
-<script>
-    // Modal Implementation
-function showNotice(title, content) {
-    document.getElementById('noticeModalLabel').textContent = title;
-    document.getElementById('noticeContent').textContent = content;
-    var noticeModal = new bootstrap.Modal(document.getElementById('noticeModal'));
-    noticeModal.show();
-}
-
-//Scroll Up button
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-
-// Useful Links Information
-function displayContent(section) {
-    const contentDisplay = document.getElementById('contentDisplay');
-    
-    let content = '';
-
-    if (section === 'privacyPolicy') {
-        content = "<strong>Privacy Policy:</strong> Here you'll find information on how we handle your data.";
-    } else if (section === 'terms') {
-        content = "<strong>Terms & Conditions:</strong> Please read the terms and conditions of our service.";
-    } else if (section === 'contact') {
-        content = "<strong>Contact:</strong> Feel free to reach out via our contact page for support.";
-    } else if (section === 'sitemap') {
-        content = "<strong>Sitemap:</strong> View the structure of our website for easy navigation.";
-    }
-
-
-    contentDisplay.innerHTML = content;
-    contentDisplay.style.display = 'block';
-
-}
-
-</script>
-</body>
-
+				contentDisplay.innerHTML = content;
+				contentDisplay.style.display = "block";
+			}
+		</script>
+	</body>
 </html>

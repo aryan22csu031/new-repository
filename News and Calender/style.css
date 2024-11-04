@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.section-1 {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.801), rgba(0, 0, 0, 0.801)), url(./images/Header-bg.c72253845a8480e2b916.jpg);
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    gap: 1vw;
+
+}
+
+.section-1 h1 {
+    font-size: 2.05vw;
+}
+
+
+.section-1 p {
+    font-size: 1vw;
+
+}
+
+.section-2 {
+    padding: 5vw 8vw;
+}
+
+.section-2 hr {
+    width: 5%;
+    background-color: black;
+    height: 2px;
+}
+
+.section-2 h1 {
+    font-size: 1.9vw;
+}
+
+.studentHandbook {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    margin-top: 2vw;
+    margin-bottom: 3vw;
+}
+
+.studentHandbook p {
+    margin: -0.1vw;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+svg {
+    color: #F33464;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    border-bottom: 2px solid #000;
+    padding: 0.6vw;
+    border: 1px solid #ddd;
+    border-bottom: 2px solid #000;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 0.7vw;
+}
+
+td a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    gap: 0.5vw;
+}
+
+td a p {
+    margin-top: 0.6vw;
+}
+
+tr:hover {
+    background-color: #f7f7f7;
+}
+
+
+
+.a,
+.b,
+.c,
+.d,
+.e,
+.f {
+    background: linear-gradient(180deg, #1e3c72, #2a5298);
+    padding: 2.3rem;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.a:hover,
+.b:hover,
+.c:hover,
+.d:hover,
+.e:hover,
+.f:hover {
+    scale: 1.05;
+    cursor: pointer;
+}
+
+.content {
+    height: 75vh;
+}
+
+.bg-img {
+    height: 100%;
+    background-image: url(https://little-s-website.vercel.app/static/media/summerCampBG.a5ae7d083ab922d26e2d.webp);
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.right {
+    background-color: #fff;
+    border-radius: 1vw;
+    border: 2px solid #000;
+    height: 75vh;
+}
+
+.rightOne {
+    background-color: #fff;
+    padding: 1.5vw;
+    border: 2px solid #000;
+    border-radius: 1vw;
+
+}
+
+.inputOne {
+    display: flex;
+    gap: 1.5vw;
+}
+
+.inputOne input {
+    width: 45%;
+    border-radius: 0.4vw;
+    padding: 0.5vw 0.3vw;
+}
+
+.inputtwo {
+    margin-bottom: 1vw;
+    gap: 1vw;
+}
+
+.inputtwo input {
+    width: 100%;
+    margin-top: 1vw;
+    border-radius: 0.4vw;
+    padding: 0.5vw 0.3vw;
+}
+
+.inputsBox {
+    gap: 3vw;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 0 1vw;
+}
+
+.bg-image {
+
+    height: 100%;
+    background-image: url(https://little-s-website.vercel.app/static/media/summerCampBG.a5ae7d083ab922d26e2d.webp);
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+select {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.tc {
+    display: flex;
+    margin-top: 2vw;
+}
