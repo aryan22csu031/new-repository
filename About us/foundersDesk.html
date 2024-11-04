@@ -3,29 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <title>Founder's desk</title>
     <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
       .navbar-sections {
         color: black;
         font-size: 17px;
@@ -47,16 +40,6 @@
         width: 100%;
       }
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-      }
-
       .breadcrumb {
         background-image: url("./images/Header-bg.jpg");
         background-position: center;
@@ -76,12 +59,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(
-          0,
-          0,
-          0,
-          0.85
-        ); /* Semi-transparent black overlay */
+        background-color: rgba(0,0,0,0.85); /* Semi-transparent black overlay */
         z-index: 1; /* Places overlay behind content */
       }
 
@@ -150,7 +128,8 @@
         background-image: url("/images/background-img-aboutus.png");
         display: flex;
         flex-direction: column-reverse;
-        padding: 130px;
+        max-width: 100%;
+        height: 620px;
       }
 
       @media (min-width: 768px) {
@@ -225,145 +204,146 @@
 
       /* Modal Styling  */
 
-.modal-header {
-    background-color: #333333;
-    color: #ffffff;
-}
+      .modal-header {
+          background-color: #333333;
+          color: #ffffff;
+      }
 
-/*Notice Modal Styling Ending*/
+      /*Notice Modal Styling Ending*/
 
 
 
-/* Footer Styling */
-.footer {
-    background-color: #333333;
-    color: #b0b0b0;
-    padding: 40px 0;
-}
-.footer .footer-col h5 {
-    color: #ffffff;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-.footer .footer-col p, .footer .footer-col li, .footer .footer-col a {
-    color: #b0b0b0;
-    font-size: 14px;
-}
-.footer .footer-col li {
-    list-style-type: none;
-    margin-bottom: 8px;
-}
-.footer .footer-col li a {
-    display: flex;
-    align-items: center;
-    color: #b0b0b0;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-.footer .footer-col li a:hover {
-    color: #ffffff;
-}
-.footer .footer-col li a i {
-    margin-right: 8px; 
-    color: #ffffff;
-}
-.footer .footer-col a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-.footer .social-icons a {
-    color: #b0b0b0;
-    font-size: 18px;
-    margin-right: 10px;
-}
-.footer .social-icons a:hover {
-    color: #ffffff;
-}
-.footer .footer-col img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-}
-.footer-logo {
-    width: 180px; 
-    height: auto;
-}
+      /* Footer Styling */
+      .footer {
+          background-color: #333333;
+          color: #b0b0b0;
+          padding: 40px 0;
+      }
+      .footer .footer-col h5 {
+          color: #ffffff;
+          font-weight: bold;
+          margin-bottom: 20px;
+      }
+      .footer .footer-col p, .footer .footer-col li, .footer .footer-col a {
+          color: #b0b0b0;
+          font-size: 14px;
+      }
+      .footer .footer-col li {
+          list-style-type: none;
+          margin-bottom: 8px;
+      }
+      .footer .footer-col li a {
+          display: flex;
+          align-items: center;
+          color: #b0b0b0;
+          text-decoration: none;
+          transition: color 0.3s ease;
+      }
+      .footer .footer-col li a:hover {
+          color: #ffffff;
+      }
+      .footer .footer-col li a i {
+          margin-right: 8px; 
+          color: #ffffff;
+      }
+      .footer .footer-col a:hover {
+          color: #ffffff;
+          text-decoration: underline;
+      }
+      .footer .social-icons a {
+          color: #b0b0b0;
+          font-size: 18px;
+          margin-right: 10px;
+      }
+      .footer .social-icons a:hover {
+          color: #ffffff;
+      }
+      .footer .footer-col img {
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+      }
+      .footer-logo {
+          width: 180px; 
+          height: auto;
+      }
 
-.footer .birthdays {
-    max-height: 150px;
-    overflow-y: auto;
-    padding-right: 15px;
-}
-.footer .birthdays::-webkit-scrollbar {
-    width: 8px;
-}
-.footer .birthdays::-webkit-scrollbar-thumb {
-    background-color: #555555;
-    border-radius: 4px;
-}
-.footer .birthdays::-webkit-scrollbar-thumb:hover {
-    background-color: #777777;
-}
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 0.5px;
-    color: #b0b0b0;
-    font-size: 12px;
-    border-top: 1px solid #444;
-}
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333333;
-    color: #ffffff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    cursor: pointer;
-}
-.back-to-top:hover {
-    background-color: #555555;
-}
-.footer .useful-links a {
-    display: block;
-    padding: 8px 0;
-    transition: all 0.3s ease;
-    text-decoration:none;
-}
-.footer .useful-links a:hover {
-    color: #ffffff;
-    padding-left: 10px;
-}
+      .footer .birthdays {
+          max-height: 150px;
+          overflow-y: auto;
+          padding-right: 15px;
+      }
+      .footer .birthdays::-webkit-scrollbar {
+          width: 8px;
+      }
+      .footer .birthdays::-webkit-scrollbar-thumb {
+          background-color: #555555;
+          border-radius: 4px;
+      }
+      .footer .birthdays::-webkit-scrollbar-thumb:hover {
+          background-color: #777777;
+      }
+      .footer-bottom {
+          text-align: center;
+          padding-top: 20px;
+          padding-bottom: 0.5px;
+          color: #b0b0b0;
+          font-size: 12px;
+          border-top: 1px solid #444;
+      }
+      .back-to-top {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #333333;
+          color: #ffffff;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          text-align: center;
+          line-height: 40px;
+          cursor: pointer;
+      }
+      .back-to-top:hover {
+          background-color: #555555;
+      }
+      .footer .useful-links a {
+          display: block;
+          padding: 8px 0;
+          transition: all 0.3s ease;
+          text-decoration:none;
+      }
+      .footer .useful-links a:hover {
+          color: #ffffff;
+          padding-left: 10px;
+      }
 
-.content-display {
-    display: none;
-    color: #ffffff;
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #444;
-    border-radius: 5px;
-}
-/* Footer Styling End*/
+      .content-display {
+          display: none;
+          color: #ffffff;
+          margin-top: 15px;
+          padding: 10px;
+          background-color: #444;
+          border-radius: 5px;
+      }
+      /* Footer Styling End*/
 
     </style>
   </head>
   <body>
-    <marquee behavior="" direction="" class="bg-danger text-white "><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee>
+    <marquee behavior="" direction="" class="bg-danger text-white "><h3>REGISTRATION OPEN FOR SESSION 2024-2025 </h3></marquee>
     <div>
       <nav class="navbar navbar-expand-lg navbar-light navbar-div">
         <!-- here keep the logo -->
-         <a class="navbar-brand" href="./homepage.html"><div class="container text-center my-5">
-          <img src="./images/logo.webp" alt="Logo" class="rounded-circle img-fluid" style="width: 100px; height: 100px;">
+        <a class="navbar-brand" href="./homepage.html">
+        <div class="container-nav text-center my-5">
+        <img src="./images/logo.webp" alt="Logo" class="rounded-circle img-fluid" style="width: 100px; height: 100px;">
         </div>
         </a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>
          </button>
-         <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="collapse navbar-collapse" id="navbarNav">
            <ul class="navbar-nav ml-auto navbarSection">
              <!-- About Us Dropdown -->
              <li class="nav-item dropdown">
@@ -451,23 +431,19 @@
              <!-- Add additional nav items here if needed -->
       
              <!-- Notice -->
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="noticeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Notice</h5>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="noticeDropdown">
-                          <a class="dropdown-item" href="./Notice/notice1.html">Notice 1</a>
-                          <a class="dropdown-item" href="./Notice/notice2.html">Notice 2</a>
-                          <a class="dropdown-item" href="./Notice/notice3.html">Notice 3</a>
-                         
-                        </div>
-                        
-                      </li>
-                      <!-- Add additional nav items here if needed -->
-      
-            
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="noticeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Notice</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="noticeDropdown">
+                <a class="dropdown-item" href="./Notice/notice1.html">Notice 1</a>
+                <a class="dropdown-item" href="./Notice/notice2.html">Notice 2</a>
+                <a class="dropdown-item" href="./Notice/notice3.html">Notice 3</a>
+               
+              </div>
+             </li>
            </ul>
-         </div>
+          </div>
        </nav>
     </div>
 
@@ -550,8 +526,8 @@
           </div>
           <div class="image-container">
             <picture>
-              <source srcset="./images/Founder_img.jpeg" type="image/jpeg" />
-              <img src="./images/Founder_img.jpeg" alt="desk" class="image" />
+              <source srcset="../images/Founder_img.jpeg" type="image/jpeg" />
+              <img src="../images/Founder_img.jpeg" alt="desk" class="image" />
             </picture>
           </div>
         </div>
@@ -559,9 +535,8 @@
     </div>
     
     <section class="footer">
-      <div class="container">
-          <div class="row">
-              
+      <div class="container-footer">
+          <div class="row"> 
               <div class="col-md-3 footer-col text-center">
                   <img src="./images/logo.webp" alt="School Logo" class="img-fluid footer-logo mb-3">
                   <p>Bhalla Farm Pratappur, Ramnagar Road,<br> Kashipur-244713, Distt. U.S.Nagar</p>
@@ -620,46 +595,46 @@
       </div>
     </section>
     
-    
     <div class="back-to-top" onclick="scrollToTop()">
       <i class="fas fa-chevron-up"></i>
     </div>
+
     <script>
-      // Modal Implementation
-function showNotice(title, content) {
-    document.getElementById('noticeModalLabel').textContent = title;
-    document.getElementById('noticeContent').textContent = content;
-    var noticeModal = new bootstrap.Modal(document.getElementById('noticeModal'));
-    noticeModal.show();
-}
+              // Modal Implementation
+        function showNotice(title, content) {
+            document.getElementById('noticeModalLabel').textContent = title;
+            document.getElementById('noticeContent').textContent = content;
+            var noticeModal = new bootstrap.Modal(document.getElementById('noticeModal'));
+            noticeModal.show();
+        }
 
-//Scroll Up Button
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-
-// Useful Links Information
-function displayContent(section) {
-    const contentDisplay = document.getElementById('contentDisplay');
-    
-    let content = '';
-
-    if (section === 'privacyPolicy') {
-        content = "<strong>Privacy Policy:</strong> Here you'll find information on how we handle your data.";
-    } else if (section === 'terms') {
-        content = "<strong>Terms & Conditions:</strong> Please read the terms and conditions of our service.";
-    } else if (section === 'contact') {
-        content = "<strong>Contact:</strong> Feel free to reach out via our contact page for support.";
-    } else if (section === 'sitemap') {
-        content = "<strong>Sitemap:</strong> View the structure of our website for easy navigation.";
-    }
+        //Scroll Up Button
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
 
-    contentDisplay.innerHTML = content;
-    contentDisplay.style.display = 'block';
+        // Useful Links Information
+        function displayContent(section) {
+            const contentDisplay = document.getElementById('contentDisplay');
+            
+            let content = '';
 
-}
+            if (section === 'privacyPolicy') {
+                content = "<strong>Privacy Policy:</strong> Here you'll find information on how we handle your data.";
+            } else if (section === 'terms') {
+                content = "<strong>Terms & Conditions:</strong> Please read the terms and conditions of our service.";
+            } else if (section === 'contact') {
+                content = "<strong>Contact:</strong> Feel free to reach out via our contact page for support.";
+            } else if (section === 'sitemap') {
+                content = "<strong>Sitemap:</strong> View the structure of our website for easy navigation.";
+            }
+
+
+            contentDisplay.innerHTML = content;
+            contentDisplay.style.display = 'block';
+
+        }
 
     </script>
   </body>
