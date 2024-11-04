@@ -1,411 +1,521 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
-    <title>Newsletter - Scholar times</title>
-  </head>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    .navbar-sections {
-      color: black;
-      font-size: 17px;
-    }
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+			crossorigin="anonymous" />
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+			integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+			integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+			crossorigin="anonymous"></script>
+		<title>Newsletter - Scholar times</title>
+		<link
+			rel="stylesheet"
+			href="./style.css" />
+	</head>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.navbar-sections {
+			color: black;
+			font-size: 17px;
+		}
 
-    .navbar-nav .nav-link {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 4px;
-    }
+		.navbar-nav .nav-link {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 4px;
+		}
 
-    .navbarSection {
-      gap: 0.7rem;
-    }
+		.navbarSection {
+			gap: 0.7rem;
+		}
 
-    .navbar-div {
-      height: 8rem;
-      width: 100%;
-    }
+		.navbar-div {
+			height: 8rem;
+			width: 100%;
+		}
 
-    /* Modal Styling  */
+		/* Modal Styling  */
 
-.modal-header {
-    background-color: #333333;
-    color: #ffffff;
-}
+		.modal-header {
+			background-color: #333333;
+			color: #ffffff;
+		}
 
-/*Notice Modal Styling Ending*/
+		/*Notice Modal Styling Ending*/
 
+		/* Footer Styling */
+		.footer {
+			background-color: #333333;
+			color: #b0b0b0;
+			padding: 40px 0;
+		}
+		.footer .footer-col h5 {
+			color: #ffffff;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		.footer .footer-col p,
+		.footer .footer-col li,
+		.footer .footer-col a {
+			color: #b0b0b0;
+			font-size: 14px;
+		}
+		.footer .footer-col li {
+			list-style-type: none;
+			margin-bottom: 8px;
+		}
+		.footer .footer-col li a {
+			display: flex;
+			align-items: center;
+			color: #b0b0b0;
+			text-decoration: none;
+			transition: color 0.3s ease;
+		}
+		.footer .footer-col li a:hover {
+			color: #ffffff;
+		}
+		.footer .footer-col li a i {
+			margin-right: 8px;
+			color: #ffffff;
+		}
+		.footer .footer-col a:hover {
+			color: #ffffff;
+			text-decoration: underline;
+		}
+		.footer .social-icons a {
+			color: #b0b0b0;
+			font-size: 18px;
+			margin-right: 10px;
+		}
+		.footer .social-icons a:hover {
+			color: #ffffff;
+		}
+		.footer .footer-col img {
+			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+		}
+		.footer-logo {
+			width: 180px;
+			height: auto;
+		}
 
+		.footer .birthdays {
+			max-height: 150px;
+			overflow-y: auto;
+			padding-right: 15px;
+		}
+		.footer .birthdays::-webkit-scrollbar {
+			width: 8px;
+		}
+		.footer .birthdays::-webkit-scrollbar-thumb {
+			background-color: #555555;
+			border-radius: 4px;
+		}
+		.footer .birthdays::-webkit-scrollbar-thumb:hover {
+			background-color: #777777;
+		}
+		.footer-bottom {
+			text-align: center;
+			padding-top: 20px;
+			padding-bottom: 0.5px;
+			color: #b0b0b0;
+			font-size: 12px;
+			border-top: 1px solid #444;
+		}
+		.back-to-top {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			background-color: #333333;
+			color: #ffffff;
+			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+			text-align: center;
+			line-height: 40px;
+			cursor: pointer;
+		}
+		.back-to-top:hover {
+			background-color: #555555;
+		}
+		.footer .useful-links a {
+			display: block;
+			padding: 8px 0;
+			transition: all 0.3s ease;
+			text-decoration: none;
+		}
+		.footer .useful-links a:hover {
+			color: #ffffff;
+			padding-left: 10px;
+		}
 
-/* Footer Styling */
-.footer {
-    background-color: #333333;
-    color: #b0b0b0;
-    padding: 40px 0;
-}
-.footer .footer-col h5 {
-    color: #ffffff;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-.footer .footer-col p, .footer .footer-col li, .footer .footer-col a {
-    color: #b0b0b0;
-    font-size: 14px;
-}
-.footer .footer-col li {
-    list-style-type: none;
-    margin-bottom: 8px;
-}
-.footer .footer-col li a {
-    display: flex;
-    align-items: center;
-    color: #b0b0b0;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-.footer .footer-col li a:hover {
-    color: #ffffff;
-}
-.footer .footer-col li a i {
-    margin-right: 8px; 
-    color: #ffffff;
-}
-.footer .footer-col a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-.footer .social-icons a {
-    color: #b0b0b0;
-    font-size: 18px;
-    margin-right: 10px;
-}
-.footer .social-icons a:hover {
-    color: #ffffff;
-}
-.footer .footer-col img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-}
-.footer-logo {
-    width: 180px; 
-    height: auto;
-}
+		.content-display {
+			display: none;
+			color: #ffffff;
+			margin-top: 15px;
+			padding: 10px;
+			background-color: #444;
+			border-radius: 5px;
+		}
+		/* Footer Styling End*/
+	</style>
+	<body>
+		<marquee
+			behavior=""
+			direction=""
+			class="bg-danger text-white"
+			><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee
+		>
+		<div>
+			<nav class="navbar navbar-expand-lg navbar-light navbar-div">
+				<!-- here keep the logo -->
+				 <a class="navbar-brand" href="./homepage.html"><div class="container text-center my-5">
+				  <img src="./images/logo.webp" alt="Logo" class="rounded-circle img-fluid" style="width: 100px; height: 100px;">
+				</div>
+				</a>
+				 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				   <span class="navbar-toggler-icon"></span>
+				 </button>
+				 <div class="collapse navbar-collapse" id="navbarNav">
+				   <ul class="navbar-nav ml-auto navbarSection">
+					 <!-- About Us Dropdown -->
+					 <li class="nav-item dropdown">
+					   <a class="nav-link dropdown-toggle" href="#" id="aboutUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">About Us</h5>
+					   </a>
+					   <div class="dropdown-menu" aria-labelledby="aboutUsDropdown">
+						 <a class="dropdown-item" href="./About us/foundersDesk.html">Founder's Desk</a>
+						 <a class="dropdown-item" href="./About us/principalsDesk.html">Principal Desk</a>
+						 <a class="dropdown-item" href="./About us/schoolManagement.html">School Management</a>
+						 <a class="dropdown-item" href="./About us/managingCommittee.html">Managing Committee</a>
+						 <a class="dropdown-item" href="./About us/principlesAndPolicies.html">Princples & Policies</a>
+						 <a class="dropdown-item" href="./About us/infrastructure.html">Infrastructure</a>
+					   </div>
+					 </li>
+					 <!-- Add additional nav items here if needed -->
+			  
+					  <!-- Admissions Dropdown -->
+					  <li class="nav-item dropdown">
+					   <a class="nav-link dropdown-toggle" href="#" id="admissionsUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Admissions</h5>
+					   </a>
+					   <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
+						 <a class="dropdown-item" href="./Admissions/Helpdesk&SchoolVisit.html">Admissions HelpDesk/school</a>
+						 <a class="dropdown-item" href="./Admissions/admissionProcedure.html">Admissions Procedure</a>
+						 <a class="dropdown-item" href="./Admissions/registration.html">Registration</a>
+						 <a class="dropdown-item" href="./Admissions/feeStructure.html">Fee Structure</a>
+						 <a class="dropdown-item" href="./Admissions/schoolTimings.html">School Timings</a>
+						 <a class="dropdown-item" href="./Admissions/faqs.html">FAQ's</a>
+					   </div>
+					 </li>
+					 <!-- Add additional nav items here if needed -->
+					   <!-- Student Life Dropdown -->
+					 <li class="nav-item dropdown">
+					   <a class="nav-link dropdown-toggle" href="#" id="StudentLifeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Student Life</h5>
+					   </a>
+					   <div class="dropdown-menu" aria-labelledby="StudentLifeDropdown">
+						 <a class="dropdown-item" href="./Student life/academics.html">Academics</a>
+						 <a class="dropdown-item" href="./Student life/sports.html">Sports</a>
+						 <a class="dropdown-item" href="./Student life/co-curricular.html">Co-curriculum</a>
+						 <a class="dropdown-item" href="./Student life/social-culturalDevelopment.html">Social-Cultural Development</a>
+						 <a class="dropdown-item" href="./Student life/counselling.html">Counselling</a>
+						 <a class="dropdown-item" href="./Student life/">Achievements</a>
+						 <a class="dropdown-item" href="./Student life/eventsCalender.html">Event Calender</a>
+						 <a class="dropdown-item" href="./Student life/toppers.html">Toppers</a>
+						 <a class="dropdown-item" href="./Student life/cabinet.html">Cabinet</a>
+						 <a class="dropdown-item" href="./Student life/transferCertificate.html">Transfer Cerificate</a>
+					   </div>
+					 </li>
+					 <!-- Add additional nav items here if needed -->
+						  <!-- News $ Calender Dropdown -->
+					 <li class="nav-item dropdown">
+					   <a class="nav-link dropdown-toggle" href="#" id="news&CalenderDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">News & Calender</h5>
+					   </a>
+					   <div class="dropdown-menu" aria-labelledby="news&CalenderDropdown">
+						 <a class="dropdown-item" href="./News and Calender/studentsHandbook.html">Student Hand Book</a>
+						 <a class="dropdown-item" href="./News and Calender/newsletter-scholarsTimes.html">NewsLetter/Scholars Times</a>
+					   </div>
+					   
+					 </li>
+					 <!-- Add additional nav items here if needed -->
+							 <!-- Mandatory Disclosures -->
+					 <li class="nav-item dropdown">
+					   <a class="nav-link dropdown-toggle" href="#" id="mandatoryDisclosureDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Mandatory Disclosures</h5>
+					   </a>
+					   <div class="dropdown-menu" aria-labelledby="mandatoryDisclosureDropdown">
+						 <a class="dropdown-item" href="./Mandatory disclosures/booklist.html">Booklist</a>
+						 <a class="dropdown-item" href="./Mandatory disclosures/safetyCertificates&affiliations.html">Safety Certificates & Affiliations</a>
+						 <a class="dropdown-item" href="./Mandatory disclosures/assets/oasis.pdf">CBSE-OASIS</a>
+						 <a class="dropdown-item" href="./Mandatory disclosures/assets/Mandatory_Disclosures.pdf">Mandatory Public Disclosures</a>
+					   </div>
+					   
+					 </li>
+					 <!-- Add additional nav items here if needed -->
+							  <!-- Contact Us  -->
+					 <li class="nav-item dropdown">
+					   <a class="nav-link dropdown-toggle" href="./Contact us/contactUs.html" id="contactUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Contact Us</h5>
+					   </a>
+					  
+					 </li>
+					 <!-- Add additional nav items here if needed -->
+			  
+					 <!-- Notice -->
+							  <li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="noticeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								  <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Notice</h5>
+								</a>
+								<div class="dropdown-menu" aria-labelledby="noticeDropdown">
+								  <a class="dropdown-item" href="./Notice/notice1.html">Notice 1</a>
+								  <a class="dropdown-item" href="./Notice/notice2.html">Notice 2</a>
+								  <a class="dropdown-item" href="./Notice/notice3.html">Notice 3</a>
+								 
+								</div>
+								
+							  </li>
+							  <!-- Add additional nav items here if needed -->
+			  
+					
+				   </ul>
+				 </div>
+			   </nav>
+		</div>
 
-.footer .birthdays {
-    max-height: 150px;
-    overflow-y: auto;
-    padding-right: 15px;
-}
-.footer .birthdays::-webkit-scrollbar {
-    width: 8px;
-}
-.footer .birthdays::-webkit-scrollbar-thumb {
-    background-color: #555555;
-    border-radius: 4px;
-}
-.footer .birthdays::-webkit-scrollbar-thumb:hover {
-    background-color: #777777;
-}
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 0.5px;
-    color: #b0b0b0;
-    font-size: 12px;
-    border-top: 1px solid #444;
-}
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333333;
-    color: #ffffff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    cursor: pointer;
-}
-.back-to-top:hover {
-    background-color: #555555;
-}
-.footer .useful-links a {
-    display: block;
-    padding: 8px 0;
-    transition: all 0.3s ease;
-    text-decoration:none;
-}
-.footer .useful-links a:hover {
-    color: #ffffff;
-    padding-left: 10px;
-}
+		<div class="section-1">
+			<div class="head">
+				<h1>Student Handbook</h1>
+				<p><b>Home > News & Calendar ></b> Scholars Times</p>
+			</div>
+		</div>
 
-.content-display {
-    display: none;
-    color: #ffffff;
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #444;
-    border-radius: 5px;
-}
-/* Footer Styling End*/
+		<div class="container mt-5">
+			<div class="row justify-content-center">
+				<div class="col-4 mb-5">
+					<div
+						class="a text-center"
+						onclick="window.location.href='./session24-25.html'">
+						Session 2024-25
+					</div>
+				</div>
+				<div class="col-4 mb-5">
+					<div
+						class="b text-center"
+						onclick="window.location.href='./session23-24.html'">
+						Session 2023-24
+					</div>
+				</div>
+				<div class="col-4 mb-5">
+					<div
+						class="c text-center"
+						onclick="window.location.href='./session21-22.html'">
+						Session 2021-22
+					</div>
+				</div>
+				<div class="col-4 mb-5">
+					<div
+						class="d text-center"
+						onclick="window.location.href='./session20-21.html'">
+						Session 2020-21
+					</div>
+				</div>
+				<div class="col-4 mb-5">
+					<div
+						class="e text-center"
+						onclick="window.location.href='./session19-20.html'">
+						Session 2019-20
+					</div>
+				</div>
+				<div class="col-4 mb-5">
+					<div
+						class="f text-center"
+						onclick="window.location.href='./session18-19.html'">
+						Session 2018-19
+					</div>
+				</div>
+			</div>
+		</div>
 
-  </style>
-  <body>
-    <marquee behavior="" direction="" class="bg-danger text-white"
-      ><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee
-    >
-    <div>
-      <nav class="navbar navbar-expand-lg navbar-light navbar-div">
-        <!-- here keep the logo -->
-         <a class="navbar-brand" href="./homepage.html"><div class="container text-center my-5">
-          <img src="./images/logo.webp" alt="Logo" class="rounded-circle img-fluid" style="width: 100px; height: 100px;">
-        </div>
-        </a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarNav">
-           <ul class="navbar-nav ml-auto navbarSection">
-             <!-- About Us Dropdown -->
-             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="aboutUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">About Us</h5>
-               </a>
-               <div class="dropdown-menu" aria-labelledby="aboutUsDropdown">
-                 <a class="dropdown-item" href="./About us/foundersDesk.html">Founder's Desk</a>
-                 <a class="dropdown-item" href="./About us/principalsDesk.html">Principal Desk</a>
-                 <a class="dropdown-item" href="./About us/schoolManagement.html">School Management</a>
-                 <a class="dropdown-item" href="./About us/managingCommittee.html">Managing Committee</a>
-                 <a class="dropdown-item" href="./About us/principlesAndPolicies.html">Princples & Policies</a>
-                 <a class="dropdown-item" href="./About us/infrastructure.html">Infrastructure</a>
-               </div>
-             </li>
-             <!-- Add additional nav items here if needed -->
-      
-              <!-- Admissions Dropdown -->
-              <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="admissionsUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Admissions</h5>
-               </a>
-               <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
-                 <a class="dropdown-item" href="./Admissions/Helpdesk&SchoolVisit.html">Admissions HelpDesk/school</a>
-                 <a class="dropdown-item" href="./Admissions/admissionProcedure.html">Admissions Procedure</a>
-                 <a class="dropdown-item" href="./Admissions/registration.html">Registration</a>
-                 <a class="dropdown-item" href="./Admissions/feeStructure.html">Fee Structure</a>
-                 <a class="dropdown-item" href="./Admissions/schoolTimings.html">School Timings</a>
-                 <a class="dropdown-item" href="./Admissions/faqs.html">FAQ's</a>
-               </div>
-             </li>
-             <!-- Add additional nav items here if needed -->
-               <!-- Student Life Dropdown -->
-             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="StudentLifeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Student Life</h5>
-               </a>
-               <div class="dropdown-menu" aria-labelledby="StudentLifeDropdown">
-                 <a class="dropdown-item" href="./Student life/academics.html">Academics</a>
-                 <a class="dropdown-item" href="./Student life/sports.html">Sports</a>
-                 <a class="dropdown-item" href="./Student life/co-curricular.html">Co-curriculum</a>
-                 <a class="dropdown-item" href="./Student life/social-culturalDevelopment.html">Social-Cultural Development</a>
-                 <a class="dropdown-item" href="./Student life/counselling.html">Counselling</a>
-                 <a class="dropdown-item" href="./Student life/">Achievements</a>
-                 <a class="dropdown-item" href="./Student life/eventsCalender.html">Event Calender</a>
-                 <a class="dropdown-item" href="./Student life/toppers.html">Toppers</a>
-                 <a class="dropdown-item" href="./Student life/cabinet.html">Cabinet</a>
-                 <a class="dropdown-item" href="./Student life/transferCertificate.html">Transfer Cerificate</a>
-               </div>
-             </li>
-             <!-- Add additional nav items here if needed -->
-                  <!-- News $ Calender Dropdown -->
-             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="news&CalenderDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">News & Calender</h5>
-               </a>
-               <div class="dropdown-menu" aria-labelledby="news&CalenderDropdown">
-                 <a class="dropdown-item" href="./News and Calender/studentsHandbook.html">Student Hand Book</a>
-                 <a class="dropdown-item" href="./News and Calender/newsletter-scholarsTimes.html">NewsLetter/Scholars Times</a>
-               </div>
-               
-             </li>
-             <!-- Add additional nav items here if needed -->
-                     <!-- Mandatory Disclosures -->
-             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="mandatoryDisclosureDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Mandatory Disclosures</h5>
-               </a>
-               <div class="dropdown-menu" aria-labelledby="mandatoryDisclosureDropdown">
-                 <a class="dropdown-item" href="./Mandatory disclosures/booklist.html">Booklist</a>
-                 <a class="dropdown-item" href="./Mandatory disclosures/safetyCertificates&affiliations.html">Safety Certificates & Affiliations</a>
-                 <a class="dropdown-item" href="./Mandatory disclosures/assets/oasis.pdf">CBSE-OASIS</a>
-                 <a class="dropdown-item" href="./Mandatory disclosures/assets/Mandatory_Disclosures.pdf">Mandatory Public Disclosures</a>
-               </div>
-               
-             </li>
-             <!-- Add additional nav items here if needed -->
-                      <!-- Contact Us  -->
-             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="./Contact us/contactUs.html" id="contactUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Contact Us</h5>
-               </a>
-              
-             </li>
-             <!-- Add additional nav items here if needed -->
-      
-             <!-- Notice -->
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="noticeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Notice</h5>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="noticeDropdown">
-                          <a class="dropdown-item" href="./Notice/notice1.html">Notice 1</a>
-                          <a class="dropdown-item" href="./Notice/notice2.html">Notice 2</a>
-                          <a class="dropdown-item" href="./Notice/notice3.html">Notice 3</a>
-                         
-                        </div>
-                        
-                      </li>
-                      <!-- Add additional nav items here if needed -->
-      
-            
-           </ul>
-         </div>
-       </nav>
-    </div>
-    <section class="footer">
-      <div class="container">
-          <div class="row">
-              
-              <div class="col-md-3 footer-col text-center">
-                  <img src="./images/logo.webp" alt="School Logo" class="img-fluid footer-logo mb-3">
-                  <p>Bhalla Farm Pratappur, Ramnagar Road,<br> Kashipur-244713, Distt. U.S.Nagar</p>
-                  <div class="social-icons">
-                      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-                  </div>
-              </div>
-    
-              <div class="col-md-3 footer-col">
-                  <h5>Birthdays</h5>
-                  <ul class="birthdays">
-                      <li>
-                          <img src="./images/p1.webp" alt="Person Image">
-                          <strong> Daksh Gehlot</strong><br><span>August 2nd, 2024</span>
-                      </li>
-                      <li>
-                          <img src="./images/p2.webp" alt="Person Image">
-                          <strong> Karan Kumar</strong><br><span>July 26th, 2024</span>
-                      </li>
-                      <li>
-                          <img src="./images/p4.webp" alt="Person Image">
-                          <strong> Tazeem Khan</strong><br><span>July 18th, 2024</span>
-                      </li>
-                     
-                      <li>
-                          <img src="./images/p3.webp" alt="Person Image">
-                          <strong> Ramesh Singh</strong><br><span>June 5th, 2024</span>
-                      </li>
-                  </ul>
-              </div>
-    
-           
-              <div class="col-md-3 footer-col useful-links">
-                  <h5>Useful Links</h5>
-                  <a href="#" onclick="displayContent('privacyPolicy')"><i class="fas fa-angle-right"></i> Privacy Policy</a>
-                  <a href="#" onclick="displayContent('terms')"><i class="fas fa-angle-right"></i> Terms & Conditions</a>
-                  <a href="#" onclick="displayContent('contact')"><i class="fas fa-angle-right"></i> Contact</a>
-                  <a href="#" onclick="displayContent('sitemap')"><i class="fas fa-angle-right"></i> Sitemap</a>
-                  
-                  <div id="contentDisplay" class="content-display"></div>
-              </div>
-    
-              <div class="col-md-3 footer-col">
-                  <h5>School Timings</h5>
-                  <p>Summers: 07:20 am - 1:30 pm</p>
-                  <p>Winters: 07:50 am - 2:00 pm</p>
-                  <p>Total Visits: 8723</p>
-              </div>
-          </div>
-      </div>
-      <div class="footer-bottom">
-          <p>© 2024 Little Scholars. All Rights Reserved.</p>
-          <p>Made with <i class="fas fa-heart text-danger"></i> by <a href="https://puminatidigital.com" target="_blank">Puminati Digital</a></p>
-      </div>
-    </section>
-    
-    
-    <div class="back-to-top" onclick="scrollToTop()">
-      <i class="fas fa-chevron-up"></i>
-    </div>
-    <script>
-      // Modal Implementation
-      function showNotice(title, content) {
-        document.getElementById("noticeModalLabel").textContent = title;
-        document.getElementById("noticeContent").textContent = content;
-        var noticeModal = new bootstrap.Modal(
-          document.getElementById("noticeModal")
-        );
-        noticeModal.show();
-      }
+		<section class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 footer-col text-center">
+						<img
+							src="./images/logo.webp"
+							alt="School Logo"
+							class="img-fluid footer-logo mb-3" />
+						<p>
+							Bhalla Farm Pratappur, Ramnagar Road,<br />
+							Kashipur-244713, Distt. U.S.Nagar
+						</p>
+						<div class="social-icons">
+							<a
+								href="https://facebook.com"
+								target="_blank"
+								><i class="fab fa-facebook"></i
+							></a>
+							<a
+								href="https://instagram.com"
+								target="_blank"
+								><i class="fab fa-instagram"></i
+							></a>
+							<a
+								href="https://youtube.com"
+								target="_blank"
+								><i class="fab fa-youtube"></i
+							></a>
+						</div>
+					</div>
 
-      //Scroll Up Button
-      function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+					<div class="col-md-3 footer-col">
+						<h5>Birthdays</h5>
+						<ul class="birthdays">
+							<li>
+								<img
+									src="./images/p1.webp"
+									alt="Person Image" />
+								<strong> Daksh Gehlot</strong><br /><span
+									>August 2nd, 2024</span
+								>
+							</li>
+							<li>
+								<img
+									src="./images/p2.webp"
+									alt="Person Image" />
+								<strong> Karan Kumar</strong><br /><span>July 26th, 2024</span>
+							</li>
+							<li>
+								<img
+									src="./images/p4.webp"
+									alt="Person Image" />
+								<strong> Tazeem Khan</strong><br /><span>July 18th, 2024</span>
+							</li>
 
-      // Useful Links Information
-      function displayContent(section) {
-        const contentDisplay = document.getElementById("contentDisplay");
+							<li>
+								<img
+									src="./images/p3.webp"
+									alt="Person Image" />
+								<strong> Ramesh Singh</strong><br /><span>June 5th, 2024</span>
+							</li>
+						</ul>
+					</div>
 
-        let content = "";
+					<div class="col-md-3 footer-col useful-links">
+						<h5>Useful Links</h5>
+						<a
+							href="#"
+							onclick="displayContent('privacyPolicy')"
+							><i class="fas fa-angle-right"></i> Privacy Policy</a
+						>
+						<a
+							href="#"
+							onclick="displayContent('terms')"
+							><i class="fas fa-angle-right"></i> Terms & Conditions</a
+						>
+						<a
+							href="#"
+							onclick="displayContent('contact')"
+							><i class="fas fa-angle-right"></i> Contact</a
+						>
+						<a
+							href="#"
+							onclick="displayContent('sitemap')"
+							><i class="fas fa-angle-right"></i> Sitemap</a
+						>
 
-        if (section === "privacyPolicy") {
-          content =
-            "<strong>Privacy Policy:</strong> Here you'll find information on how we handle your data.";
-        } else if (section === "terms") {
-          content =
-            "<strong>Terms & Conditions:</strong> Please read the terms and conditions of our service.";
-        } else if (section === "contact") {
-          content =
-            "<strong>Contact:</strong> Feel free to reach out via our contact page for support.";
-        } else if (section === "sitemap") {
-          content =
-            "<strong>Sitemap:</strong> View the structure of our website for easy navigation.";
-        }
+						<div
+							id="contentDisplay"
+							class="content-display"></div>
+					</div>
 
-        contentDisplay.innerHTML = content;
-        contentDisplay.style.display = "block";
-      }
-    </script>
-  </body>
+					<div class="col-md-3 footer-col">
+						<h5>School Timings</h5>
+						<p>Summers: 07:20 am - 1:30 pm</p>
+						<p>Winters: 07:50 am - 2:00 pm</p>
+						<p>Total Visits: 8723</p>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>© 2024 Little Scholars. All Rights Reserved.</p>
+				<p>
+					Made with <i class="fas fa-heart text-danger"></i> by
+					<a
+						href="https://puminatidigital.com"
+						target="_blank"
+						>Puminati Digital</a
+					>
+				</p>
+			</div>
+		</section>
+
+		<div
+			class="back-to-top"
+			onclick="scrollToTop()">
+			<i class="fas fa-chevron-up"></i>
+		</div>
+		<script>
+			// Modal Implementation
+			function showNotice(title, content) {
+				document.getElementById("noticeModalLabel").textContent = title;
+				document.getElementById("noticeContent").textContent = content;
+				var noticeModal = new bootstrap.Modal(
+					document.getElementById("noticeModal")
+				);
+				noticeModal.show();
+			}
+
+			//Scroll Up Button
+			function scrollToTop() {
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			}
+
+			// Useful Links Information
+			function displayContent(section) {
+				const contentDisplay = document.getElementById("contentDisplay");
+
+				let content = "";
+
+				if (section === "privacyPolicy") {
+					content =
+						"<strong>Privacy Policy:</strong> Here you'll find information on how we handle your data.";
+				} else if (section === "terms") {
+					content =
+						"<strong>Terms & Conditions:</strong> Please read the terms and conditions of our service.";
+				} else if (section === "contact") {
+					content =
+						"<strong>Contact:</strong> Feel free to reach out via our contact page for support.";
+				} else if (section === "sitemap") {
+					content =
+						"<strong>Sitemap:</strong> View the structure of our website for easy navigation.";
+				}
+
+				contentDisplay.innerHTML = content;
+				contentDisplay.style.display = "block";
+			}
+		</script>
+	</body>
 </html>
