@@ -51,6 +51,94 @@
         text-align: center;
       }
 
+      .breadcrumb {
+        background-image: url("./images/Header-bg.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 200px;
+        color: white;
+        position: relative;
+        display: flex;
+        align-items: center; /* Centers the breadcrumb content vertically */
+        justify-content: center; /* Centers the breadcrumb content horizontally */
+      }
+
+      .breadcrumb::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.85
+        ); /* Semi-transparent black overlay */
+        z-index: 1; /* Places overlay behind content */
+      }
+
+      .breadcrumb-content {
+        position: relative;
+        z-index: 2; /* Ensures content is above the overlay */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 50px;
+      }
+
+      @media (min-width: 640px) {
+        .breadcrumb-content {
+          width: 80%;
+          gap: 1.5rem;
+        }
+      }
+
+      .title {
+        font-size: 1.75rem;
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 0.05em;
+      }
+
+      @media (min-width: 640px) {
+        .title {
+          font-size: 2.5rem;
+        }
+      }
+
+      .breadcrumb-links {
+        display: flex;
+        gap: 0.25rem;
+        font-size: 1rem;
+      }
+
+      @media (min-width: 640px) {
+        .breadcrumb-links {
+          font-size: 1.125rem;
+        }
+      }
+
+      .breadcrumb-item {
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        text-decoration: none;
+        color: white;
+      }
+
+      .current {
+        font-weight: 300;
+      }
+
+      .icon {
+        display: inline-block;
+        font-size: 1em;
+      }
+
       .uppercase {
         text-transform: uppercase;
         font-size: 32px;
@@ -389,6 +477,51 @@
        </nav>
     </div>
 
+    <div class="breadcrumb">
+      <div class="breadcrumb-content">
+        <h1 class="title">Infrastructure</h1>
+        <div class="breadcrumb-links">
+          <a href="/" class="breadcrumb-item">
+            Home
+            <span class="icon">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 320 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+                ></path>
+              </svg>
+            </span>
+          </a>
+          <p class="breadcrumb-item">
+            About us
+            <span class="icon">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 320 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+                ></path>
+              </svg>
+            </span>
+          </p>
+          <span class="breadcrumb-item current">Infrastructure</span>
+        </div>
+      </div>
+    </div>
+
     <section class="relative w-full py-24 bg-off-white-bg">
       <div class="container">
         <div class="content flex-col">
@@ -406,6 +539,7 @@
             <button type="button" class="btn hoverable tab" onclick="showTab('Library')">Library</button>
             <button type="button" class="btn hoverable tab" onclick="showTab('PhysicsLab')">Physics Lab</button>
           </div>
+          <hr>
           <div class="swiper-container">
             <div class="content">
               <div id="SchoolBuilding" class="tab-content">
@@ -430,17 +564,115 @@
                   </div>
                 </div>
               </div>
-
               <div id="sportsGround" class="tab-content">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <img src="https://little-s-website.vercel.app/static/media/in1.fe20d5f45f9da871c512.webp" alt="Slide 1" />
+                    <picture>
+                      <source srcset="../images/sports1.webp" type="image/webp">
+                      <img src="../images/sports1.webp" alt="..">
+                    </picture>
                   </div>
                   <div class="swiper-slide">
-                    <img src="https://little-s-website.vercel.app/static/media/in2.7f6367ea11dfc04f49d9.webp" alt="Slide 2" />
+                    <picture>
+                      <source srcset="../images/sports2.webp" type="image/webp">
+                      <img src="../images/sports2.webp" alt="..">
+                    </picture>
                   </div>
                   <div class="swiper-slide">
-                    <img src="https://little-s-website.vercel.app/static/media/in3.c4b25581fac8fda102d3.webp" alt="Slide 3" />
+                    <picture>
+                      <source srcset="../images/sports3.webp" type="image/webp">
+                      <img src="../images/sports3.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/sports4.webp" type="image/webp">
+                      <img src="../images/sports4.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/sports5.webp" type="image/webp">
+                      <img src="../images/sports5.webp" alt="..">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+              <div id="Auditorium" class="tab-content">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/aud1.webp" type="image/webp">
+                      <img src="../images/aud1.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/aud2.webp" type="image/webp">
+                      <img src="../images/aud2.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/aud3.webp" type="image/webp">
+                      <img src="../images/aud3.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/aud4.webp" type="image/webp">
+                      <img src="../images/aud4.webp" alt="..">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+              <div id="BiologicalLab" class="tab-content">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/bio1.webp" type="image/webp">
+                      <img src="../images/bio1.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/bio2.webp" type="image/webp">
+                      <img src="../images/bio2.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/bio3.webp" type="image/webp">
+                      <img src="../images/bio3.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/bio4.webp" type="image/webp">
+                      <img src="../images/bio4.webp" alt="..">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+              <div id="ChemistryLab" class="tab-content">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/chemistry1.webp" type="image/webp">
+                      <img src="../images/chemistry1.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/chemistry2.webp" type="image/webp">
+                      <img src="../images/chemistry2.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/chemistry3.webp" type="image/webp">
+                      <img src="../images/chemistry3.webp" alt="..">
+                    </picture>
                   </div>
                   <div class="swiper-slide">
                     <img src="https://little-s-website.vercel.app/static/media/in4.ec7d7d1cb34366fd7c3c.webp" alt="Slide 4" />
@@ -450,6 +682,84 @@
                   </div>
                   <div class="swiper-slide">
                     <img src="https://little-s-website.vercel.app/static/media/in6.7f6ad336f65cc60709d1.webp" alt="Slide 6" />
+                  </div>
+                </div>
+              </div>
+              <div id="ComputerLab" class="tab-content">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/comp1.webp" type="image/webp">
+                      <img src="../images/comp1.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/comp2.webp" type="image/webp">
+                      <img src="../images/comp2.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/comp3.webp" type="image/webp">
+                      <img src="../images/comp3.webp" alt="..">
+                    </picture>
+                  </div>
+                </div> 
+              </div>
+              <div id="Library" class="tab-content">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/lib1.webp" type="image/webp">
+                      <img src="../images/lib1.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/lib2.webp" type="image/webp">
+                      <img src="../images/lib2.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/lib3.webp" type="image/webp">
+                      <img src="../images/lib3.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/lib4.webp" type="image/webp">
+                      <img src="../images/lib4.webp" alt="..">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+              <div id="PhysicsLab" class="tab-content">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/physics1..webp" type="image/webp">
+                      <img src="../images/physics1..webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/physics2.webp" type="image/webp">
+                      <img src="../images/physics2.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/physics3.webp" type="image/webp">
+                      <img src="../images/physics3.webp" alt="..">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="../images/physics4.webp" type="image/webp">
+                      <img src="../images/physics4.webp" alt="..">
+                    </picture>
                   </div>
                 </div>
               </div>
