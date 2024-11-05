@@ -11,33 +11,27 @@
         color: black;
         font-size: 17px;
       }
-
       .navbar-nav .nav-link {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 4px;
       }
-
       .navbarSection {
         gap: 0.7rem;
       }
-
       .navbar-div {
         height: 8rem;
         width: 100%;
       }
-
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
-
       body {
         font-family: Arial, sans-serif;
       }
-
       .breadcrumb {
         background-image: url("./images/Header-bg.jpg");
         background-position: center;
@@ -49,7 +43,6 @@
         align-items: center; /* Centers the breadcrumb content vertically */
         justify-content: center; /* Centers the breadcrumb content horizontally */
       }
-
       .breadcrumb::before {
         content: "";
         position: absolute;
@@ -57,15 +50,9 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(
-          0,
-          0,
-          0,
-          0.85
-        ); /* Semi-transparent black overlay */
+        background-color: rgba(0,0,0,0.85); /* Semi-transparent black overlay */
         z-index: 1; /* Places overlay behind content */
       }
-
       .breadcrumb-content {
         position: relative;
         z-index: 2; /* Ensures content is above the overlay */
@@ -75,39 +62,33 @@
         gap: 0.5rem;
         padding: 50px;
       }
-
       @media (min-width: 640px) {
         .breadcrumb-content {
           width: 80%;
           gap: 1.5rem;
         }
       }
-
       .title {
         font-size: 1.75rem;
         font-weight: 600;
         text-align: center;
         letter-spacing: 0.05em;
       }
-
       @media (min-width: 640px) {
         .title {
           font-size: 2.5rem;
         }
       }
-
       .breadcrumb-links {
         display: flex;
         gap: 0.25rem;
         font-size: 1rem;
       }
-
       @media (min-width: 640px) {
         .breadcrumb-links {
           font-size: 1.125rem;
         }
       }
-
       .breadcrumb-item {
         font-weight: 600;
         display: flex;
@@ -116,34 +97,30 @@
         text-decoration: none;
         color: white;
       }
-
       .current {
         font-weight: 300;
       }
-
       .icon {
         display: inline-block;
         font-size: 1em;
       }
+
       .container {
-        max-width: 90%;
-        margin: 0 auto;
-        background-color: #fff;
+        margin-left: 50px;
       }
 
       .content-container {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
         padding: 5rem 0;
         overflow: hidden;
         text-align: left;
-        border-radius: 0.5rem;
       }
 
       .sidebar {
-        margin: 1.25rem auto;
-        overflow-y: auto;
-        text-align: center;
+        text-align: left;
+        width: 350px;
       }
 
       .menu {
@@ -159,6 +136,7 @@
       }
 
       .menu-link {
+        text-decoration: none;
         display: block;
         margin-left: 0.75rem;
         padding: 0.5rem 0;
@@ -175,7 +153,7 @@
       }
 
       .content {
-        width: 75%;
+        width: 100%;
         padding: 1rem;
         overflow-y: auto;
       }
@@ -183,7 +161,6 @@
       .section {
         width: 100%;
         padding: 1rem;
-        border-bottom: 0.2px solid rgb(173, 172, 172);
       }
 
       .section-content {
@@ -215,187 +192,196 @@
       }
 
       .school-uniform {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  .school-uniform h2 {
-    text-align: center;
-    font-size: 1.5em;
-  }
-  
-  /* Tabs styling */
-  .tabs {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        width: 300px;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      }
+      
+      .school-uniform h2 {
+        text-align: center;
+        font-size: 1.5em;
+      }
+      
+      /* Tabs styling 
+      .tabs {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
 
-  .tab {
-    padding: 10px 20px;
-    cursor: pointer;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    border-radius: 5px 5px 0 0;
-    margin-right: 5px;
-  }
+      .tab {
+        padding: 10px 20px;
+        cursor: pointer;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        border-radius: 5px 5px 0 0;
+        margin-right: 5px;
+      }
 
-  .tab.active {
-    background-color: #fff;
-    border-bottom: none;
-    font-weight: bold;
-  }
-
-  .content-schooluniform {
-    border: 1px solid #ddd;
-    border-top: none;
-    padding: 15px;
-    background-color: #fff;
-  }
-
-  /* List and text styling */
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  ul li {
-    padding: 5px 0;
-  }
-
-  p {
-    font-size: 0.9em;
-    color: #555;
-  }
-
-      /* Modal Styling  */
-
-.modal-header {
-    background-color: #333333;
-    color: #ffffff;
-}
-
-/*Notice Modal Styling Ending*/
+      .tab.active {
+        background-color: #fff;
+        border-bottom: none;
+        font-weight: bold;
+      } */
+       
+      .nav {
+        border: 2px solid;
+      }
 
 
+      .tab-content {
+        padding: 20px;
+      }
 
-/* Footer Styling */
-.footer {
-    background-color: #333333;
-    color: #b0b0b0;
-    padding: 40px 0;
-}
-.footer .footer-col h5 {
-    color: #ffffff;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-.footer .footer-col p, .footer .footer-col li, .footer .footer-col a {
-    color: #b0b0b0;
-    font-size: 14px;
-}
-.footer .footer-col li {
-    list-style-type: none;
-    margin-bottom: 8px;
-}
-.footer .footer-col li a {
-    display: flex;
-    align-items: center;
-    color: #b0b0b0;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-.footer .footer-col li a:hover {
-    color: #ffffff;
-}
-.footer .footer-col li a i {
-    margin-right: 8px; 
-    color: #ffffff;
-}
-.footer .footer-col a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-.footer .social-icons a {
-    color: #b0b0b0;
-    font-size: 18px;
-    margin-right: 10px;
-}
-.footer .social-icons a:hover {
-    color: #ffffff;
-}
-.footer .footer-col img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-}
-.footer-logo {
-    width: 180px; 
-    height: auto;
-}
+      .content-schooluniform {
+        border: 1px solid #ddd;
+        border-top: none;
+        padding: 15px;
+        background-color: #fff;
+      }
 
-.footer .birthdays {
-    max-height: 150px;
-    overflow-y: auto;
-    padding-right: 15px;
-}
-.footer .birthdays::-webkit-scrollbar {
-    width: 8px;
-}
-.footer .birthdays::-webkit-scrollbar-thumb {
-    background-color: #555555;
-    border-radius: 4px;
-}
-.footer .birthdays::-webkit-scrollbar-thumb:hover {
-    background-color: #777777;
-}
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 0.5px;
-    color: #b0b0b0;
-    font-size: 12px;
-    border-top: 1px solid #444;
-}
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333333;
-    color: #ffffff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    cursor: pointer;
-}
-.back-to-top:hover {
-    background-color: #555555;
-}
-.footer .useful-links a {
-    display: block;
-    padding: 8px 0;
-    transition: all 0.3s ease;
-    text-decoration:none;
-}
-.footer .useful-links a:hover {
-    color: #ffffff;
-    padding-left: 10px;
-}
+      /* List and text styling */
+      ul {
+        list-style: none;
+        padding: 0;
+      }
 
-.content-display {
-    display: none;
-    color: #ffffff;
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #444;
-    border-radius: 5px;
-}
-/* Footer Styling End*/
+      ul li {
+        padding: 5px 0;
+      }
+
+      p {
+        font-size: 0.9em;
+        color: #555;
+      }
+
+          /* Modal Styling  */
+
+    .modal-header {
+        background-color: #333333;
+        color: #ffffff;
+    }
+
+    /*Notice Modal Styling Ending*/
+
+
+
+    /* Footer Styling */
+    .footer {
+        background-color: #333333;
+        color: #b0b0b0;
+        padding: 40px 0;
+    }
+    .footer .footer-col h5 {
+        color: #ffffff;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .footer .footer-col p, .footer .footer-col li, .footer .footer-col a {
+        color: #b0b0b0;
+        font-size: 14px;
+    }
+    .footer .footer-col li {
+        list-style-type: none;
+        margin-bottom: 8px;
+    }
+    .footer .footer-col li a {
+        display: flex;
+        align-items: center;
+        color: #b0b0b0;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .footer .footer-col li a:hover {
+        color: #ffffff;
+    }
+    .footer .footer-col li a i {
+        margin-right: 8px; 
+        color: #ffffff;
+    }
+    .footer .footer-col a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+    .footer .social-icons a {
+        color: #b0b0b0;
+        font-size: 18px;
+        margin-right: 10px;
+    }
+    .footer .social-icons a:hover {
+        color: #ffffff;
+    }
+    .footer .footer-col img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+    }
+    .footer-logo {
+        width: 180px; 
+        height: auto;
+    }
+
+    .footer .birthdays {
+        max-height: 150px;
+        overflow-y: auto;
+        padding-right: 15px;
+    }
+    .footer .birthdays::-webkit-scrollbar {
+        width: 8px;
+    }
+    .footer .birthdays::-webkit-scrollbar-thumb {
+        background-color: #555555;
+        border-radius: 4px;
+    }
+    .footer .birthdays::-webkit-scrollbar-thumb:hover {
+        background-color: #777777;
+    }
+    .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 0.5px;
+        color: #b0b0b0;
+        font-size: 12px;
+        border-top: 1px solid #444;
+    }
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #333333;
+        color: #ffffff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+    }
+    .back-to-top:hover {
+        background-color: #555555;
+    }
+    .footer .useful-links a {
+        display: block;
+        padding: 8px 0;
+        transition: all 0.3s ease;
+        text-decoration:none;
+    }
+    .footer .useful-links a:hover {
+        color: #ffffff;
+        padding-left: 10px;
+    }
+
+    .content-display {
+        display: none;
+        color: #ffffff;
+        margin-top: 15px;
+        padding: 10px;
+        background-color: #444;
+        border-radius: 5px;
+    }
+    /* Footer Styling End*/
 
     </style>
   </head>
@@ -518,6 +504,7 @@
              </div>
            </nav>
         </div>
+
         <div class="breadcrumb">
           <div class="breadcrumb-content">
             <h1 class="title">Principles & Policies</h1>
@@ -563,10 +550,10 @@
           </div>
         </div>
 
-        <div class="container w-11/12 mx-auto bg-white App">
-          <div class="content-container flex-wrap py-20 overflow-hidden text-left rounded-lg md:flex overscroll-y-contain 2xl:flex 2xl:flex-nowrap">
-            <div class="sidebar mx-auto mt-5 overflow-y-auto text-center md:w-8/12 md:overflow-hidden scroll-mx-0 2xl:w-1/4 lg:text-left">
-              <ul class="menu list-none border-list">
+        <div class="container">
+          <div class="content-container">
+            <div class="sidebar">
+              <ul class="menu">
                 <li class="menu-item">
                   <a href="#section-0" class="menu-link">Behaviour/Code of Conduct</a>
                 </li>
@@ -590,9 +577,10 @@
                 </li>
               </ul>
             </div>
-            <div class="content w-3/4 p-4 overflow-y-auto">
-                  <div id="section-0" class="section">
-                    <div class="section-content pb-10 rounded-lg">
+
+            <div class="content">
+              <div id="section-0" class="section">
+                    <div class="section-content">
                       <h2 class="section-title">Behaviour/Code of Conduct</h2>
                       <img
                         src="../images/Pic_of_students.webp"
@@ -612,9 +600,10 @@
                         The School reserves the right to advise the parents to withdraw their child if his/her progress in studies is unsatisfactory or his/her attendance is irregular or his/her conduct is harmful to other students.
                       </p>
                     </div>
-                  </div>
-                  <div id="section-0" class="section">
-                    <div class="section-content pb-10 rounded-lg">
+              </div>
+
+              <div id="section-1" class="section">
+                    <div class="section-content">
                       <h2 class="section-title">Library</h2>
                       <img
                         src="../images/Pic_of_Library.webp"
@@ -625,9 +614,10 @@
                         Students must maintain absolute silence in the library. Students are expected to handle the library books with care. Books marked, disfigured or damaged will have to be replaced or paid by the borrower. For the loss of a book, the market price will be charged. Text books, magazines and reference books will not be issued.
                       </p>
                     </div>
-                  </div>
-                  <div id="section-0" class="section">
-                    <div class="section-content pb-10 rounded-lg">
+              </div>
+
+              <div id="section-2" class="section">
+                    <div class="section-content">
                       <h2 class="section-title">Transport Rules</h2>
                       <img
                         src="../images/Pic_of_Bus_Area.webp"
@@ -644,9 +634,10 @@
                         Students are expected to behave in a courteous manner in the bus and should not throw trash/food inside or outside the bus. In case of any emergency, parents must contact the School office, which will take the necessary action in contacting the person in charge of a particular bus.
                       </p>
                     </div>
-                  </div>
-                  <div id="section-0" class="section">
-                    <div class="section-content pb-10 rounded-lg">
+              </div>
+
+              <div id="section-3" class="section">
+                    <div class="section-content">
                       <h2 class="section-title">School Uniform</h2>
                       <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -691,8 +682,37 @@
                         </div>
                       </div>
                       </div>
-                  </div>
-                  </div>
+              </div>
+
+              <div id="section-4" class="section">
+                <div class="section-content">
+                  <h2 class="section-title">House System</h2>
+                  <p class="section-text">
+                    The students of classes II to XII are members of houses allotted to them. The house system plays an important role in promoting the cultural and co-curricular activities of the school. The houses conduct functions to celebrate important days and events. Inter-House competitions are periodically conducted to motivate students to take part in debates, declamations and other activities. Besides this, the students play inter-house matches in team games- Cricket, Basketball, football volleyball, athletics etc
+                  </p>
+                </div>
+              </div>
+
+              <div id="section-5" class="section">
+                <div class="section-content">
+                  <h2 class="section-title">Withdrawal from School</h2>
+                  <p class="section-text">
+                    Any parent withdrawing his/her child for whatever reason must serve one month’s notice, failing which the child’s security money will be adjusted against fees for the period of non-attendance till issue of T.C. Withdrawal of any student is possible only after the concerned parents/guardian officially fills and submits a withdrawal from available in the school office. NOC from concerned departments must be obtained by the student which is to be countered signed by PRINCIPAL.
+                  </p>
+                  <p class="section-text">
+                    Any child whose attendance falls below 75% till December, for classes IX – XII will not be allowed to appear for the final examinations in accordance with the CBSE rules. Any child short of this attendance will require special permission from the CBSE which will have to be obtained by the parents.
+                  </p>
+                </div>
+              </div>
+
+              <div id="section-5" class="section">
+                <div class="section-content">
+                  <h2 class="section-title">Faculty</h2>
+                  <p class="section-text">
+                    The School is in the process of implementing the New Education Policy (NEP – 2020) in a phased manner. The ‘10 + 2’ structure will be replaced with the ‘5+3+3+4’ model.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
