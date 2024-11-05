@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="output.css">
    <title>Homepage</title>
 </head>
 <body>
@@ -15,7 +17,6 @@
   <!-- Header Section -->
   <div>
   <marquee behavior="" direction="" class="bg-danger text-white "><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee>
-
   <div>
     <nav class="navbar navbar-expand-lg navbar-light navbar-div">
       <!-- here keep the logo -->
@@ -134,7 +135,50 @@
        </nav>
   </div>
 
-  <!-- Footer Section -->
+    <div class="corousal-div">
+      <h1 class="minus" style="font-size: 3rem; cursor: pointer;"><</h1>
+      <img src="./images/sch1.jpg" alt="" class="w-[30rem] image">
+      <h1 class="plus" style="font-size: 3rem; cursor: pointer;">></h1>
+    </div>
+
+    <div class="welcome" style="display: flex; gap: 3px;flex-direction: column; padding: 4rem;">
+      <div class="welcome-head">
+        <h1 style="font-weight: bolder; font-size: 2rem;">WELCOME TO LITTLE SCHOLARS</h1>
+        <h4 style="font-size: 15px; font-weight: 400;">SERVICE BEFORE SELF</h4>
+        <hr>
+      </div>
+      <div style="margin-top: 1rem;">
+        <p>
+          The Little Scholars school is co-educational CBSE affiliated institution and was established in 1983 at Bhalla Farm in Kashipur, U.S.Nagar. At the school, we consider our curriculum from philosophical and eclectic perspective, with a view to develop each individual’s potential to the optimum.<br> <br> The school aims at promoting an institution which caters to children without discrimination of caste, colour, creed or status in any respect whatsoever. Indian traditional values are inculcated so that children grow up with awareness of our society and the roots of our culture. Every child is also encouraged to develop sound ethical values and a strong moral fibre to be a worthy member of the world community.
+        </p>
+      </div>
+      <div style="display: flex; padding: 3rem; flex-wrap: wrap; justify-content: space-between; width: 100%; margin-top: 2rem;">
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="op-1" style="display: flex; flex-direction: column; gap: 5px;">
+            <h2 class="welcome-chars">ESTABLISHED LEGACY</h2>
+            <p>Founded in 1983 in Kashipur, U.S.Nagar, Little Scholars <br> School has a rich legacy in quality education.</p>
+          </div>
+          <div class="op-2" style="display: flex; flex-direction: column; gap: 5px;">
+            <h2 class="welcome-chars">INCLUSIVE EDUCATION</h2>
+            <p>As a co-ed CBSE school, Little Scholars welcomes all <br> children, fostering a diverse learning environment.</p>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="op-3" style="display: flex; flex-direction: column; gap: 5px;">
+            <h2 class="welcome-chars">PHILOSOPHICAL CURRICULUM</h2>
+            <p>Our curriculum nurtures each student's unique potential <br> with a philosophical and eclectic approach.</p>
+          </div>
+          <div class="op-4" style="display: flex; flex-direction: column; gap: 5px;">
+            <h2 class="welcome-chars">CULTURAL ROOTS AND VALUES</h2>
+            <p>We instill Indian traditional values, fostering pride and <br> connection to our cultural heritage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+
+ <!-- Footer Section -->
 <section class="footer">
   <div class="container">
       <div class="row">
@@ -209,8 +253,35 @@
   
 </div>
 
-</div>
 
+<script>
+
+const img = document.querySelector(".image");
+const plus = document.querySelector(".plus");
+const minus = document.querySelector(".minus");
+let i=1
+plus.addEventListener("click", () => {
+  if(i>=3){
+    i = 1;
+  }else{
+    i++;
+  }
+  
+  img.src = `./images/sch${i}.jpg`
+});
+
+minus.addEventListener("click", () => {
+  if(i<=1){
+    i=3;
+  }else{
+    i--;
+  }
+  console.log(i);
+  
+  img.src = `./images/sch${i}.jpg`;
+})
+
+</script>
 </body>
 </html>
 
