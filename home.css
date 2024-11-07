@@ -1,11 +1,29 @@
-body{
+html, body{
     margin: 0;
     padding: 0;
+    height: 100%;
     box-sizing: border-box;
+}
+
+.bg{
+    position: fixed; /* Make it fixed to cover the whole viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("https://content.jdmagicbox.com/v2/comp/bangalore/97/080pf016197/catalogue/st-john-s-school-hebbal-bangalore-schools-2yd7nwzm49.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4);
+    z-index: -1;
 }
 .navbar-sections{
     color: black;
     font-size: 17px;
+}
+
+.navbar{
+    background-color: white;
 }
 
 .navbar-nav .nav-link {
@@ -40,13 +58,26 @@ body{
     background-color: azure;
 }
 
-.welcome-chars {
-    font-weight: 500;
-    margin-bottom: 10px;
+
+.img-controls {
+    background-color: white;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 3rem;
 }
 
-/*Notice Modal Styling Ending*/
+svg {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+}
 
+.btn-active {
+    background-color: red;
+    background-blend-mode: screen;
+}
 
 
 /* Footer Styling */
