@@ -123,85 +123,83 @@
         font-size: 1em;
       }
 
-      .container {
-        position: relative;
-        background-image: url("/images/background-img-aboutus.png");
-        display: flex;
-        flex-direction: column-reverse;
-        max-width: 100%;
-        height: 620px;
-      }
+      .section-container {
+    position: relative;
+    width: 100%;
+    background-image: url('../images/background-img-aboutus.png');
+    padding: 2rem;
+}
 
-      @media (min-width: 768px) {
-        .container {
-          flex-direction: row;
-          flex-wrap: nowrap;
-          gap: 1.5rem;
-          padding-top: 3.5rem;
-        }
-      }
+.content-wrapper {
+    width: 83.33%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1.5rem;
+}
 
-      .content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-
-      .heading1 {
-        color: #666;
-        font-size: 2rem;
-        font-weight: 500;
-        margin-bottom: 0.25rem;
-      }
-
-      .heading2 {
-        color: #e53e3e;
-        font-size: 2.5rem;
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-      }
-
-      .description {
-        color: #000;
-        font-weight: 600;
-        line-height: 1.75;
-        font-size: 0.875rem;
-        text-align: justify;
-        margin-bottom: 2rem;
-        word-spacing: 3px;
-      }
-
-      .additional-text {
-        color: #000;
-        font-weight: 300;
-        line-height: 1.75;
-        font-size: 1rem;
-        text-align: justify;
-      }
-
-      .image-container {
-        display: flex;
+@media (min-width: 768px) {
+    .content-wrapper {
+        flex-direction: row;
         align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        width: 100%;
-      }
+        gap: 1.5rem;
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+}
 
-      @media (min-width: 768px) {
-        .image-container {
-          justify-content: flex-end;
-          width: 40%;
-        }
-      }
+.text-container {
+    display: flex;
+    flex-direction: column;
+}
 
-      .image {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        border: 4px solid #333;
-      }
+.subtitle {
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
 
+.title {
+    color: #dc2626;
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    color: #000;
+    font-weight: 600;
+    line-height: 1.75;
+    font-size: 1rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+}
+
+.additional-info {
+    color: #000;
+    font-weight: 300;
+    line-height: 1.75;
+    text-align: justify;
+    font-size: 1rem;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 40%;
+}
+
+.founder-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    outline: none;
+    border: 4px solid #000;
+}
       /* Modal Styling  */
 
       .modal-header {
@@ -510,45 +508,39 @@
           </div>
         </div>
       </div>
+    </div>
 
+    <div>
       <div>
-        <div class="container">
-          <div class="content">
-            <h3 class="heading1">Welcome To</h3>
-            <h2 class="heading2">Little Scholars</h2>
-            <p class="description">
-              Little Scholars is a journey of self-discovery for a child as they
-              grow to become young adults. The school will equip him to excel in
-              academics, and to be savvy in through a Hybrid learning platform.
-            </p>
-            <p class="additional-text">
-              The student will be encouraged to discover their interests,
-              talents and aptitudes, and learn to form their opinions and role
-              in society. This is achieved in a nurturing environment, where the
-              Mentor enacts the role of a Second Parent. An important feature of
-              this process is the school’s provision of rich choices, be they in
-              courses of academics, co-curricular activities in artistic,
-              creative and intellectual activities, and in sports and adventure.
-              Engagements with ecology and heritage allow engagements with the
-              community, within the school, in rural areas, or through NGOs,
-              nurturing the ideologies of the school motto ‘Service before
-              self’. Leadership abilities to take decisions and to find
-              solutions are imbibed on the sports field, through social
-              interactions, and through positions of responsibility provided in
-              school, aiming not just to nurture the students through their
-              formative years, but also to place them on a continuous curiosity
-              to learn, while carrying the responsibilities of leader with
-              understanding, intelligence, sensitivity and an inclusive
-              attitude.
-            </p>
+        <section class="section-container">
+          <div class="content-wrapper">
+              <div class="text-container">
+                  <h3 class="subtitle">Welcome To</h3>
+                  <h2 class="title">Little Scholars</h2>
+                  <p class="description">
+                      Little Scholars is a journey of self-discovery for a child as they grow to become young adults.
+                      The school will equip him to excel in academics, and to be savvy in through a Hybrid learning platform.
+                  </p>
+                  <p class="additional-info">
+                      The student will be encouraged to discover their interests, talents and aptitudes, and learn to
+                      form their opinions and role in society. This is achieved in a nurturing environment, where the
+                      Mentor enacts the role of a Second Parent. An important feature of this process is the school’s
+                      provision of rich choices, be they in courses of academics, co-curricular activities in artistic,
+                      creative and intellectual activities, and in sports and adventure. Engagements with ecology and
+                      heritage allow engagements with the community, within the school, in rural areas, or through NGOs,
+                      nurturing the ideologies of the school motto ‘Service before self’. Leadership abilities to take
+                      decisions and to find solutions are imbibed on the sports field, through social interactions, and
+                      through positions of responsibility provided in school, aiming not just to nurture the students
+                      through their formative years, but also to place them on a continuous curiosity to learn, while
+                      carrying the responsibilities of leader with understanding, intelligence, sensitivity and an
+                      inclusive attitude.
+                  </p>
+              </div>
+              <div class="image-container">
+                  <img src="../images/Founder_img.jpeg" alt="desk" class="founder-image">
+              </div>
           </div>
-          <div class="image-container">
-            <picture>
-              <source srcset="../images/Founder_img.jpeg" type="image/jpeg" />
-              <img src="../images/Founder_img.jpeg" alt="desk" class="image" />
-            </picture>
-          </div>
-        </div>
+      </section>
       </div>
     </div>
     
