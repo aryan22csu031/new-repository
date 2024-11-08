@@ -10,34 +10,37 @@
         box-sizing: border-box;
         margin: 0;
         padding: 0;
+        scrollbar-color: #202c45 #dfe9eb;
+        scrollbar-width: thin;
       }
 
       body {
-        font-family: Arial, sans-serif;
+        font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
       }
 
       .navbar-sections {
         color: black;
         font-size: 17px;
       }
-
       .navbar-nav .nav-link {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 4px;
       }
-
       .navbarSection {
         gap: 0.7rem;
       }
-
       .navbar-div {
         height: 8rem;
         width: 100%;
+        padding-left: 6rem;
+        padding-right: 6rem;
       }
 
+
       .breadcrumb {
+        margin: 0;
         background-image: url("./images/Header-bg.jpg");
         background-position: center;
         background-size: cover;
@@ -45,10 +48,9 @@
         color: white;
         position: relative;
         display: flex;
-        align-items: center; /* Centers the breadcrumb content vertically */
-        justify-content: center; /* Centers the breadcrumb content horizontally */
+        align-items: center;
+        justify-content: center;
       }
-
       .breadcrumb::before {
         content: "";
         position: absolute;
@@ -56,10 +58,9 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0,0,0,0.85); /* Semi-transparent black overlay */
-        z-index: 1; /* Places overlay behind content */
+        background-color: rgba(0,0,0,0.85);
+        z-index: 1; 
       }
-
       .breadcrumb-content {
         position: relative;
         z-index: 2; /* Ensures content is above the overlay */
@@ -94,6 +95,12 @@
         display: flex;
         gap: 0.25rem;
         font-size: 1rem;
+        a {
+            text-decoration: none;
+          }
+          a:hover {
+            color: white;
+          }
       }
 
       @media (min-width: 640px) {
@@ -110,93 +117,75 @@
         text-decoration: none;
         color: white;
       }
-
       .current {
         font-weight: 300;
       }
-
       .icon {
         display: inline-block;
         font-size: 1em;
       }
 
-      .container {
+
+      .section-container {
+        margin: 0;
         position: relative;
+        max-width: auto;
         background-image: url("/images/background-img-aboutus.png");
+        object-fit: cover;
+      }
+      .content-wrapper {
+        width: 83.33%;
+        margin: 0 auto;
         display: flex;
         flex-direction: column-reverse;
-        padding: 160px;
-      }
-
-      @media (min-width: 768px) {
-        .container {
-          flex-direction: row;
-          flex-wrap: nowrap;
-          gap: 1.5rem;
-          padding-top: 3.5rem;
-        }
-      }
-
-      .content {
-        display: flex;
-        flex-direction: column;
         align-items: flex-start;
-        gap: 1rem;
       }
 
-      .heading1 {
-        color: #666;
-        font-size: 2rem;
-        font-weight: 500;
-        margin-bottom: 0.25rem;
-      }
-
-      .heading2 {
-        color: #e53e3e;
-        font-size: 2.5rem;
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-      }
-
-      .description {
-        color: #000;
-        font-weight: 600;
-        line-height: 1.75;
-        font-size: 0.875rem;
-        text-align: justify;
-        margin-bottom: 2rem;
-        word-spacing: 3px;
-      }
-
-      .additional-text {
-        color: #000;
-        font-weight: 300;
-        line-height: 1.75;
-        font-size: 1rem;
-        text-align: justify;
-      }
-
-      .image-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        width: 100%;
-      }
-
-      @media (min-width: 768px) {
-        .image-container {
-          justify-content: flex-end;
-          width: 40%;
+      .text-container {
+            display: flex;
+            flex-direction: column;
         }
-      }
+        .subtitle {
+            color: rgb(102, 102, 102);
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        .title {
+            color: #dc2626;
+            font-size: 2.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        .description {
+            color: #000;
+            font-weight: 600;
+            line-height: 1.75;
+            text-align: justify;
+            margin-bottom: 2rem;
+        }
+        .additional-info {
+            color: #000;
+            font-weight: 300;
+            line-height: 1.75;
+            text-align: justify;
+            font-size: 1rem;
+        }
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 100%;
+            height: auto;
+        }
 
-      .image {
-        max-width: 100%;
-        height: auto;
-        object-fit: cover;
-        border: 4px solid #333;
-      }
+        .principal-image {
+          width: 500px;
+          height: auto;
+          object-fit: cover;
+          border: 4px solid #000;
+        }
 
       /* Modal Styling  */
 
@@ -491,52 +480,57 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="content">
-        <h3 class="heading1">Welcome To</h3>
-        <h2 class="heading2">Little Scholars</h2>
-        <p class="description">
-          Foundation of every nation is education. The objective of education is
-          to prepare the young to educate themselves. It is a continuous life
-          long process and school is one of the most important components of
-          this process.
-        </p>
-        <p class="additional-text">
-          Dear Parents & Students, At LITTLE SCHOLARS, Kashipur the task of
-          guiding children towards their journey to adulthood is taken up with
-          utmost seriousness through strategically and scientifically planned
-          steps so that the students and parents relax and enjoy the process of
-          becoming lifelong learners. Guiding principles of NCF emphasizes on
-          connecting knowledge to life outside school and ensuring learning is
-          shifted away from rote methods to allow holistic development of the
-          child .Besides the familiar academic areas life skills, thinking
-          skills, entrepreneurial skills, sports, creative and performing art
-          are a part of the school time table. Teaching methodology is student
-          centred and designed to capture attention, interest & concentration.
-          Each child has the potential to be the one who can make a difference.
-          Given appropriate support, guidance and opportunity they can create
-          magic that will astonish us. At LITTLE SCHOLARS each child is provided
-          with opportunity to realize his/her potential. We work towards shaping
-          self confident individuals. Self confidence has three components i.e.
-          having skills, feeling appreciated and being responsible. Our children
-          will be enabled to transform knowledge (what they know) and attitudes
-          (what they feel and believe) into action (what to do and how to do).
-          Our focus is on students acquiring precision in use of language,
-          refined gentle manners, ability to appreciate culture, power and habit
-          of reflection and efficiency to perform. Education is about the total
-          configuration of ideas, practices and conduct. Schools ought to be a
-          breathing place, providing real meaning of life for students. We
-          continuously strive to achieve this and get better and better every
-          day in every way.
-        </p>
-      </div>
-      <div class="image-container">
-        <picture>
-          <source srcset="../images/principal.webp" type="image/webp" />
-          <img src="../images/principal.webp" alt="Principal" class="image" />
-        </picture>
-      </div>
+    <div>
+      <section class="section-container">
+        <div class="content-wrapper">
+          <div class="text-container">
+            <h3 class="subtitle">Welcome To</h3>
+            <h2 class="title">Little Scholars</h2>
+            <p class="description">
+              Foundation of every nation is education. The objective of education is
+              to prepare the young to educate themselves. It is a continuous life
+              long process and school is one of the most important components of
+              this process.
+            </p>
+            <p class="additional-info">
+            Dear Parents & Students, At LITTLE SCHOLARS, Kashipur the task of
+            guiding children towards their journey to adulthood is taken up with
+            utmost seriousness through strategically and scientifically planned
+            steps so that the students and parents relax and enjoy the process of
+            becoming lifelong learners. Guiding principles of NCF emphasizes on
+            connecting knowledge to life outside school and ensuring learning is
+            shifted away from rote methods to allow holistic development of the
+            child .Besides the familiar academic areas life skills, thinking
+            skills, entrepreneurial skills, sports, creative and performing art
+            are a part of the school time table. Teaching methodology is student
+            centred and designed to capture attention, interest & concentration.
+            Each child has the potential to be the one who can make a difference.
+            Given appropriate support, guidance and opportunity they can create
+            magic that will astonish us. At LITTLE SCHOLARS each child is provided
+            with opportunity to realize his/her potential. We work towards shaping
+            self confident individuals. Self confidence has three components i.e.
+            having skills, feeling appreciated and being responsible. Our children
+            will be enabled to transform knowledge (what they know) and attitudes
+            (what they feel and believe) into action (what to do and how to do).
+            Our focus is on students acquiring precision in use of language,
+            refined gentle manners, ability to appreciate culture, power and habit
+            of reflection and efficiency to perform. Education is about the total
+            configuration of ideas, practices and conduct. Schools ought to be a
+            breathing place, providing real meaning of life for students. We
+            continuously strive to achieve this and get better and better every
+            day in every way.
+            </p>
+          </div>
+          <div class="image-container">
+            <picture>
+              <source srcset="../images/principal.webp" type="image/webp" />
+              <img src="../images/principal.webp" alt="Principal" class="principal-image" />
+            </picture>
+          </div>
+        </div>
+      </section>
     </div>
+
     <section class="footer">
       <div class="container">
           <div class="row">
