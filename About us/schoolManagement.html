@@ -6,225 +6,264 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
     <title>School Management</title>
     <style>
-      .navbar-sections {
-        color: black;
-        font-size: 17px;
-      }
-
-      .navbar-nav .nav-link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 4px;
-      }
-
-      .navbarSection {
-        gap: 0.7rem;
-      }
-
-      .navbar-div {
-        height: 8rem;
-        width: 100%;
-      }
-
       * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          scrollbar-color: #202c45 #dfe9eb;
+          scrollbar-width: thin;
+        }
 
-      body {
-        font-family: Arial, sans-serif;
-      }
+        body {
+          font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
 
-      .breadcrumb {
-        background-image: url("./images/Header-bg.jpg");
-        background-position: center;
-        background-size: cover;
-        height: 200px;
-        color: white;
-        position: relative;
-        display: flex;
-        align-items: center; /* Centers the breadcrumb content vertically */
-        justify-content: center; /* Centers the breadcrumb content horizontally */
-      }
+        .navbar-sections {
+          color: black;
+          font-size: 17px;
+        }
+        .navbar-nav .nav-link {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 4px;
+        }
+        .navbarSection {
+          gap: 0.7rem;
+        }
+        .navbar-div {
+          height: 8rem;
+          width: 100%;
+          padding-left: 6rem;
+          padding-right: 6rem;
+        }
 
-      .breadcrumb::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(
-          0,
-          0,
-          0,
-          0.85
-        ); /* Semi-transparent black overlay */
-        z-index: 1; /* Places overlay behind content */
-      }
 
-      .breadcrumb-content {
-        position: relative;
-        z-index: 2; /* Ensures content is above the overlay */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 50px;
-      }
-
-      @media (min-width: 640px) {
+        .breadcrumb {
+          margin: 0;
+          background-image: url("./images/Header-bg.jpg");
+          background-position: center;
+          background-size: cover;
+          height: 200px;
+          color: white;
+          position: relative;
+          display: flex;
+          align-items: center; 
+          justify-content: center; 
+        }
+        .breadcrumb::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0,0,0,0.85);
+          z-index: 1; 
+        }
         .breadcrumb-content {
-          width: 80%;
-          gap: 1.5rem;
+          position: relative;
+          z-index: 2; 
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 45px;
         }
-      }
 
-      .title {
-        font-size: 1.75rem;
-        font-weight: 600;
-        text-align: center;
-        letter-spacing: 0.05em;
-      }
-
-      @media (min-width: 640px) {
-        .title {
-          font-size: 2.5rem;
+        @media (min-width: 640px) {
+          .breadcrumb-content {
+            width: 80%;
+            gap: 1.5rem;
+          }
         }
-      }
 
-      .breadcrumb-links {
-        display: flex;
-        gap: 0.25rem;
-        font-size: 1rem;
-      }
+        .breadcrumb-title {
+          font-size: 1.75rem;
+          font-weight: 600;
+          text-align: center;
+          letter-spacing: 0.05em;
+        }
 
-      @media (min-width: 640px) {
+        @media (min-width: 640px) {
+          .breadcrumb-title {
+            font-size: 2.5rem;
+          }
+        }
+
         .breadcrumb-links {
-          font-size: 1.125rem;
+          display: flex;
+          gap: 0.25rem;
+          font-size: 1rem;
+          a {
+            text-decoration: none;
+          }
+          a:hover {
+            color: white;
+          }
         }
-      }
 
-      .breadcrumb-item {
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-        text-decoration: none;
-        color: white;
-      }
+        @media (min-width: 640px) {
+          .breadcrumb-links {
+            font-size: 1.125rem;
+          }
+        }
 
-      .current {
-        font-weight: 300;
-      }
+        .breadcrumb-item {
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+          text-decoration: none;
+          color: white;
+        }
+        .current {
+          font-weight: 300;
+        }
+        .icon {
+          display: inline-block;
+          font-size: 1em;
+        }
 
-      .icon {
-        display: inline-block;
-        font-size: 1em;
-      }
 
-      .management-section {
-        padding-top: 7rem;
-        padding-bottom: 8rem;
-      }
+        .team-section {
+          padding: 7rem 7rem;
+        }
 
-      .management-container {
-        width: 83.333333%;
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        flex-direction: column;
-        row-gap: 3rem;
-      }
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 3rem;
 
-      .gap-y-4 {
-        row-gap: 1rem;
-      }
+        }
 
-      .title {
-        text-transform: uppercase;
-        font-size: 32px;
-        font-weight: 600;
-        color: #222;
-      }
+        .section-header h1 {
+          font-size: 32px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: #333;
+          text-align: left;
+        }
 
-      .divider {
-        width: 70px;
-        height: 4px;
-        background-color: black;
-      }
+        .divider {
+          width: 70px;
+          height: 4px;
+          background-color: #333;
+          margin: 0;
+          margin-top: 1.5rem;
+          text-align: left;
+        }
 
-      .staff-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-        padding: 0 1rem;
-      }
+        .person-cards, .grid {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 3.5rem;
+          justify-content: flex-start;
+          padding: 0.5rem 0 0 2rem;
+        }
 
-      .staff-member {
-        width: 260px;
-        transition: transform 0.4s;
-      }
+        .cards {
+          flex: 1 1 260px;
+          max-width: 260px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          transition: transform 0.4s ease;
+          
+        }
 
-      .staff-member:hover {
-        transform: scale(1.05);
-      }
+        .cards:hover {
+          transform: scale(1.05);
+        }
 
-      .image-wrapper {
-        width: 100%;
-        height: 320px;
-        cursor: pointer;
-      }
+        .image-wrapper {
+          width: 100%;
+          height: 320px;
+          overflow: hidden;
+          border-radius: 8px;
+          border: 4px solid #333;
+          cursor: pointer;
+        }
 
-      .staff-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 0.375rem;
-        border: 4px solid black;
-      }
+        .image-wrapper img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
 
-      .staff-info {
-        text-align: center;
-      }
+        .name {
+          color: black;
+          font-weight: bold;
+          font-size: 16px;
+          text-align: center;
+          text-transform: uppercase;
+          margin-top: 0.5rem;
+        }
 
-      .staff-name {
-        color: #2c3e50;
-        font-weight: 700;
-        font-size: 16px;
-        text-transform: uppercase;
-      }
+        .position {
+          color: #ff0000;
+          font-weight: bold;
+          font-size: 16px;
+          text-align: center;
+          text-transform: uppercase;
+        }
 
-      .staff-role {
-        color: #e74c3c;
-        font-weight: 700;
-        font-size: 16px;
-        text-transform: uppercase;
-      }
+        .about-link {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: #333;
+          font-weight: 600;
+          cursor: pointer;
+          transition: color 0.3s ease;
+        }
 
-      .about-button {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        gap: 0.5rem;
-      }
+        .about-link svg {
+          fill: #ff0000;
+          transition: transform 0.3s ease;
+          
+        }
 
-      .arrow-icon {
-        color: #e74c3c;
-      }
+        .about-link:hover {
+          color: #ff0000;
+          transform: rotateY(180deg);
+        }
 
-      .about-text {
-        font-weight: 600;
-        color: #222;
-        transition: color 0.3s;
-      }
+        .popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-      .about-text:hover {
-        color: #e74c3c;
-      }
+/* Popup content styling */
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+  max-width: 90%;
+  position: relative;
+}
+
+/* Close button styling */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
 
       /* Modal Styling  */
 
@@ -355,414 +394,276 @@
     </style>
   </head>
   <body>
-    <marquee behavior="" direction="" class="bg-danger text-white "><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee>
+    <div>
+      <marquee behavior="" direction="" class="bg-danger text-white "><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee>
+    </div>
+
     <div>
       <nav class="navbar navbar-expand-lg navbar-light navbar-div">
-        <!-- here keep the logo -->
-         <a class="navbar-brand" href="./homepage.html"><div class="container text-center my-5">
-          <img src="./images/logo.webp" alt="Logo" class="rounded-circle img-fluid" style="width: 100px; height: 100px;">
+        <a class="navbar-brand" href="./homepage.html"><div class="container text-center my-5">
+          <img src="./images/logo.webp" alt="Logo" style="max-width: 100px; height: auto;">
         </div>
         </a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarNav">
-           <ul class="navbar-nav ml-auto navbarSection">
-             <!-- About Us Dropdown -->
-             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="aboutUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">About Us</h5>
-               </a>
-               <div class="dropdown-menu" aria-labelledby="aboutUsDropdown">
-                 <a class="dropdown-item" href="../About us/foundersDesk.html">Founder's Desk</a>
-                 <a class="dropdown-item" href="../About us/principalsDesk.html">Principal Desk</a>
-                 <a class="dropdown-item" href="../About us/schoolManagement.html">School Management</a>
-                 <a class="dropdown-item" href="../About us/managingCommittee.html">Managing Committee</a>
-                 <a class="dropdown-item" href="../About us/principlesAndPolicies.html">Princples & Policies</a>
-                 <a class="dropdown-item" href="../About us/infrastructure.html">Infrastructure</a>
-               </div>
-             </li>
-             <!-- Add additional nav items here if needed -->
-      
-              <!-- Admissions Dropdown -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto navbarSection">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="aboutUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">About Us</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="aboutUsDropdown">
+                <a class="dropdown-item" href="../About us/foundersDesk.html">Founder's Desk</a>
+                <a class="dropdown-item" href="../About us/principalsDesk.html">Principal Desk</a>
+                <a class="dropdown-item" href="../About us/schoolManagement.html">School Management</a>
+                <a class="dropdown-item" href="../About us/managingCommittee.html">Managing Committee</a>
+                <a class="dropdown-item" href="../About us/principlesAndPolicies.html">Princples & Policies</a>
+                <a class="dropdown-item" href="../About us/infrastructure.html">Infrastructure</a>
+              </div>
+            </li>
               <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="admissionsUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Admissions</h5>
-               </a>
-               <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
-                 <a class="dropdown-item" href="../Admissions/Helpdesk&SchoolVisit.html">Admissions HelpDesk/school</a>
-                 <a class="dropdown-item" href="../Admissions/admissionProcedure.html">Admissions Procedure</a>
-                 <a class="dropdown-item" href="../Admissions/registration.html">Registration</a>
-                 <a class="dropdown-item" href="../Admissions/feeStructure.html">Fee Structure</a>
-                 <a class="dropdown-item" href="../Admissions/schoolTimings.html">School Timings</a>
-                 <a class="dropdown-item" href="../Admissions/faqs.html">FAQ's</a>
-               </div>
-             </li>
-             <!-- Add additional nav items here if needed -->
-               <!-- Student Life Dropdown -->
-             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="StudentLifeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Student Life</h5>
-               </a>
-               <div class="dropdown-menu" aria-labelledby="StudentLifeDropdown">
-                 <a class="dropdown-item" href="../Student life/academics.html">Academics</a>
-                 <a class="dropdown-item" href="../Student life/sports.html">Sports</a>
-                 <a class="dropdown-item" href="../Student life/co-curricular.html">Co-curriculum</a>
-                 <a class="dropdown-item" href="../Student life/social-culturalDevelopment.html">Social-Cultural Development</a>
-                 <a class="dropdown-item" href="../Student life/counselling.html">Counselling</a>
-                 <a class="dropdown-item" href="../Student life/">Achievements</a>
-                 <a class="dropdown-item" href="../Student life/eventsCalender.html">Event Calender</a>
-                 <a class="dropdown-item" href="../Student life/toppers.html">Toppers</a>
-                 <a class="dropdown-item" href="../Student life/cabinet.html">Cabinet</a>
-                 <a class="dropdown-item" href="../Student life/transferCertificate.html">Transfer Cerificate</a>
-               </div>
-             </li>
-             <!-- Add additional nav items here if needed -->
-                  <!-- News $ Calender Dropdown -->
-             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="news&CalenderDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">News & Calender</h5>
-               </a>
-               <div class="dropdown-menu" aria-labelledby="news&CalenderDropdown">
-                 <a class="dropdown-item" href="../News and Calender/studentsHandbook.html">Student Hand Book</a>
-                 <a class="dropdown-item" href="../News and Calender/newsletter-scholarsTimes.html">NewsLetter/Scholars Times</a>
-               </div>
-               
-             </li>
-             <!-- Add additional nav items here if needed -->
-                     <!-- Mandatory Disclosures -->
-             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="mandatoryDisclosureDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Mandatory Disclosures</h5>
-               </a>
-               <div class="dropdown-menu" aria-labelledby="mandatoryDisclosureDropdown">
-                 <a class="dropdown-item" href="../Mandatory disclosures/booklist.html">Booklist</a>
-                 <a class="dropdown-item" href="../Mandatory disclosures/safetyCertificates&affiliations.html">Safety Certificates & Affiliations</a>
-                 <a class="dropdown-item" href="../Mandatory disclosures/assets/oasis.pdf">CBSE-OASIS</a>
-                 <a class="dropdown-item" href="../Mandatory disclosures/assets/Mandatory_Disclosures.pdf">Mandatory Public Disclosures</a>
-               </div>
-               
-             </li>
-             <!-- Add additional nav items here if needed -->
-                      <!-- Contact Us  -->
-             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="../Contact us/contactUs.html" id="contactUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Contact Us</h5>
-               </a>
-              
-             </li>
-             <!-- Add additional nav items here if needed -->
-      
-             <!-- Notice -->
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="noticeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Notice</h5>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="noticeDropdown">
-                          <a class="dropdown-item" href="../Notice/notice1.html">Notice 1</a>
-                          <a class="dropdown-item" href="../Notice/notice2.html">Notice 2</a>
-                          <a class="dropdown-item" href="../Notice/notice3.html">Notice 3</a>
-                         
-                        </div>
-                        
-                      </li>
-                      <!-- Add additional nav items here if needed -->
-      
-            
-           </ul>
-         </div>
-       </nav>
+              <a class="nav-link dropdown-toggle" href="#" id="admissionsUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Admissions</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
+                <a class="dropdown-item" href="../Admissions/Helpdesk&SchoolVisit.html">Admissions HelpDesk/school</a>
+                <a class="dropdown-item" href="../Admissions/admissionProcedure.html">Admissions Procedure</a>
+                <a class="dropdown-item" href="../Admissions/registration.html">Registration</a>
+                <a class="dropdown-item" href="../Admissions/feeStructure.html">Fee Structure</a>
+                <a class="dropdown-item" href="../Admissions/schoolTimings.html">School Timings</a>
+                <a class="dropdown-item" href="../Admissions/faqs.html">FAQ's</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="StudentLifeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Student Life</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="StudentLifeDropdown">
+                <a class="dropdown-item" href="../Student life/academics.html">Academics</a>
+                <a class="dropdown-item" href="../Student life/sports.html">Sports</a>
+                <a class="dropdown-item" href="../Student life/co-curricular.html">Co-curriculum</a>
+                <a class="dropdown-item" href="../Student life/social-culturalDevelopment.html">Social-Cultural Development</a>
+                <a class="dropdown-item" href="../Student life/counselling.html">Counselling</a>
+                <a class="dropdown-item" href="../Student life/">Achievements</a>
+                <a class="dropdown-item" href="../Student life/eventsCalender.html">Event Calender</a>
+                <a class="dropdown-item" href="../Student life/toppers.html">Toppers</a>
+                <a class="dropdown-item" href="../Student life/cabinet.html">Cabinet</a>
+                <a class="dropdown-item" href="../Student life/transferCertificate.html">Transfer Cerificate</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="news&CalenderDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">News & Calender</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="news&CalenderDropdown">
+                <a class="dropdown-item" href="../News and Calender/studentsHandbook.html">Student Hand Book</a>
+                <a class="dropdown-item" href="../News and Calender/newsletter-scholarsTimes.html">NewsLetter/Scholars Times</a>
+              </div> 
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="mandatoryDisclosureDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Mandatory Disclosures</h5>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="mandatoryDisclosureDropdown">
+                <a class="dropdown-item" href="../Mandatory disclosures/booklist.html">Booklist</a>
+                <a class="dropdown-item" href="../Mandatory disclosures/safetyCertificates&affiliations.html">Safety Certificates & Affiliations</a>
+                <a class="dropdown-item" href="../Mandatory disclosures/assets/oasis.pdf">CBSE-OASIS</a>
+                <a class="dropdown-item" href="../Mandatory disclosures/assets/Mandatory_Disclosures.pdf">Mandatory Public Disclosures</a>
+              </div>  
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="../Contact us/contactUs.html" id="contactUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Contact Us</h5>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="noticeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-info-circle"></i> <h5 class="navbar-sections">Notice</h5>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="noticeDropdown">
+                    <a class="dropdown-item" href="../Notice/notice1.html">Notice 1</a>
+                    <a class="dropdown-item" href="../Notice/notice2.html">Notice 2</a>
+                    <a class="dropdown-item" href="../Notice/notice3.html">Notice 3</a>
+                </div>
+              </li>
+            </ul>
+        </div>
+      </nav>
     </div>
 
     <div class="breadcrumb">
       <div class="breadcrumb-content">
-        <h1 class="title">School Management</h1>
+        <h1 class="breadcrumb-title">School Management</h1>
         <div class="breadcrumb-links">
-          <a href="/" class="breadcrumb-item">
-            Home
-            <span class="icon">
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 320 512"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
-                ></path>
-              </svg>
-            </span>
-          </a>
+          <p>
+            <a href=".." class="breadcrumb-item">
+              Home
+            </a>
+          </p>
+          <span class="icon">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z">
+              </path>
+            </svg>
+          </span>
           <p class="breadcrumb-item">
             About us
-            <span class="icon">
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 320 512"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
-                ></path>
-              </svg>
-            </span>
           </p>
-          <span class="breadcrumb-item current">School Management</span>
+          <span class="icon">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z">
+              </path>
+            </svg>
+          </span>
+          <p>
+            <span class="breadcrumb-item current">School Management</span>
+          </p>
         </div>
       </div>
     </div>
 
     <div>
-      <section class="management-section">
-        <div class="management-container">
-          <div class="flex flex-col gap-y-12">
-            <div class="flex flex-col gap-y-4">
-              <h1 class="title">Principal and Vice Principal</h1>
-              <div class="divider"></div>
-            </div>
-            <div class="staff-container">
-              <div class="staff-member">
-                <div class="image-wrapper">
-                  <img
-                    src="../images/principal.webp"
-                    alt="Principal"
-                    class="staff-image"
-                  />
-                </div>
-                <div class="staff-info">
-                  <p class="staff-name">Ms. Shikha Gautam</p>
-                  <p class="staff-role">Principal</p>
-                  <div class="about-button">
-                    <span class="arrow-icon">
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 512 512"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span class="about-text">About</span>
-                  </div>
+      <section class="team-section">
+        <div class="container">
+          <div class="section-header">
+            <h1>Principal and Vice Principal</h1>
+            <div class="divider"></div>
+          </div>
+          <div class="person-cards">
+            <div class="cards">
+              <div class="image-wrapper">
+                <picture>
+                  <source srcset="../images/principal.webp" type="image/webp">
+                  <img src="../images/principal.webp" alt="Principal Photo">
+                </picture>
+              </div>
+              <p class="name">Ms. Shikha Gautam</p>
+              <p class="position">Principal</p>
+              <div class="about-link">
+                <svg viewBox="0 0 512 512" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                </svg>
+                <span onclick="togglePopup()">About</span>
+              </div>
+              <div class="popup-overlay" id="popup">
+                <div class="popup-content">
+                  <span class="close-button" onclick="togglePopup()">&times;</span>
+                  <h2>About Ms. Shikha Gautam</h2>
+                  <p>Principal of XYZ School with over 15 years of experience in education.</p>
                 </div>
               </div>
-              
-              <div class="staff-member">
-                <div class="image-wrapper">
-                  <img
-                    src="../images/vice-prinicipal.webp"
-                    alt="Vice Principal"
-                    class="staff-image"
-                  />
-                </div>
-                <div class="staff-info">
-                  <p class="staff-name">Ms. Ruma Agarwal</p>
-                  <p class="staff-role">Vice Principal</p>
-                  <div class="about-button">
-                    <span class="arrow-icon">
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 512 512"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span class="about-text">About</span>
-                  </div>
-                </div>
+            </div>
+      
+            <div class="cards">
+              <div class="image-wrapper">
+                <picture>
+                  <source srcset="../images/vice-prinicipal.webp" type="image/webp">
+                  <img src="../images/vice-prinicipal.webp" alt="Principal Photo">
+                </picture>
+              </div>
+              <p class="name">Ms. Ruma Agarwal</p>
+              <p class="position">Vice Principal</p>
+              <div class="about-link">
+                <svg viewBox="0 0 512 512" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                </svg>
+                <span>About</span>
               </div>
             </div>
           </div>
-
-          <div class="flex flex-col gap-y-12">
-            <div class="flex flex-col gap-y-4">
-              <h1 class="title">Heads</h1>
-              <div class="divider"></div>
+          
+          <div class="section-header">
+            <h1>Heads</h1>
+            <div class="divider"></div>
+          </div>
+          <div class="grid">
+            <div class="cards">
+              <div class="image-wrapper">
+                <picture>
+                  <source srcset="../images/academic-head.webp" type="image/webp">
+                  <img src="../images/academic-head.webp" alt="Principal Photo">
+                </picture>
+              </div>
+              <p class="name">Mr. Subhash Sharma</p>
+              <p class="position">Academic Head</p>
+              <div class="about-link">
+                <svg viewBox="0 0 512 512" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                </svg>
+                <span>About</span>
+              </div>
             </div>
-            <div class="heads-container">
-              <div class="staff-member">
-                <div class="image-wrapper">
-                  <img
-                    src="../images/academic-head.webp"
-                    alt="Academic Head"
-                    class="staff-image"
-                  />
-                </div>
-                <div class="staff-info">
-                  <p class="staff-name">Mr. Subhash Sharma</p>
-                  <p class="staff-role">Academic Head</p>
-                  <div class="about-button">
-                    <span class="arrow-icon">
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 512 512"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span class="about-text">About</span>
-                  </div>
-                </div>
+            <div class="cards">
+              <div class="image-wrapper">
+                <picture>
+                  <source srcset="../images/curricular-head.webp" type="image/webp">
+                  <img src="../images/curricular-head.webp" alt="Principal Photo">
+                </picture>
               </div>
-              
-              <div class="staff-member">
-                <div class="image-wrapper">
-                  <img
-                    src="../images/curricular-head.webp"
-                    alt="Academic Head"
-                    class="staff-image"
-                  />
-                </div>
-                <div class="staff-info">
-                  <p class="staff-name">Mr. Kamna Chhabra</p>
-                  <p class="staff-role">Co-Curricular Head</p>
-                  <div class="about-button">
-                    <span class="arrow-icon">
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 512 512"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span class="about-text">About</span>
-                  </div>
-                </div>
+              <p class="name">Ms. Kamna Chhabra</p>
+              <p class="position">Co-Curricular Head</p>
+              <div class="about-link">
+                <svg viewBox="0 0 512 512" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                </svg>
+                <span>About</span>
               </div>
-
-              <div class="staff-member">
-                <div class="image-wrapper">
-                  <img
-                    src="../images/ict-head.webp"
-                    alt="Academic Head"
-                    class="staff-image"
-                  />
-                </div>
-                <div class="staff-info">
-                  <p class="staff-name">Mr. Manish Chandra Sharma</p>
-                  <p class="staff-role">ICT Head</p>
-                  <div class="about-button">
-                    <span class="arrow-icon">
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 512 512"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span class="about-text">About</span>
-                  </div>
-                </div>
+            </div>
+            <div class="cards">
+              <div class="image-wrapper">
+                <picture>
+                  <source srcset="../images/ict-head.webp" type="image/webp">
+                  <img src="../images/ict-head.webp" alt="Principal Photo">
+                </picture>
               </div>
-
-              <div class="staff-member">
-                <div class="image-wrapper">
-                  <img
-                    src="../images/hr-head.webp"
-                    alt="Academic Head"
-                    class="staff-image"
-                  />
-                </div>
-                <div class="staff-info">
-                  <p class="staff-name">Mr. Kapil Kumar Vishnoi</p>
-                  <p class="staff-role">HR Head</p>
-                  <div class="about-button">
-                    <span class="arrow-icon">
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 512 512"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span class="about-text">About</span>
-                  </div>
-                </div>
+              <p class="name">Mr. Manish Chandra Sharma</p>
+              <p class="position">Ict HEAD</p>
+              <div class="about-link">
+                <svg viewBox="0 0 512 512" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                </svg>
+                <span>About</span>
               </div>
-
-              <div class="staff-member">
-                <div class="image-wrapper">
-                  <img
-                    src="../images/sport-head.webp"
-                    alt="Academic Head"
-                    class="staff-image"
-                  />
-                </div>
-                <div class="staff-info">
-                  <p class="staff-name">Mr. Gopal Singh Bisht</p>
-                  <p class="staff-role">Sport Head</p>
-                  <div class="about-button">
-                    <span class="arrow-icon">
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 512 512"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span class="about-text">About</span>
-                  </div>
-                </div>
+            </div>
+            <div class="cards">
+              <div class="image-wrapper">
+                <picture>
+                  <source srcset="../images/hr-head.webp" type="image/webp">
+                  <img src="../images/hr-head.webp" alt="Principal Photo">
+                </picture>
+              </div>
+              <p class="name">Mr. Kapil kumar Vishnoi</p>
+              <p class="position">Hr Head</p>
+              <div class="about-link">
+                <svg viewBox="0 0 512 512" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                </svg>
+                <span>About</span>
+              </div>
+            </div>
+            <div class="cards">
+              <div class="image-wrapper">
+                <picture>
+                  <source srcset="../images/sport-head.webp" type="image/webp">
+                  <img src="../images/sport-head.webp" alt="Principal Photo">
+                </picture>
+              </div>
+              <p class="name">Mr. Gopal Singh Bisht</p>
+              <p class="position">Sport Head</p>
+              <div class="about-link">
+                <svg viewBox="0 0 512 512" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path>
+                </svg>
+                <span>About</span>
               </div>
             </div>
           </div>
         </div>
       </section>
+      
     </div>
 
     <section class="footer">
@@ -870,6 +771,13 @@
             contentDisplay.style.display = 'block';
 
         }
+
+        // JavaScript function to toggle popup visibility
+      function togglePopup() {
+        const popup = document.getElementById("popup");
+        popup.style.display = popup.style.display === "flex" ? "none" : "flex";
+      }
+
     </script>
   </body>
 </html>
