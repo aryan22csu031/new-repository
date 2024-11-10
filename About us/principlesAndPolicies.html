@@ -7,6 +7,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Principles and Policies</title>
     <style>
+         * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        scrollbar-color: #202c45 #dfe9eb;
+        scrollbar-width: thin;
+      }
+      body {
+        font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+      }
+
+
       .navbar-sections {
         color: black;
         font-size: 17px;
@@ -24,91 +36,97 @@
         height: 8rem;
         width: 100%;
       }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        font-family: Arial, sans-serif;
-      }
+
+
       .breadcrumb {
-        background-image: url("./images/Header-bg.jpg");
-        background-position: center;
-        background-size: cover;
-        height: 200px;
-        color: white;
-        position: relative;
-        display: flex;
-        align-items: center; /* Centers the breadcrumb content vertically */
-        justify-content: center; /* Centers the breadcrumb content horizontally */
-      }
-      .breadcrumb::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0,0,0,0.85); /* Semi-transparent black overlay */
-        z-index: 1; /* Places overlay behind content */
-      }
-      .breadcrumb-content {
-        position: relative;
-        z-index: 2; /* Ensures content is above the overlay */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 50px;
-      }
-      @media (min-width: 640px) {
+          margin: 0;
+          background-image: url("./images/Header-bg.jpg");
+          background-position: center;
+          background-size: cover;
+          height: 200px;
+          color: white;
+          position: relative;
+          display: flex;
+          align-items: center; 
+          justify-content: center; 
+        }
+        .breadcrumb::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0,0,0,0.85);
+          z-index: 1; 
+        }
         .breadcrumb-content {
-          width: 80%;
-          gap: 1.5rem;
+          position: relative;
+          z-index: 2; 
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 45px;
         }
-      }
-      .title {
-        font-size: 1.75rem;
-        font-weight: 600;
-        text-align: center;
-        letter-spacing: 0.05em;
-      }
-      @media (min-width: 640px) {
-        .title {
-          font-size: 2.5rem;
+
+        @media (min-width: 640px) {
+          .breadcrumb-content {
+            width: 80%;
+            gap: 1.5rem;
+          }
         }
-      }
-      .breadcrumb-links {
-        display: flex;
-        gap: 0.25rem;
-        font-size: 1rem;
-      }
-      @media (min-width: 640px) {
+
+        .breadcrumb-title {
+          font-size: 1.75rem;
+          font-weight: 600;
+          text-align: center;
+          letter-spacing: 0.05em;
+        }
+
+        @media (min-width: 640px) {
+          .breadcrumb-title {
+            font-size: 2.5rem;
+          }
+        }
+
         .breadcrumb-links {
-          font-size: 1.125rem;
+          display: flex;
+          gap: 0.25rem;
+          font-size: 1rem;
+          a {
+            text-decoration: none;
+          }
+          a:hover {
+            color: white;
+          }
         }
-      }
-      .breadcrumb-item {
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-        text-decoration: none;
-        color: white;
-      }
-      .current {
-        font-weight: 300;
-      }
-      .icon {
-        display: inline-block;
-        font-size: 1em;
-      }
+
+        @media (min-width: 640px) {
+          .breadcrumb-links {
+            font-size: 1.125rem;
+          }
+        }
+
+        .breadcrumb-item {
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+          text-decoration: none;
+          color: white;
+        }
+        .current {
+          font-weight: 300;
+        }
+        .icon {
+          display: inline-block;
+          font-size: 1em;
+        }
 
       .container {
         margin-left: 50px;
       }
-
       .content-container {
         display: flex;
         flex-direction: row;
@@ -117,12 +135,14 @@
         overflow: hidden;
         text-align: left;
       }
-
       .sidebar {
         text-align: left;
         width: 350px;
       }
 
+      .sidebar ul li a {
+        text-decoration: none;
+      }
       .menu {
         list-style: none;
         padding: 0;
@@ -136,20 +156,15 @@
       }
 
       .menu-link {
-        text-decoration: none;
         display: block;
         margin-left: 0.75rem;
         padding: 0.5rem 0;
         font-size: 0.95rem;
         color: #000;
         font-weight: 400;
-        font-family: "Open Sans", sans-serif;
-        word-break: break-word;
-        transition: background 0.3s;
-      }
-
-      .menu-link:hover {
-        background-color: rgb(244, 243, 243);
+        a {
+          text-decoration: none;
+        }
       }
 
       .content {
@@ -188,7 +203,6 @@
         margin-bottom: 1.5rem;
         font-size: 1rem;
         font-weight: 300;
-        font-family: "Open Sans", sans-serif;
       }
 
       .school-uniform {
@@ -203,33 +217,6 @@
         text-align: center;
         font-size: 1.5em;
       }
-      
-      /* Tabs styling 
-      .tabs {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-      }
-
-      .tab {
-        padding: 10px 20px;
-        cursor: pointer;
-        border: 1px solid #ddd;
-        background-color: #f9f9f9;
-        border-radius: 5px 5px 0 0;
-        margin-right: 5px;
-      }
-
-      .tab.active {
-        background-color: #fff;
-        border-bottom: none;
-        font-weight: bold;
-      } */
-       
-      .nav {
-        border: 2px solid;
-      }
-
 
       .tab-content {
         padding: 20px;
@@ -242,7 +229,7 @@
         background-color: #fff;
       }
 
-      /* List and text styling */
+
       ul {
         list-style: none;
         padding: 0;
@@ -257,18 +244,57 @@
         color: #555;
       }
 
-          /* Modal Styling  */
+
+      div.tab {
+        border: 1px solid;
+      }
+      .tabs {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 0.2px solid gray;
+        background-color: white;
+      }
+
+      .tab {
+        padding: 0.5rem 1rem;
+        border: 1px solid gray;
+        background-color: white;
+        color: gray;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .tab:hover {
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+      }
+
+      .tab.active {
+        color: #0066cc;
+        font-weight: bold;
+        border: 1px solid #0066cc;
+        border-radius: 0.5rem;
+      }
+
+      /* Chart Container */
+      .chart-container {
+        padding: 1rem;
+        border: 1px solid gray;
+        margin-top: 1rem;
+      }
+
+      .chart {
+        width: 100%;
+        height: 400px;
+      }
+
 
     .modal-header {
         background-color: #333333;
         color: #ffffff;
     }
 
-    /*Notice Modal Styling Ending*/
 
-
-
-    /* Footer Styling */
     .footer {
         background-color: #333333;
         color: #b0b0b0;
@@ -386,7 +412,10 @@
     </style>
   </head>
   <body>
-        <marquee behavior="" direction="" class="bg-danger text-white "><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee>
+        <div>
+          <marquee behavior="" direction="" class="bg-danger text-white "><h3>REGISTRATION OPEN FOR SESSION 2024-2025</h3></marquee>
+        </div>
+
         <div>
           <nav class="navbar navbar-expand-lg navbar-light navbar-div">
             <!-- here keep the logo -->
@@ -507,45 +536,33 @@
 
         <div class="breadcrumb">
           <div class="breadcrumb-content">
-            <h1 class="title">Principles & Policies</h1>
+            <h1 class="breadcrumb-title">Principles And Policies</h1>
             <div class="breadcrumb-links">
-              <a href="/" class="breadcrumb-item">
-                Home
-                <span class="icon">
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 320 512"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
-                    ></path>
-                  </svg>
-                </span>
-              </a>
+              <p>
+                <a href=".." class="breadcrumb-item">
+                  Home
+                </a>
+              </p>
+              <span class="icon">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z">
+                  </path>
+                </svg>
+              </span>
               <p class="breadcrumb-item">
                 About us
-                <span class="icon">
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 320 512"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
-                    ></path>
-                  </svg>
-                </span>
               </p>
-              <span class="breadcrumb-item current">Principles & Policies</span>
+              <span class="icon">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z">
+                  </path>
+                </svg>
+              </span>
+              <p>
+                <span class="breadcrumb-item current">Principles And Policies</span>
+              </p>
             </div>
           </div>
         </div>
@@ -690,6 +707,16 @@
                   <p class="section-text">
                     The students of classes II to XII are members of houses allotted to them. The house system plays an important role in promoting the cultural and co-curricular activities of the school. The houses conduct functions to celebrate important days and events. Inter-House competitions are periodically conducted to motivate students to take part in debates, declamations and other activities. Besides this, the students play inter-house matches in team games- Cricket, Basketball, football volleyball, athletics etc
                   </p>
+                  <div class="tabs">
+                    <button class="tab">House Tally 2017-18</button>
+                    <button class="tab">House Tally 2019-20</button>
+                    <button class="tab active">House Tally 2022-23</button>
+                  </div>
+                  <div class="chart-container">
+                    <svg class="chart" width="414" height="400" viewBox="0 0 414 400">
+                      <!-- SVG content goes here, omitted for brevity -->
+                    </svg>
+                  </div>
                 </div>
               </div>
 
@@ -705,12 +732,26 @@
                 </div>
               </div>
 
-              <div id="section-5" class="section">
+              <div id="section-6" class="section">
                 <div class="section-content">
                   <h2 class="section-title">Faculty</h2>
                   <p class="section-text">
                     The School is in the process of implementing the New Education Policy (NEP – 2020) in a phased manner. The ‘10 + 2’ structure will be replaced with the ‘5+3+3+4’ model.
                   </p>
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -778,6 +819,7 @@
               <p>Made with <i class="fas fa-heart text-danger"></i> by <a href="https://puminatidigital.com" target="_blank">Puminati Digital</a></p>
           </div>
         </section>
+
         <div class="back-to-top" onclick="scrollToTop()">
           <i class="fas fa-chevron-up"></i>
         </div>
