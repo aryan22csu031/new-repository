@@ -6,124 +6,124 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
     <title>Managing Committee</title>
     <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        scrollbar-color: #202c45 #dfe9eb;
+        scrollbar-width: thin;
+      }
+
+      body {
+        font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+      }
+
+
       .navbar-sections {
         color: black;
         font-size: 17px;
       }
-
       .navbar-nav .nav-link {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 4px;
       }
-
       .navbarSection {
         gap: 0.7rem;
       }
-
       .navbar-div {
         height: 8rem;
         width: 100%;
       }
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-      }
 
       .breadcrumb {
-        background-image: url("images/Header-bg.jpg");
-        background-position: center;
-        background-size: cover;
-        height: 200px;
-        color: white;
-        position: relative;
-        display: flex;
-        align-items: center; /* Centers the breadcrumb content vertically */
-        justify-content: center; /* Centers the breadcrumb content horizontally */
-      }
-
-      .breadcrumb::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(
-          0,
-          0,
-          0,
-          0.85
-        ); /* Semi-transparent black overlay */
-        z-index: 1; /* Places overlay behind content */
-      }
-
-      .breadcrumb-content {
-        position: relative;
-        z-index: 2; /* Ensures content is above the overlay */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 50px;
-      }
-
-      @media (min-width: 640px) {
+          margin: 0;
+          background-image: url("./images/Header-bg.jpg");
+          background-position: center;
+          background-size: cover;
+          height: 200px;
+          color: white;
+          position: relative;
+          display: flex;
+          align-items: center; 
+          justify-content: center; 
+        }
+        .breadcrumb::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0,0,0,0.85);
+          z-index: 1; 
+        }
         .breadcrumb-content {
-          width: 80%;
-          gap: 1.5rem;
+          position: relative;
+          z-index: 2; 
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 45px;
         }
-      }
 
-      .title {
-        font-size: 1.75rem;
-        font-weight: 600;
-        text-align: center;
-        letter-spacing: 0.05em;
-      }
-
-      @media (min-width: 640px) {
-        .title {
-          font-size: 2.5rem;
+        @media (min-width: 640px) {
+          .breadcrumb-content {
+            width: 80%;
+            gap: 1.5rem;
+          }
         }
-      }
 
-      .breadcrumb-links {
-        display: flex;
-        gap: 0.25rem;
-        font-size: 1rem;
-      }
+        .breadcrumb-title {
+          font-size: 1.75rem;
+          font-weight: 600;
+          text-align: center;
+          letter-spacing: 0.05em;
+        }
 
-      @media (min-width: 640px) {
+        @media (min-width: 640px) {
+          .breadcrumb-title {
+            font-size: 2.5rem;
+          }
+        }
+
         .breadcrumb-links {
-          font-size: 1.125rem;
+          display: flex;
+          gap: 0.25rem;
+          font-size: 1rem;
+          a {
+            text-decoration: none;
+          }
+          a:hover {
+            color: white;
+          }
         }
-      }
 
-      .breadcrumb-item {
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-        text-decoration: none;
-        color: white;
-      }
+        @media (min-width: 640px) {
+          .breadcrumb-links {
+            font-size: 1.125rem;
+          }
+        }
 
-      .current {
-        font-weight: 300;
-      }
+        .breadcrumb-item {
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+          text-decoration: none;
+          color: white;
+        }
+        .current {
+          font-weight: 300;
+        }
+        .icon {
+          display: inline-block;
+          font-size: 1em;
+        }
 
-      .icon {
-        display: inline-block;
-        font-size: 1em;
-      }
 
       .section-title {
         font-size: 2.2rem;
@@ -140,7 +140,7 @@
         margin-bottom: 20px;
       }
 
-      .container {
+      .section-container {
         padding: 60px 120px;
         p {
           text-align: justify;
@@ -156,17 +156,17 @@
         border-collapse: collapse;
         margin-top: 30px;
         text-align: center;
-        border: 1px solid #b0b0b0;
         color: #b0b0b0;
       }
       .styled-table thead th {
         align-items: center;
         padding: 10px;
         color: black;
+        border-bottom: 2px solid  black !important;
       }
 
       .styled-table thead tr:first-child th {
-        border: 2px solid black;
+        border: 1px solid #b0b0b0;
       }
 
       .styled-table tbody td {
@@ -175,13 +175,11 @@
         padding: 8px;
       }
 
-      .styled-table tbody td:first-child {
-        text-align: center;
-      }
       tbody tr:hover {
         background-color: #f5f5f5;
         color: black;
       }
+      
       /* Responsive Styling */
       @media (max-width: 768px) {
         .header-section {
@@ -479,147 +477,138 @@
          </ul>
        </div>
      </nav>
-    <div class="breadcrumb">
+
+     <div class="breadcrumb">
       <div class="breadcrumb-content">
-        <h1 class="title">Managing Committee</h1>
+        <h1 class="breadcrumb-title">Managing Committee</h1>
         <div class="breadcrumb-links">
-          <a href="/" class="breadcrumb-item">
-            Home
-            <span class="icon">
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 320 512"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
-                ></path>
-              </svg>
-            </span>
-          </a>
+          <p>
+            <a href=".." class="breadcrumb-item">
+              Home
+            </a>
+          </p>
+          <span class="icon">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z">
+              </path>
+            </svg>
+          </span>
           <p class="breadcrumb-item">
             About us
-            <span class="icon">
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 320 512"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
-                ></path>
-              </svg>
-            </span>
           </p>
-          <span class="breadcrumb-item current">Managing Committee</span>
+          <span class="icon">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z">
+              </path>
+            </svg>
+          </span>
+          <p>
+            <span class="breadcrumb-item current">Managing Committee</span>
+          </p>
         </div>
       </div>
     </div>
 
-    <section>
-      <div class="container">
-        <h1 class="section-title">Managing Committee</h1>
-        <div class="underline"></div>
-        <p>
-          It was a long cherished dream of Late Maj. S.N. Bhalla and Mrs. Ritu
-          Bhalla to start a school in the Kumaun Region to provide quality
-          education at affordable price to the people of this region. With this
-          vision, they put their shoulders to the wheel to sow the seed of
-          LITTLE SCHOLARS in April 1983. They were assisted in this onerous task
-          by some very dedicated and diligent teachers who helped them in
-          nourishing the seed into a lofty banyan and a citadel of learning.
-        </p>
-
-        <div class="table-responsive">
-          <table class="styled-table">
-            <thead>
-              <tr>
-                <th>S.No</th>
-                <th>Name</th>
-                <th>Category &amp; Clause of Affiliation Bye-Laws, 2018</th>
-                <th>Clause</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Mrs. Ruma Agarwal</td>
-                <td>Officiating Principal &amp; Member secretary</td>
-                <td>Clause 8.2.2(a)</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Mrs. Manjula Arora</td>
-                <td>Member (Parent/Mother)</td>
-                <td>Clause 8.2.2(b)</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Mr. Gaurav Sharma</td>
-                <td>Member (Parent/Father)</td>
-                <td>Clause 8.2.2(b)</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Mrs. Kamna Chhabra</td>
-                <td>Member (Teacher)</td>
-                <td>Clause 8.2.2(c)</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Mrs. Rashmi Agarwal</td>
-                <td>Member (Teacher)</td>
-                <td>Clause 8.2.2(c)</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>Mrs. Sonia Kapoor</td>
-                <td>Member (Educationist)</td>
-                <td>Clause 8.2.2(d)</td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>Mr. Pradeep K Sapra</td>
-                <td>Member (Educationist)</td>
-                <td>Clause 8.2.2(d)</td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td>Mr. Rohit Bhalla</td>
-                <td>President (BoG Nominee)</td>
-                <td>Clause 8.2.2(e)</td>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td>Mr. Pankaj Bhalla</td>
-                <td>Asst Manager (BoG Nominee)</td>
-                <td>Clause 8.2.2(e)</td>
-              </tr>
-              <tr>
-                <td>10</td>
-                <td>Mrs. Ritu Bhalla</td>
-                <td>Manager (BoG Nominee)</td>
-                <td>Clause 8.2.2(e)</td>
-              </tr>
-              <tr>
-                <td>11</td>
-                <td>Mrs. Sujata Sareen</td>
-                <td>Member (BoG Nominee)</td>
-                <td>Clause 8.2.2(f)</td>
-              </tr>
-            </tbody>
-          </table>
+    <div>
+      <section>
+        <div class="section-container">
+          <h1 class="section-title">Managing Committee</h1>
+          <div class="underline"></div>
+          <p>
+            It was a long cherished dream of Late Maj. S.N. Bhalla and Mrs. Ritu
+            Bhalla to start a school in the Kumaun Region to provide quality
+            education at affordable price to the people of this region. With this
+            vision, they put their shoulders to the wheel to sow the seed of
+            LITTLE SCHOLARS in April 1983. They were assisted in this onerous task
+            by some very dedicated and diligent teachers who helped them in
+            nourishing the seed into a lofty banyan and a citadel of learning.
+          </p>
+  
+          <div class="table-responsive">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Name</th>
+                  <th colspan="2">Category &amp; Clause of Affiliation Bye-Laws, 2018</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Mrs. Ruma Agarwal</td>
+                  <td>Officiating Principal &amp; Member secretary</td>
+                  <td>Clause 8.2.2(a)</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Mrs. Manjula Arora</td>
+                  <td>Member (Parent/Mother)</td>
+                  <td>Clause 8.2.2(b)</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Mr. Gaurav Sharma</td>
+                  <td>Member (Parent/Father)</td>
+                  <td>Clause 8.2.2(b)</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Mrs. Kamna Chhabra</td>
+                  <td>Member (Teacher)</td>
+                  <td>Clause 8.2.2(c)</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Mrs. Rashmi Agarwal</td>
+                  <td>Member (Teacher)</td>
+                  <td>Clause 8.2.2(c)</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Mrs. Sonia Kapoor</td>
+                  <td>Member (Educationist)</td>
+                  <td>Clause 8.2.2(d)</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Mr. Pradeep K Sapra</td>
+                  <td>Member (Educationist)</td>
+                  <td>Clause 8.2.2(d)</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Mr. Rohit Bhalla</td>
+                  <td>President (BoG Nominee)</td>
+                  <td>Clause 8.2.2(e)</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Mr. Pankaj Bhalla</td>
+                  <td>Asst Manager (BoG Nominee)</td>
+                  <td>Clause 8.2.2(e)</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Mrs. Ritu Bhalla</td>
+                  <td>Manager (BoG Nominee)</td>
+                  <td>Clause 8.2.2(e)</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>Mrs. Sujata Sareen</td>
+                  <td>Member (BoG Nominee)</td>
+                  <td>Clause 8.2.2(f)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
+
     <section class="footer">
       <div class="container">
           <div class="row">
